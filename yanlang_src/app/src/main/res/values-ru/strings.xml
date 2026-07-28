@@ -1,0 +1,21 @@
+<resources>
+    <string name="ui_000">Приятно познакомиться</string>
+    <string name="ui_001">Продолжить</string>
+    <string name="ui_002">Готово</string>
+    <string name="ui_003">Назад</string>
+    <string name="ui_004">Укажите родной язык</string>
+    <string name="ui_005">Мы покажем подходящие переводы и задания</string>
+    <string name="ui_006">Родной язык</string>
+    <string name="ui_007">Введите родной язык</string>
+    <string name="ui_008">Настройки</string>
+    <string name="ui_009">Выберите язык</string>
+    <string name="ui_010">Другое</string>
+    <string name="ui_011">Сохранить</string>
+    <string name="ui_012">Отмена</string>
+    <string name="ui_013">Начать</string>
+    <string name="ui_014">Далее</string>
+    <string name="ui_015">Язык изучения</string>
+    <string name="ui_016">Выберите тему для изучения</string>
+    <string name="ui_017">Словарь</string>
+    <string name="ui_018">Подходящих словарей нет</string>
+</resources>
