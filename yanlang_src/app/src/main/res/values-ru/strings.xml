@@ -1,4 +1,6 @@
 <resources>
+    <string name="analytics_consent_message">Мы используем Google Analytics для сбора обезличенной информации, помогающей улучшать приложение. Если вы не согласны, закройте приложение.</string>
+    <string name="analytics_consent_accept">Согласиться</string>
     <string name="ui_000">Приятно познакомиться</string>
     <string name="ui_001">Продолжить</string>
     <string name="ui_002">Готово</string>

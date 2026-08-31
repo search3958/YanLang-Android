@@ -90,6 +90,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -133,6 +134,8 @@ import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.sentaro.yanlang.data.AppState
+import com.sentaro.yanlang.data.AuthRepository
+import com.sentaro.yanlang.data.CreditInfo
 import com.sentaro.yanlang.data.ComprehensionQuestion
 import com.sentaro.yanlang.data.ComprehensionQuestionType
 import com.sentaro.yanlang.data.LearningDocument
@@ -164,6 +167,9 @@ import kotlinx.coroutines.delay
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import java.util.UUID
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -182,8 +188,10 @@ private fun hapticAction(action: () -> Unit): () -> Unit {
 @Composable
 fun YanLangApp(
     repository: LearningRepository,
-    engine: LearningEngine = remember { SupabaseLearningEngine() },
+    authRepository: AuthRepository = remember { AuthRepository() },
+    engine: LearningEngine? = null,
 ) {
+    val actualEngine = engine ?: remember { SupabaseLearningEngine(authRepository = authRepository) }
     val stateViewModel: YanLangViewModel = viewModel(
         factory = object : ViewModelProvider.Factory {
             @Suppress("UNCHECKED_CAST")
@@ -207,7 +215,31 @@ fun YanLangApp(
     var librarySection by rememberSaveable { mutableStateOf(0) }
     var rootTab by rememberSaveable { mutableStateOf(0) }
     var singlePageMode by rememberSaveable { mutableStateOf(false) }
+    var creditInfo by remember { mutableStateOf<CreditInfo?>(null) }
     val appScope = rememberCoroutineScope()
+
+    val refreshCredits: () -> Unit = {
+        appScope.launch {
+            creditInfo = authRepository.fetchCredits().getOrNull()
+        }
+    }
+
+    androidx.compose.runtime.LaunchedEffect(Unit) {
+        refreshCredits()
+    }
+
+    val lifecycleOwner = LocalLifecycleOwner.current
+    androidx.compose.runtime.DisposableEffect(lifecycleOwner) {
+        val observer = object : DefaultLifecycleObserver {
+            override fun onResume(owner: LifecycleOwner) {
+                refreshCredits()
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
+        }
+    }
     val context = LocalContext.current
     var onboardingCompleted by remember {
         mutableStateOf(
@@ -556,6 +588,7 @@ fun YanLangApp(
                             )
                         },
                         activityDates = appState.activityDates,
+                        creditInfo = creditInfo,
                     )
                 }
 
@@ -589,7 +622,7 @@ fun YanLangApp(
                             appScope.launch {
                                 runCatching {
                                     withContext(Dispatchers.IO) {
-                                        engine.analyze(
+                                        actualEngine.analyze(
                                             source = source,
                                             targetLanguage = activeDocument.targetLanguage,
                                             nativeLanguage = nativeLanguage,
@@ -671,7 +704,7 @@ fun YanLangApp(
                     RunnerWordCheckScreen(
                         document = activeDocument,
                         singlePageMode = singlePageMode,
-                        engine = engine,
+                        engine = actualEngine,
                         onBack = ::navigateToPreviousLearningStep,
                         onTopBarBack = ::navigateToLibrary,
                         onTokenChange = { changed ->
@@ -800,7 +833,7 @@ fun YanLangApp(
                             appScope.launch {
                                 runCatching {
                                     withContext(Dispatchers.IO) {
-                                        engine.evaluateTranslation(
+                                        actualEngine.evaluateTranslation(
                                             source,
                                             translation,
                                             nativeLanguage,
@@ -835,12 +868,12 @@ fun YanLangApp(
                                 val source = activeDocument.sourceText
                                 appScope.launch {
                                     runCatching {
-                                        withContext(Dispatchers.IO) {
-                                            engine.generateComprehensionQuestions(
-                                                source,
-                                                nativeLanguage,
-                                            )
-                                        }
+                                    withContext(Dispatchers.IO) {
+                                        actualEngine.generateComprehensionQuestions(
+                                            source,
+                                            nativeLanguage,
+                                        )
+                                    }
                                     }.onSuccess { questions ->
                                         commit(
                                             appState.copy(
@@ -909,7 +942,7 @@ fun YanLangApp(
                             appScope.launch {
                                 runCatching {
                                     withContext(Dispatchers.IO) {
-                                        engine.evaluateComprehension(
+                                        actualEngine.evaluateComprehension(
                                             source,
                                             questions,
                                             nativeLanguage,
@@ -952,6 +985,7 @@ fun YanLangApp(
                                     activityDates = appState.activityDates + todayKey(),
                                 ),
                             )
+                            refreshCredits()
                         },
                     )
                 }
@@ -1039,6 +1073,13 @@ fun YanLangApp(
             onConsent = {
                 analyticsPreferences.edit().putBoolean(ANALYTICS_CONSENT_GRANTED, true).apply()
                 analyticsConsentGranted = true
+                appScope.launch {
+                    authRepository.signInAnonymously().onSuccess { userId ->
+                        android.util.Log.d("YanLangApp", "Signed in anonymously: $userId")
+                    }.onFailure { e ->
+                        android.util.Log.e("YanLangApp", "Failed to sign in: ${e.message}")
+                    }
+                }
             },
         )
     }
@@ -1233,6 +1274,7 @@ private fun LibraryScreen(
     customNativeLanguage: String = "",
     onNativeLanguageChange: (String, String) -> Unit = { _, _ -> },
     activityDates: Set<String> = emptySet(),
+    creditInfo: CreditInfo? = null,
 ) {
     var pendingDelete by remember { mutableStateOf<LearningDocument?>(null) }
     var documentQuery by rememberSaveable { mutableStateOf("") }
@@ -1429,6 +1471,9 @@ private fun LibraryScreen(
                 ),
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
+                item {
+                    CreditCard(info = creditInfo)
+                }
                 if (resumeDocument != null) {
                     item {
                         Card(
@@ -1477,198 +1522,6 @@ private fun LibraryScreen(
     }
 }
 
-/*
-private const val ONBOARDING_PREFS = "yanlang_onboarding"
-private const val ONBOARDING_COMPLETED = "completed"
-
-private enum class OnboardingPage { WELCOME, LANGUAGE }
-
-@Composable
-private fun OnboardingFlow(
-    initialLanguageCode: String,
-    initialCustomLanguage: String,
-    onComplete: (String, String) -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    var page by rememberSaveable { mutableStateOf(OnboardingPage.WELCOME) }
-    var languageCode by rememberSaveable(initialLanguageCode) { mutableStateOf(initialLanguageCode) }
-    var customLanguage by rememberSaveable { mutableStateOf(initialCustomLanguage) }
-
-    AnimatedContent(
-        targetState = page,
-        transitionSpec = { fadeIn(tween(220)) togetherWith fadeOut(tween(160)) },
-        label = "onboardingPage",
-        modifier = modifier,
-    ) { currentPage ->
-        when (currentPage) {
-            OnboardingPage.WELCOME -> WelcomeOnboardingScreen(
-                onContinue = { page = OnboardingPage.LANGUAGE },
-                modifier = Modifier.fillMaxSize(),
-            )
-            OnboardingPage.LANGUAGE -> LanguageOnboardingScreen(
-                languageCode = languageCode,
-                customLanguage = customLanguage,
-                onLanguageChange = { code, custom ->
-                    languageCode = code
-                    customLanguage = custom
-                },
-                onComplete = { onComplete(languageCode, customLanguage) },
-                modifier = Modifier.fillMaxSize(),
-            )
-        }
-    }
-}
-
-@Composable
-private fun WelcomeOnboardingScreen(
-    onContinue: () -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    val composition by rememberLottieComposition(LottieCompositionSpec.Asset("welcome.json"))
-    var showGreeting by remember { mutableStateOf(false) }
-    val greetingOffset = remember { androidx.compose.animation.core.Animatable(0f) }
-
-    androidx.compose.runtime.LaunchedEffect(composition) {
-        val durationMs = composition?.duration?.toLong()?.coerceAtLeast(1L) ?: 2900L
-        delay(durationMs)
-        showGreeting = true
-        greetingOffset.snapTo(0f)
-        greetingOffset.animateTo(5f, tween(55))
-        greetingOffset.animateTo(-3f, tween(55))
-        greetingOffset.animateTo(1f, tween(45))
-        greetingOffset.animateTo(0f, tween(45))
-    }
-
-    Box(
-        modifier = modifier.background(Color(0xFFF6F6F6)),
-        contentAlignment = Alignment.Center,
-    ) {
-        LottieAnimation(
-            composition = composition,
-            iterations = 1,
-            modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.Fit,
-        )
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 28.dp, vertical = 28.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Bottom,
-        ) {
-            androidx.compose.animation.AnimatedVisibility(
-                visible = showGreeting,
-                enter = fadeIn(tween(100)),
-            ) {
-                Text(
-                    text = "はじめまして",
-                    modifier = Modifier.graphicsLayer { translationX = greetingOffset.value },
-                    style = MaterialTheme.typography.headlineMedium,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.Black,
-                )
-            }
-            Spacer(Modifier.height(28.dp))
-            Button(
-                onClick = onContinue,
-                modifier = Modifier.fillMaxWidth().height(56.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.White,
-                    contentColor = Color.Black,
-                ),
-                shape = SmoothCornerShape(18.dp),
-            ) {
-                Text("続行", fontWeight = FontWeight.Bold)
-            }
-        }
-    }
-}
-
-@Composable
-private fun LanguageOnboardingScreen(
-    languageCode: String,
-    customLanguage: String,
-    onLanguageChange: (String, String) -> Unit,
-    onComplete: () -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    val languages = listOf(
-        "ja" to "日本語",
-        "en" to "English",
-        "ru" to "Русский",
-        "ko-kr" to "한국어",
-        "zh-CN" to "中文（简体）",
-        "zh-TW" to "中文（繁體）",
-        "other" to "その他",
-    )
-    val canComplete = languageCode != "other" || customLanguage.isNotBlank()
-    val buttonComposition by rememberLottieComposition(
-        LottieCompositionSpec.Asset("bg-animation.json"),
-    )
-    var playButtonAnimation by remember { mutableStateOf(false) }
-
-    Column(
-        modifier = modifier
-            .background(Color(0xFFF6F6F6))
-            .verticalScroll(rememberScrollState())
-            .padding(horizontal = 28.dp, vertical = 48.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        Spacer(Modifier.weight(1f, fill = true))
-        Text("母国語を教えてください", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-        Spacer(Modifier.height(8.dp))
-        Text("あなたに合った訳や問題を表示します", color = Color(0xFF666666))
-        Spacer(Modifier.height(28.dp))
-        languages.forEach { (code, label) ->
-            val selected = languageCode == code
-            Card(
-                onClick = { onLanguageChange(code, if (code == "other") customLanguage else "") },
-                modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp),
-                shape = SmoothCornerShape(18.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = if (selected) Color(0xFFE8E8FF) else Color.White,
-                ),
-                border = if (selected) androidx.compose.foundation.BorderStroke(2.dp, Color(0xFF0900FF)) else null,
-            ) {
-                Row(Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
-                    Text(label, fontWeight = if (selected) FontWeight.Bold else FontWeight.Medium)
-                    Spacer(Modifier.weight(1f))
-                    if (selected) Icon(Icons.Default.CheckCircle, contentDescription = null, tint = Color(0xFF0900FF))
-                }
-            }
-        }
-        if (languageCode == "other") {
-            TextField(
-                value = customLanguage,
-                onValueChange = { onLanguageChange("other", it) },
-                placeholder = { Text("母国語を入力") },
-                singleLine = true,
-                modifier = Modifier.fillMaxWidth(),
-                shape = SmoothCornerShape(18.dp),
-                colors = yanLangTextFieldColors(),
-            )
-            Spacer(Modifier.height(10.dp))
-        }
-        Spacer(Modifier.height(18.dp))
-        Box(
-            modifier = Modifier.fillMaxWidth().height(56.dp).clip(SmoothCornerShape(18.dp))
-                .background(if (canComplete) Color(0xFF0900FF) else Color(0xFFBDBDBD)),
-        ) {
-            if (playButtonAnimation && canComplete) {
-                LottieAnimation(buttonComposition, iterations = 1, modifier = Modifier.matchParentSize(), contentScale = ContentScale.FillBounds)
-            }
-            Button(
-                onClick = { playButtonAnimation = true; onComplete() },
-                enabled = canComplete,
-                modifier = Modifier.fillMaxSize(),
-                shape = SmoothCornerShape(18.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent, contentColor = Color.White),
-            ) { Text("完了", fontWeight = FontWeight.Bold) }
-        }
-        Spacer(Modifier.weight(1f, fill = true))
-    }
-}
-*/
 
     pendingDelete?.let { document ->
         AlertDialog(
@@ -1860,7 +1713,7 @@ private fun StreakScreen(
     activityDates: Set<String>,
     modifier: Modifier = Modifier,
 ) {
-    val calendar = remember {
+    val currentMonth = remember {
         Calendar.getInstance().apply {
             set(Calendar.DAY_OF_MONTH, 1)
             set(Calendar.HOUR_OF_DAY, 12)
@@ -1870,64 +1723,101 @@ private fun StreakScreen(
         }
     }
     val uiLanguageCode = Locale.getDefault().language
-    val monthTitle = remember(uiLanguageCode) {
-        val locale = when (uiLanguageCode) {
-            "en" -> Locale.ENGLISH
-            "ko" -> Locale.KOREAN
-            "zh" -> Locale.SIMPLIFIED_CHINESE
-            "es" -> Locale.forLanguageTag("es")
-            else -> Locale.JAPANESE
-        }
-        SimpleDateFormat(if (uiLanguageCode == "ja" || uiLanguageCode == "zh") "yyyy年 M月" else "MMMM yyyy", locale)
-            .format(calendar.time)
-    }
-    val firstDayOffset = (calendar.get(Calendar.DAY_OF_WEEK) - Calendar.SUNDAY)
-    val dayCount = calendar.getActualMaximum(Calendar.DAY_OF_MONTH)
+    val calendarLocale = remember(uiLanguageCode) { calendarLocale(uiLanguageCode) }
+    val weekdayLabels = listOf(
+        stringResource(R.string.ui_012),
+        stringResource(R.string.ui_013),
+        stringResource(R.string.ui_014),
+        stringResource(R.string.ui_015),
+        stringResource(R.string.ui_016),
+        stringResource(R.string.ui_017),
+        stringResource(R.string.ui_018),
+    )
     val streak = remember(activityDates) { currentStreak(activityDates) }
 
-    Column(
-        modifier = modifier
-            .verticalScroll(rememberScrollState())
-            .padding(horizontal = 20.dp, vertical = 16.dp),
+    LazyColumn(
+        modifier = modifier,
+        contentPadding = PaddingValues(horizontal = 20.dp, vertical = 16.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
-        Card(
-            modifier = Modifier.fillMaxWidth(),
-            shape = SmoothCornerShape(28.dp),
-            colors = CardDefaults.cardColors(containerColor = AccentGreen),
-        ) {
-            Row(
-                modifier = Modifier.padding(horizontal = 22.dp, vertical = 20.dp),
-                verticalAlignment = Alignment.CenterVertically,
+        item {
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                shape = SmoothCornerShape(28.dp),
+                colors = CardDefaults.cardColors(containerColor = AccentGreen),
             ) {
-                Icon(
-                    Icons.Default.Whatshot,
-                    contentDescription = null,
-                    tint = Color.White,
-                    modifier = Modifier.size(38.dp),
-                )
-                Spacer(Modifier.width(14.dp))
-                Column {
-                    Text(stringResource(R.string.ui_011), color = Color.White.copy(alpha = 0.78f))
-                    Text(
-                        when (uiLanguageCode) {
-                            "en" -> "$streak days"
-                            "ko" -> "${streak}일"
-                            "zh" -> "$streak 天"
-                            "es" -> "$streak días"
-                            else -> "${streak}日"
-                        },
-                        style = MaterialTheme.typography.headlineLarge,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.White,
+                Row(
+                    modifier = Modifier.padding(horizontal = 22.dp, vertical = 20.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Icon(
+                        Icons.Default.Whatshot,
+                        contentDescription = null,
+                        tint = Color.White,
+                        modifier = Modifier.size(38.dp),
                     )
+                    Spacer(Modifier.width(14.dp))
+                    Column {
+                        Text(stringResource(R.string.ui_011), color = Color.White.copy(alpha = 0.78f))
+                        Text(
+                            when (uiLanguageCode) {
+                                "en" -> "$streak days"
+                                "ko" -> "${streak}일"
+                                "zh" -> "$streak 天"
+                                "es" -> "$streak días"
+                                else -> "${streak}日"
+                            },
+                            style = MaterialTheme.typography.headlineLarge,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White,
+                        )
+                    }
                 }
             }
         }
-        Spacer(Modifier.height(22.dp))
+        // The header occupies one LazyColumn item, so reserve one slot to avoid
+        // overflowing Compose's total item count.
+        items(count = Int.MAX_VALUE - 1, key = { it }) { monthOffset ->
+            val month = remember(monthOffset) {
+                (currentMonth.clone() as Calendar).apply {
+                    add(Calendar.MONTH, -monthOffset)
+                }
+            }
+            MonthCalendar(
+                calendar = month,
+                locale = calendarLocale,
+                uiLanguageCode = uiLanguageCode,
+                weekdayLabels = weekdayLabels,
+                activityDates = activityDates,
+                showHint = monthOffset == 0,
+            )
+        }
+    }
+}
+
+@Composable
+private fun MonthCalendar(
+    calendar: Calendar,
+    locale: Locale,
+    uiLanguageCode: String,
+    weekdayLabels: List<String>,
+    activityDates: Set<String>,
+    showHint: Boolean,
+) {
+    val monthTitle = remember(calendar.timeInMillis, uiLanguageCode, locale) {
+        SimpleDateFormat(
+            if (uiLanguageCode == "ja" || uiLanguageCode == "zh") "yyyy年 M月" else "MMMM yyyy",
+            locale,
+        ).format(calendar.time)
+    }
+    val firstDayOffset = calendar.get(Calendar.DAY_OF_WEEK) - Calendar.SUNDAY
+    val dayCount = calendar.getActualMaximum(Calendar.DAY_OF_MONTH)
+
+    Column(modifier = Modifier.fillMaxWidth().padding(top = 14.dp)) {
         Text(monthTitle, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
         Spacer(Modifier.height(14.dp))
         Row(Modifier.fillMaxWidth()) {
-            listOf("日", "月", "火", "水", "木", "金", "土").forEach { day ->
+            weekdayLabels.forEach { day ->
                 Text(
                     day,
                     modifier = Modifier.weight(1f),
@@ -1973,12 +1863,59 @@ private fun StreakScreen(
                 }
             }
         }
-        Text(
-            stringResource(R.string.ui_057),
-            modifier = Modifier.padding(top = 12.dp),
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            style = MaterialTheme.typography.bodySmall,
-        )
+        if (showHint) {
+            Text(
+                stringResource(R.string.ui_057),
+                modifier = Modifier.padding(top = 12.dp),
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                style = MaterialTheme.typography.bodySmall,
+            )
+        }
+    }
+}
+
+private fun calendarLocale(languageCode: String): Locale = when (languageCode) {
+    "en" -> Locale.ENGLISH
+    "ko" -> Locale.KOREAN
+    "zh" -> Locale.SIMPLIFIED_CHINESE
+    "es" -> Locale.forLanguageTag("es")
+    else -> Locale.JAPANESE
+}
+
+@Composable
+private fun CreditCard(info: CreditInfo?) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = SmoothCornerShape(22.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
+    ) {
+        Column(Modifier.padding(18.dp)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(
+                    info?.usagePercent?.let { "${it.toInt()}%" } ?: "--%",
+                    style = MaterialTheme.typography.headlineMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = AccentGreen,
+                )
+                Text(
+                    stringResource(R.string.ui_128),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = Color.Black.copy(alpha = 0.5f),
+                )
+            }
+            Spacer(Modifier.height(8.dp))
+            LinearProgressIndicator(
+                progress = { ((info?.usagePercent ?: 0.0) / 100.0).toFloat() },
+                modifier = Modifier.fillMaxWidth().height(8.dp),
+                color = AccentGreen,
+                trackColor = Color(0xFFE0E0E0),
+            )
+        }
     }
 }
 
@@ -2016,11 +1953,11 @@ private fun EmptyLibrary(modifier: Modifier = Modifier) {
 
 private fun vocabularyLanguageLabel(code: String): String = when (code) {
     "ja" -> "日本語"
-    "ko-kr" -> "한국어"
-    "ko-kp" -> "조선말"
-    "zh" -> "中文（简体）"
-    "zh-CN" -> "中文（简体）"
-    "zh-TW" -> "中文（繁體）"
+    "ko-kr" -> "표준어"
+    "ko-kp" -> "문화어"
+    "zh" -> "简体中文"
+    "zh-CN" -> "中简体文"
+    "zh-TW" -> "繁體中文"
     "en" -> "English"
     "ru" -> "Русский"
     else -> code
@@ -2264,6 +2201,7 @@ private fun CustomVocabularyEditorScreen(
                     onValueChange = { title = it },
                     label = stringResource(R.string.ui_092),
                     singleLine = true,
+                    containerColor = Color(0xFFF2F2F2),
                 )
             }
             items(entries, key = { it.id }) { entry ->
@@ -2343,6 +2281,7 @@ private fun CompactVocabularyField(
     onValueChange: (String) -> Unit,
     label: String,
     singleLine: Boolean,
+    containerColor: Color = Color(0xFFF4F4F4),
 ) {
     TextField(
         value = value,
@@ -2353,8 +2292,8 @@ private fun CompactVocabularyField(
         minLines = if (singleLine) 1 else 2,
         shape = SmoothCornerShape(12.dp),
         colors = TextFieldDefaults.colors(
-            focusedContainerColor = Color(0xFFF4F4F4),
-            unfocusedContainerColor = Color(0xFFF4F4F4),
+            focusedContainerColor = containerColor,
+            unfocusedContainerColor = containerColor,
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
             focusedPlaceholderColor = PlaceholderGray,
@@ -2362,6 +2301,8 @@ private fun CompactVocabularyField(
         ),
     )
 }
+
+
 
 @Composable
 private fun VocabularyCategoryMenu(
@@ -2374,127 +2315,277 @@ private fun VocabularyCategoryMenu(
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
+    val snackbarHostState = remember { SnackbarHostState() }
+    val scope = rememberCoroutineScope()
+    val scrollState = rememberScrollState()
+
     val languages = remember(nativeLanguageCode) {
         VocabularyRepository.load(context, "numbers.json").first
             .filterNot { it.code == nativeLanguageCode }
     }
-    val preferences = remember { context.getSharedPreferences("yanlang_preferences", 0) }
+
+    val preferences = remember {
+        context.getSharedPreferences("yanlang_preferences", 0)
+    }
+
     var languageCode by rememberSaveable(nativeLanguageCode) {
         mutableStateOf(
-            (preferences.getString("vocabulary_language", initialLanguageCode)
-                ?: initialLanguageCode).takeIf { saved ->
-                languages.any { it.code == saved }
-            } ?: languages.firstOrNull()?.code.orEmpty(),
+            (
+                    preferences.getString(
+                        "vocabulary_language",
+                        initialLanguageCode,
+                    ) ?: initialLanguageCode
+                    ).takeIf { saved ->
+                    languages.any { it.code == saved }
+                } ?: languages.firstOrNull()?.code.orEmpty(),
         )
     }
-    Column(modifier.padding(20.dp).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        val normalizedQuery = searchQuery.trim().lowercase()
-        val filteredCustomBooks = customBooks.filter { book ->
-            normalizedQuery.isBlank() ||
-                book.title.lowercase().contains(normalizedQuery) ||
-                book.entries.any { entry ->
-                    entry.word.lowercase().contains(normalizedQuery) ||
-                        entry.meaning.lowercase().contains(normalizedQuery) ||
-                        entry.pronunciation.lowercase().contains(normalizedQuery)
-                }
-        }
-        Text(stringResource(R.string.ui_019), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-        if (filteredCustomBooks.isEmpty()) {
+
+    Box(
+        modifier = modifier,
+    ) {
+        Column(
+            modifier = Modifier
+                .verticalScroll(scrollState)
+                .padding(20.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            val normalizedQuery = searchQuery.trim().lowercase()
+
+            val filteredCustomBooks = customBooks.filter { book ->
+                normalizedQuery.isBlank() ||
+                        book.title.lowercase().contains(normalizedQuery) ||
+                        book.entries.any { entry ->
+                            entry.word.lowercase().contains(normalizedQuery) ||
+                                    entry.meaning.lowercase().contains(normalizedQuery) ||
+                                    entry.pronunciation.lowercase().contains(normalizedQuery)
+                        }
+            }
+
             Text(
-                if (customBooks.isEmpty()) stringResource(R.string.ui_096) else stringResource(R.string.ui_097),
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(bottom = 4.dp),
+                stringResource(R.string.ui_019),
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold,
             )
-        } else {
-            filteredCustomBooks.forEach { book ->
-                Card(
-                    onClick = hapticAction { onSelectCustom(book) },
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = SmoothCornerShape(20.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color.White),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
-                ) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 14.dp),
-                        verticalAlignment = Alignment.CenterVertically,
+
+            if (filteredCustomBooks.isEmpty()) {
+                Text(
+                    if (customBooks.isEmpty()) {
+                        stringResource(R.string.ui_096)
+                    } else {
+                        stringResource(R.string.ui_097)
+                    },
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(bottom = 4.dp),
+                )
+            } else {
+                filteredCustomBooks.forEach { book ->
+                    Card(
+                        onClick = hapticAction {
+                            onSelectCustom(book)
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = SmoothCornerShape(20.dp),
+                        colors = CardDefaults.cardColors(
+                            containerColor = Color.White,
+                        ),
+                        elevation = CardDefaults.cardElevation(
+                            defaultElevation = 3.dp,
+                        ),
                     ) {
-                        Column(Modifier.weight(1f)) {
-                            Text(book.title.ifBlank { stringResource(R.string.ui_095) }, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(
+                                    horizontal = 16.dp,
+                                    vertical = 14.dp,
+                                ),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            Column(
+                                modifier = Modifier.weight(1f),
+                            ) {
+                                Text(
+                                    book.title.ifBlank {
+                                        stringResource(R.string.ui_095)
+                                    },
+                                    style = MaterialTheme.typography.titleMedium,
+                                    fontWeight = FontWeight.Bold,
+                                )
+
+                                Text(
+                                    "${book.entries.count { entry ->
+                                        entry.word.isNotBlank() ||
+                                                entry.meaning.isNotBlank()
+                                    }}語",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                            }
+
                             Text(
-                                "${book.entries.count { it.word.isNotBlank() || it.meaning.isNotBlank() }}語",
-                                style = MaterialTheme.typography.bodySmall,
+                                "›",
+                                fontSize = 28.sp,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
                         }
-                        Text("›", fontSize = 28.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                 }
             }
-        }
-        Spacer(Modifier.height(8.dp))
-        Text(stringResource(R.string.ui_020), style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-        Text(stringResource(R.string.ui_021), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        androidx.compose.foundation.lazy.LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            items(languages) { language ->
-                val label = vocabularyLanguageLabel(language.code)
-                val colors = if (language.code == languageCode) ButtonDefaults.buttonColors()
-                else ButtonDefaults.buttonColors(containerColor = Color.White, contentColor = Color.Black)
-                Button(
-                    onClick = {
-                        languageCode = language.code
-                        preferences.edit().putString("vocabulary_language", language.code).apply()
+
+            Spacer(Modifier.height(8.dp))
+
+            Text(
+                stringResource(R.string.ui_020),
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold,
+            )
+
+            Text(
+                stringResource(R.string.ui_021),
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+
+            androidx.compose.foundation.lazy.LazyRow(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                items(
+                    languages.sortedBy {
+                        if (it.code == "ko-kp") 1 else 0
                     },
-                    shape = SmoothCornerShape(999.dp),
-                    colors = colors,
-                ) { Text("${vocabularyLanguageFlag(language.code)} $label") }
-            }
-        }
-        Text(stringResource(R.string.ui_022), color = MaterialTheme.colorScheme.onSurfaceVariant)
-        val themes = listOf(
-            "数字" to "numbers.json",
-            "数え方" to "ordinal_numbers.json",
-            "果物" to "fruits.json",
-            "野菜" to "vegetables.json",
-            "色" to "colors.json",
-            "電子製品" to "electronics.json",
-            "数学用語" to "math_terms.json",
-            "文法用語" to "grammar_terms.json",
-            "生物用語" to "biology_terms.json",
-            "科学用語" to "science_terms.json",
-            "主要国名" to "countries.json",
-            "衣類" to "clothing.json",
-            "家具" to "furniture.json",
-            "手荷物" to "luggage.json",
-            "方向" to "directions.json",
-            "香りと視覚感情" to "scents_and_visual_emotions.json",
-            "感情" to "emotions.json"
-        )
-        val filteredThemes = themes.filter { (label, file) ->
-            normalizedQuery.isBlank() || label.lowercase().contains(normalizedQuery) ||
-                VocabularyRepository.load(context, file).second.any { entry ->
-                    entry.translations.values.any { translation ->
-                        translation.text.lowercase().contains(normalizedQuery) ||
-                            translation.pronunciation.lowercase().contains(normalizedQuery)
-                    }
-                }
-        }
-        filteredThemes.chunked(2).forEach { rowThemes ->
-            Row(horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
-                rowThemes.forEach { (label, file) ->
-                    Card(
-                        onClick = hapticAction { onSelect(file, languageCode) },
-                        modifier = Modifier.weight(1f).shadow(6.dp, SmoothCornerShape(24.dp), spotColor = Color.Black.copy(alpha = 0.267f), ambientColor = Color.Black.copy(alpha = 0.267f)),
-                        shape = SmoothCornerShape(24.dp),
-                        colors = CardDefaults.cardColors(containerColor = Color.White),
+                ) { language ->
+                    val label = vocabularyLanguageLabel(language.code)
+
+                    val colors =
+                        if (language.code == languageCode) {
+                            ButtonDefaults.buttonColors()
+                        } else {
+                            ButtonDefaults.buttonColors(
+                                containerColor = Color.White,
+                                contentColor = Color.Black,
+                            )
+                        }
+
+                    Button(
+                        onClick = {
+                            languageCode = language.code
+
+                            preferences
+                                .edit()
+                                .putString(
+                                    "vocabulary_language",
+                                    language.code,
+                                )
+                                .apply()
+
+                            if (language.code == "ko-kp") {
+                                scope.launch {
+                                    snackbarHostState.showSnackbar(
+                                        message = context.getString(
+                                            R.string.ui_130,
+                                        ),
+                                        duration = SnackbarDuration.Short,
+                                    )
+                                }
+                            }
+                        },
+                        shape = SmoothCornerShape(999.dp),
+                        colors = colors,
                     ) {
-                        Text(label, modifier = Modifier.padding(20.dp), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+                        Text(
+                            "${vocabularyLanguageFlag(language.code)} $label",
+                        )
                     }
                 }
-                if (rowThemes.size == 1) Spacer(Modifier.weight(1f))
+            }
+
+            Text(
+                stringResource(R.string.ui_022),
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+
+            val themes = listOf(
+                "数字" to "numbers.json",
+                "数え方" to "ordinal_numbers.json",
+                "果物" to "fruits.json",
+                "野菜" to "vegetables.json",
+                "色" to "colors.json",
+                "電子製品" to "electronics.json",
+                "数学用語" to "math_terms.json",
+                "文法用語" to "grammar_terms.json",
+                "生物用語" to "biology_terms.json",
+                "科学用語" to "science_terms.json",
+                "主要国名" to "countries.json",
+                "衣類" to "clothing.json",
+                "家具" to "furniture.json",
+                "手荷物" to "luggage.json",
+                "方向" to "directions.json",
+                "香りと視覚感情" to "scents_and_visual_emotions.json",
+                "感情" to "emotions.json",
+            )
+
+            val filteredThemes = themes.filter { (label, file) ->
+                normalizedQuery.isBlank() ||
+                        label.lowercase().contains(normalizedQuery) ||
+                        VocabularyRepository.load(context, file).second.any { entry ->
+                            entry.translations.values.any { translation ->
+                                translation.text.lowercase().contains(normalizedQuery) ||
+                                        translation.pronunciation
+                                            .lowercase()
+                                            .contains(normalizedQuery)
+                            }
+                        }
+            }
+
+            filteredThemes.chunked(2).forEach { rowThemes ->
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    rowThemes.forEach { (label, file) ->
+                        Card(
+                            onClick = hapticAction {
+                                onSelect(file, languageCode)
+                            },
+                            modifier = Modifier
+                                .weight(1f)
+                                .shadow(
+                                    6.dp,
+                                    SmoothCornerShape(24.dp),
+                                    spotColor = Color.Black.copy(alpha = 0.267f),
+                                    ambientColor = Color.Black.copy(alpha = 0.267f),
+                                ),
+                            shape = SmoothCornerShape(24.dp),
+                            colors = CardDefaults.cardColors(
+                                containerColor = Color.White,
+                            ),
+                        ) {
+                            Text(
+                                label,
+                                modifier = Modifier.padding(20.dp),
+                                style = MaterialTheme.typography.titleLarge,
+                                fontWeight = FontWeight.Bold,
+                            )
+                        }
+                    }
+
+                    if (rowThemes.size == 1) {
+                        Spacer(Modifier.weight(1f))
+                    }
+                }
             }
         }
+
+        SnackbarHost(
+            hostState = snackbarHostState,
+        )
     }
 }
+
+
+
+
 
 @Composable
 private fun SearchField(
@@ -2753,7 +2844,7 @@ private fun EditorScreen(
                         onChange(document.targetLanguage, document.title, it)
                     }
                 },
-                placeholder = { Text(stringResource(R.string.ui_028)) },
+                placeholder = { Text(stringResource(R.string.ui_028, MAX_SOURCE_LENGTH)) },
                 isError = document.sourceText.length > MAX_SOURCE_LENGTH,
                 enabled = !isProcessing,
                 modifier = Modifier

@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">얀랑</string>
+    <string name="analytics_consent_message">YanLang에서는 부정 사용 방지를 위해 앱마다 ID를 배포하여 관리하고 있습니다.\nID별로 사용 시각, 사용 상황을 연동하여 관리하지만 그 외 불필요한 정보가 연동되지는 않습니다.\n또한 Google Analytics를 사용하여 개인을 식별할 수 없는 형태로 앱 개발에 도움이 되는 정보를 수집하고 있습니다.\nGoogle Analytics와 개인 ID는 절대 연동되지 않으며 독립적으로 관리됩니다.\n이는 운영에 필요한 것입니다. 동의하지 않는 경우 앱을 종료해 주세요.</string>
+    <string name="analytics_consent_accept">동의하기</string>
     <string name="ui_000">처음 뵙겠습니다</string>
     <string name="ui_001">계속</string>
     <string name="ui_002">모국어를 알려 주세요</string>
@@ -28,7 +30,7 @@
     <string name="ui_025">계속</string>
     <string name="ui_026">학습할 언어</string>
     <string name="ui_027">제목</string>
-    <string name="ui_028">학습할 글을 여기에 붙여 넣으세요</string>
+    <string name="ui_028">학습할 글을 여기에 붙여 넣으세요 (%d자 이내)</string>
     <string name="ui_029">언어, 제목, 본문을 입력하면 계속할 수 있습니다</string>
     <string name="ui_030">단어장</string>
     <string name="ui_031">단어 확인</string>
@@ -92,7 +94,7 @@
     <string name="ui_089">짧은 글을 붙여 넣고 단어부터 전체 글까지 순서대로 학습하세요.</string>
     <string name="ui_090">새 단어장</string>
     <string name="ui_091">단어장 편집</string>
-    <string name="ui_092">단어장 이름</string>
+    <string name="ui_092">単語帳の名前を入力...</string>
     <string name="ui_093">발음(선택)</string>
     <string name="ui_094">뜻</string>
     <string name="ui_095">제목 없는 단어장</string>
@@ -121,4 +123,5 @@
     <string name="ui_118">시작</string>
     <string name="ui_119">다시 플레이</string>
     <string name="ui_120">최종 점수</string>
+    <string name="ui_128">매일 리셋됩니다</string>
 </resources>

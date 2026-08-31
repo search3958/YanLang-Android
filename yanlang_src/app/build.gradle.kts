@@ -15,10 +15,12 @@ android {
         applicationId = "com.sentaro.yanlang"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "SUPABASE_URL", "\"https://bhwxeffktrxzfdmpfhpd.supabase.co\"")
+        buildConfigField("String", "SUPABASE_ANON_KEY", "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJod3hlZmZrdHJ4emZkbXBmaHBkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE5NDU2OTgsImV4cCI6MjA5NzUyMTY5OH0.eoUBCDsiT4fkcxMiP9948bT6tKed03qXZJGQ2tGYVEk\"")
     }
 
     buildTypes {
@@ -57,6 +59,8 @@ dependencies {
     implementation(libs.lottie.compose)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
+    implementation(libs.supabase.auth.kt)
+    implementation(libs.ktor.client.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

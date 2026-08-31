@@ -1,4 +1,6 @@
 <resources>
+    <string name="analytics_consent_message">YanLang asigna y administra un ID único por aplicación para prevenir el uso indebido.\nEl estado y tiempo de uso se vinculan con cada ID, pero no se asocia información innecesaria.\nTambién usamos Google Analytics para recopilar información no identificable para mejorar la aplicación.\nGoogle Analytics y los personales nunca se vinculan y se administran de forma independiente.\nEsto es necesario para la operación. Si no estás de acuerdo, cierra y no uses la aplicación.</string>
+    <string name="analytics_consent_accept">Aceptar</string>
     <string name="ui_000">Encantado de conocerte</string>
     <string name="ui_001">Continuar</string>
     <string name="ui_002">¿Cuál es tu lengua materna?</string>
@@ -27,7 +29,7 @@
     <string name="ui_025">Continuar</string>
     <string name="ui_026">Idioma que quieres aprender</string>
     <string name="ui_027">Título</string>
-    <string name="ui_028">Pega aquí el texto que quieres aprender</string>
+    <string name="ui_028">Pega aquí el texto que quieres aprender (%d caracteres máx.)</string>
     <string name="ui_029">Introduce el idioma, el título y el texto para continuar</string>
     <string name="ui_030">Vocabulario</string>
     <string name="ui_031">Repaso de palabras</string>
@@ -91,7 +93,7 @@
     <string name="ui_089">Pega un texto corto y aprende paso a paso, desde palabras hasta el texto completo.</string>
     <string name="ui_090">Nuevo vocabulario</string>
     <string name="ui_091">Editar vocabulario</string>
-    <string name="ui_092">Nombre del vocabulario</string>
+    <string name="ui_092">単語帳の名前を入力...</string>
     <string name="ui_093">Pronunciación (opcional)</string>
     <string name="ui_094">Significado</string>
     <string name="ui_095">Vocabulario sin título</string>
@@ -120,4 +122,5 @@
     <string name="ui_118">Comenzar</string>
     <string name="ui_119">Jugar de nuevo</string>
     <string name="ui_120">Puntuación final</string>
+    <string name="ui_128">Se reinicia a diario</string>
 </resources>

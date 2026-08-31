@@ -5,10 +5,12 @@ import org.json.JSONObject
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.UUID
+import io.github.jan.supabase.auth.auth
 
 
 class SupabaseLearningEngine(
     private val endpoint: String = DEFAULT_ENDPOINT,
+    private val authRepository: AuthRepository? = null,
 ) : LearningEngine {
     private val answerChecker = LocalKoreanLearningEngine()
 
@@ -38,30 +40,34 @@ class SupabaseLearningEngine(
     }
 
     private fun parseAnalysis(content: String, originalSource: String): List<LearningToken> {
-        val root = JSONObject(extractJsonObject(content))
-        val array = root.optJSONArray("tokens")
-            ?: throw LearningApiException("AIの応答にtokensがありません")
-        if (array.length() == 0) {
+        val lines = content.trim().lines()
+            .map { it.trim() }
+            .filter { it.isNotBlank() && !it.startsWith("```") }
+
+        if (lines.isEmpty()) {
             throw LearningApiException("文章を単語に分割できませんでした")
         }
 
         val tokens = buildList {
-            for (index in 0 until array.length()) {
-                val item = array.optJSONObject(index)
-                    ?: throw LearningApiException("tokens[$index]の形式が不正です")
-                val sourcePart = AiTextCodec.unescape(item.optString("source")).trim()
-                val translation = AiTextCodec.unescape(item.optString("translation")).trim()
+            for ((index, line) in lines.withIndex()) {
+                val parts = line.split("|", limit = 4)
+                if (parts.size < 3) {
+                    throw LearningApiException("分割結果の形式が不正です（行 ${index + 1}）")
+                }
+                val sourcePart = AiTextCodec.unescape(parts[0]).trim()
+                val kindValue = AiTextCodec.unescape(parts[1]).trim().lowercase()
+                val translation = AiTextCodec.unescape(parts[2]).trim()
                 if (sourcePart.isBlank() || translation.isBlank()) {
                     throw LearningApiException("AIの単語データが不足しています")
                 }
-                val kind = if (item.optString("kind").lowercase() == "connector") {
+                val kind = if (kindValue == "connector" || kindValue == "cnct") {
                     TokenKind.CONNECTOR
                 } else {
                     TokenKind.WORD
                 }
-                val choices = if (kind == TokenKind.CONNECTOR) {
+                val choices = if (kind == TokenKind.CONNECTOR && parts.size == 4) {
                     normalizeChoices(
-                        item.optJSONArray("choices").toStringList().map(AiTextCodec::unescape),
+                        parseBracketedChoices(parts[3]),
                         translation,
                     )
                 } else {
@@ -86,6 +92,14 @@ class SupabaseLearningEngine(
             )
         }
         return tokens
+    }
+
+    private fun parseBracketedChoices(field: String): List<String> {
+        val trimmed = field.trim()
+        if (!trimmed.startsWith("[") || !trimmed.endsWith("]")) return emptyList()
+        val inner = trimmed.substring(1, trimmed.length - 1).trim()
+        if (inner.isBlank()) return emptyList()
+        return inner.split("|").map { AiTextCodec.unescape(it).trim() }.filter { it.isNotBlank() }
     }
 
     override fun checkAnswer(token: LearningToken, answer: String): Boolean {
@@ -132,11 +146,9 @@ class SupabaseLearningEngine(
             throw LearningApiException("AIの応答にscoreがありません")
         }
         val score = root.optInt("score").coerceIn(0, 100)
-        val mistakesJson = root.optJSONArray("mistakes") ?: JSONArray()
-        val meaningEquivalent = root.optBoolean(
-            "meaningEquivalent",
-            score == 100 && mistakesJson.length() == 0,
-        )
+        val mistakesJson = root.optJSONArrayCompat("mistakes", "miss") ?: JSONArray()
+        val meaningEquivalent = root.optBooleanCompat("meaningEquivalent", "equivalent") ||
+            (score == 100 && mistakesJson.length() == 0)
         if (meaningEquivalent) {
             return AiEvaluation(
                 meaningEquivalent = true,
@@ -149,7 +161,9 @@ class SupabaseLearningEngine(
                 val item = mistakesJson.optJSONObject(index) ?: continue
                 val source = AiTextCodec.unescape(item.optString("source")).trim()
                 val correct = AiTextCodec.unescape(item.optString("correct")).trim()
-                val submitted = AiTextCodec.unescape(item.optString("submitted"))
+                val submitted = AiTextCodec.unescape(
+                    item.optStringCompat("submitted", "sent"),
+                )
                     .trim()
                     .ifBlank { "未反映" }
                 val isActuallyDifferent =
@@ -176,45 +190,44 @@ class SupabaseLearningEngine(
         sourceText: String,
         nativeLanguage: String,
     ): List<ComprehensionQuestion> {
-        val root = JSONObject(
-            extractJsonObject(
-                request(
-                    "generate_comprehension",
-                    JSONObject()
-                        .put("sourceText", sourceText)
-                        .put("nativeLanguage", nativeLanguage),
-                ),
-            ),
+        val content = request(
+            "generate_comprehension",
+            JSONObject()
+                .put("sourceText", sourceText)
+                .put("nativeLanguage", nativeLanguage),
         )
-        val array = root.optJSONArray("questions")
-            ?: throw LearningApiException("AIの応答に理解チェックがありません")
+        val lines = content.trim().lines()
+            .map { it.trim() }
+            .filter { it.isNotBlank() && !it.startsWith("```") }
+
+        if (lines.isEmpty()) {
+            throw LearningApiException("AIの応答に理解チェックがありません")
+        }
         val questions = buildList {
-            for (index in 0 until array.length()) {
-                val item = array.optJSONObject(index) ?: continue
-                val questionPrompt = AiTextCodec.unescape(item.optString("prompt")).trim()
+            for ((index, line) in lines.withIndex()) {
+                val parts = line.split("|", limit = 4)
+                if (parts.size < 3) continue
+                val questionId = AiTextCodec.unescape(parts[0]).trim()
+                    .ifBlank { "q${index + 1}" }
+                val typeValue = AiTextCodec.unescape(parts[1]).trim().lowercase()
+                val questionPrompt = AiTextCodec.unescape(parts[2]).trim()
                 if (questionPrompt.isBlank()) continue
-                val type = if (item.optString("type") == "multiple_choice") {
+                val type = if (typeValue == "multiple_choice" || typeValue == "mlt_choice") {
                     ComprehensionQuestionType.MULTIPLE_CHOICE
                 } else {
                     ComprehensionQuestionType.FREE_TEXT
                 }
-                val choices = if (type == ComprehensionQuestionType.MULTIPLE_CHOICE) {
-                    item.optJSONArray("choices").toStringList()
-                        .map(AiTextCodec::unescape)
-                        .distinct()
-                        .take(3)
+                val choices = if (type == ComprehensionQuestionType.MULTIPLE_CHOICE && parts.size == 4) {
+                    parseBracketedChoices(parts[3]).distinct().take(3)
                 } else {
                     emptyList()
                 }
-                if (type == ComprehensionQuestionType.MULTIPLE_CHOICE &&
-                    choices.size != 3
-                ) {
+                if (type == ComprehensionQuestionType.MULTIPLE_CHOICE && choices.size != 3) {
                     continue
                 }
                 add(
                     ComprehensionQuestion(
-                        id = AiTextCodec.unescape(item.optString("id"))
-                            .ifBlank { "q${index + 1}" } + "-${UUID.randomUUID()}",
+                        id = "${questionId}-${UUID.randomUUID()}",
                         prompt = questionPrompt,
                         type = type,
                         choices = choices,
@@ -247,32 +260,38 @@ class SupabaseLearningEngine(
                 })
             }
         }
-        val root = JSONObject(
-            extractJsonObject(
-                request(
-                    "evaluate_comprehension",
-                    JSONObject()
-                        .put("sourceText", sourceText)
-                        .put("nativeLanguage", nativeLanguage)
-                        .put("questions", submittedQuestions),
-                ),
-            ),
+        val content = request(
+            "evaluate_comprehension",
+            JSONObject()
+                .put("sourceText", sourceText)
+                .put("nativeLanguage", nativeLanguage)
+                .put("questions", submittedQuestions),
         )
-        val results = root.optJSONArray("results")
-            ?: throw LearningApiException("AIの採点結果を読み取れませんでした")
+        val lines = content.trim().lines()
+            .map { it.trim() }
+            .filter { it.isNotBlank() && !it.startsWith("```") }
+
+        if (lines.isEmpty()) {
+            throw LearningApiException("AIの採点結果を読み取れませんでした")
+        }
         val resultById = buildMap {
-            for (index in 0 until results.length()) {
-                val item = results.optJSONObject(index) ?: continue
-                put(AiTextCodec.unescape(item.optString("id")), item)
+            for (line in lines) {
+                val parts = line.split("|", limit = 4)
+                if (parts.size < 4) continue
+                val id = AiTextCodec.unescape(parts[0]).trim()
+                if (id.isNotBlank()) put(id, parts)
             }
         }
         val checked = questions.map { question ->
             val result = resultById[question.id]
                 ?: throw LearningApiException("理解チェックの採点結果が不足しています")
+            val isOK = AiTextCodec.unescape(result[1]).trim().lowercase() == "true"
+            val correctAnswer = AiTextCodec.unescape(result[2]).trim()
+            val feedback = AiTextCodec.unescape(result[3]).trim()
             question.copy(
-                isCorrect = result.optBoolean("isCorrect"),
-                correctAnswer = AiTextCodec.unescape(result.optString("correctAnswer")).trim(),
-                feedback = AiTextCodec.unescape(result.optString("feedback")).trim(),
+                isCorrect = isOK,
+                correctAnswer = correctAnswer,
+                feedback = feedback,
             )
         }
         val calculatedScore = checked.count { it.isCorrect == true } * 100 / checked.size
@@ -291,6 +310,12 @@ class SupabaseLearningEngine(
             doOutput = true
             setRequestProperty("Content-Type", "application/json; charset=utf-8")
             setRequestProperty("Accept", "application/json")
+            authRepository?.currentUserId?.let { userId ->
+                val token = SupabaseAuthClient.client.auth.currentSessionOrNull()?.accessToken
+                if (token != null) {
+                    setRequestProperty("Authorization", "Bearer $token")
+                }
+            }
         }
 
         return try {
@@ -386,9 +411,30 @@ class SupabaseLearningEngine(
         }
     }
 
+    private fun JSONObject.optStringCompat(vararg keys: String): String {
+        for (key in keys) {
+            if (has(key)) return optString(key)
+        }
+        return ""
+    }
+
+    private fun JSONObject.optBooleanCompat(vararg keys: String): Boolean {
+        for (key in keys) {
+            if (has(key)) return optBoolean(key)
+        }
+        return false
+    }
+
+    private fun JSONObject.optJSONArrayCompat(vararg keys: String): JSONArray? {
+        for (key in keys) {
+            if (has(key)) return optJSONArray(key)
+        }
+        return null
+    }
+
     private companion object {
         const val DEFAULT_ENDPOINT =
-            "https://bhwxeffktrxzfdmpfhpd.supabase.co/functions/v1/noteapp"
+            "https://bhwxeffktrxzfdmpfhpd.supabase.co/functions/v1/yanlang-2"
     }
 
     private data class AiEvaluation(

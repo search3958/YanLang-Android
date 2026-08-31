@@ -1,4 +1,6 @@
 <resources>
+    <string name="analytics_consent_message">YanLangでは，不正利用防止のためアプリごとにIDを配布して管理しています。\nIDごとに利用日時，利用状況を紐づけて管理していますが，それ以外の不必要な情報が紐づけられたりすることはありません。\nまた，Google Analyticsを使用して個人を特定できない形式でアプリ開発に役立てるための情報を取得しています。\nGoogle Analyticsと個人のIDが紐づけられることは一切なく，独立して管理されています。\nこれは運営の上で必要なものです。同意しない場合はアプリを閉じて，使用しないでください。</string>
+    <string name="analytics_consent_accept">同意する</string>
     <string name="ui_000">はじめまして</string>
     <string name="ui_001">続行</string>
     <string name="ui_002">母国語を教えてください</string>
@@ -27,7 +29,7 @@
     <string name="ui_025">進む</string>
     <string name="ui_026">学習したい言語</string>
     <string name="ui_027">タイトル欄</string>
-    <string name="ui_028">ここに学習する文章を貼り付けます</string>
+    <string name="ui_028">ここに学習したい言語の文章を貼り付けます(%d文字以内)</string>
     <string name="ui_029">学習したい言語・タイトル・本文を入力すると続行できます</string>
     <string name="ui_030">単語帳</string>
     <string name="ui_031">単語確認</string>
@@ -91,7 +93,7 @@
     <string name="ui_089">短い文章を貼り付けるだけで、\n単語から全文まで順番に学べます。</string>
     <string name="ui_090">新しい単語帳</string>
     <string name="ui_091">単語帳を編集</string>
-    <string name="ui_092">単語帳の名前</string>
+    <string name="ui_092">単語帳の名前を入力...</string>
     <string name="ui_093">読み方（任意）</string>
     <string name="ui_094">意味</string>
     <string name="ui_095">無題の単語帳</string>
@@ -127,4 +129,5 @@
     <string name="ui_125">開始</string>
     <string name="ui_126">もう一度プレイ</string>
     <string name="ui_127">最終スコア</string>
+    <string name="ui_128">毎日リセットされます</string>
 </resources>

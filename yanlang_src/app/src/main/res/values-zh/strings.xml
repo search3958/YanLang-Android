@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">言然</string>
+    <string name="analytics_consent_message">YanLang 为了防止不正当使用，为每个应用分配并管理 ID。\n我们会将使用时间与使用情况与每个 ID 关联管理，但不会关联其他不必要的信息。\n此外，我们使用 Google Analytics 以无法识别个人的形式收集有助于改进应用的信息。\nGoogle Analytics 与个人 ID 绝不会关联，独立管理。\n这是运营所必需的。如果您不同意，请关闭应用并不要使用。</string>
+    <string name="analytics_consent_accept">同意</string>
     <string name="ui_000">初次见面</string>
     <string name="ui_001">继续</string>
     <string name="ui_002">请告诉我们您的母语</string>
@@ -28,7 +30,7 @@
     <string name="ui_025">继续</string>
     <string name="ui_026">要学习的语言</string>
     <string name="ui_027">标题</string>
-    <string name="ui_028">在此粘贴要学习的文章</string>
+    <string name="ui_028">在此粘贴要学习的文章（最多%d个字符）</string>
     <string name="ui_029">输入语言、标题和正文后即可继续</string>
     <string name="ui_030">单词本</string>
     <string name="ui_031">单词检查</string>
@@ -92,7 +94,7 @@
     <string name="ui_089">粘贴一段短文，从单词到全文逐步学习。</string>
     <string name="ui_090">新单词本</string>
     <string name="ui_091">编辑单词本</string>
-    <string name="ui_092">单词本名称</string>
+    <string name="ui_092">単語帳の名前を入力...</string>
     <string name="ui_093">读音（可选）</string>
     <string name="ui_094">含义</string>
     <string name="ui_095">无标题单词本</string>
@@ -121,4 +123,5 @@
     <string name="ui_118">开始</string>
     <string name="ui_119">再玩一次</string>
     <string name="ui_120">最终得分</string>
+    <string name="ui_128">每天重置</string>
 </resources>
