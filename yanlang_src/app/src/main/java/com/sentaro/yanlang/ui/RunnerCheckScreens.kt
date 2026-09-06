@@ -76,40 +76,6 @@ private val RunnerRed = Color(0xFFD32F2F)
 private val RunnerTrack = Color(0xFFE8E8E8)
 
 @Composable
-internal fun RunnerWordCheckScreen(
-    document: LearningDocument,
-    singlePageMode: Boolean,
-    engine: LearningEngine,
-    onBack: () -> Unit,
-    onTopBarBack: () -> Unit,
-    onTokenChange: (LearningToken) -> Unit,
-    onSkipKnown: () -> Unit,
-    onReset: () -> Unit,
-    onComplete: () -> Unit,
-) {
-    val words = document.wordTokens
-    RunnerCheckScreen(
-        title = stringResource(R.string.ui_031),
-        instruction = stringResource(R.string.ui_099),
-        tokens = words,
-        singlePageMode = singlePageMode,
-        choicesFor = { token ->
-            buildRunnerChoices(
-                correct = token.translation,
-                candidates = words.map { it.translation },
-                seed = token.id.hashCode(),
-            )
-        },
-        answerIsCorrect = { token, answer -> engine.checkAnswer(token, answer) },
-        onBack = onBack,
-        onTopBarBack = onTopBarBack,
-        onTokenChange = onTokenChange,
-        onReset = onReset,
-        onComplete = onComplete,
-    )
-}
-
-@Composable
 internal fun RunnerConnectorCheckScreen(
     document: LearningDocument,
     singlePageMode: Boolean,
@@ -342,7 +308,7 @@ private fun RunnerCourse(
             }
             Row(
                 modifier = Modifier.fillMaxWidth().padding(top = 58.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 choices.forEach { choice ->
                     val selected = selectedAnswer == choice
@@ -355,12 +321,13 @@ private fun RunnerCourse(
                         onClick = { onSelect(choice) },
                         modifier = Modifier
                             .weight(1f)
+                            .padding(horizontal = 2.dp)
                             .graphicsLayer {
                                 translationY = if (selected) -reaction * 18f else 0f
                                 scaleX = if (selected && selectedWasCorrect == false) 1f - reaction * 0.06f else 1f
                                 scaleY = if (selected && selectedWasCorrect == true) 1f + reaction * 0.08f else 1f
                             },
-                        shape = SmoothCornerShape(18.dp),
+                        shape = SmoothCornerShape(22.dp),
                         color = color,
                         contentColor = if (selected) Color.White else Color(0xFF555555),
                     ) {

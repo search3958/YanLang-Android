@@ -1,1 +1,684 @@
-{"entries":{"suitcase":{"ja":{"text":"スーツケース","pronunciation":"スーツケース / suutsukeesu"},"ko-kr":{"text":"트렁크","pronunciation":"teureongkeu"},"ko-kp":{"text":"짐가방","pronunciation":"jimgabang"},"zh":{"text":"手提箱","pronunciation":"shǒutíxiāng"},"en":{"text":"suitcase","pronunciation":"ˈsuːtkeɪs"},"zh-CN":{"text":"手提箱","pronunciation":"shǒutíxiāng"},"zh-TW":{"text":"手提箱","pronunciation":"shǒutíxiāng"},"ru":{"text":"чемодан","pronunciation":""}},"backpack":{"ja":{"text":"リュックサック","pronunciation":"リュックサック / ryukkusakku"},"ko-kr":{"text":"배낭","pronunciation":"baenang"},"ko-kp":{"text":"배낭","pronunciation":"baenang"},"zh":{"text":"背包","pronunciation":"bēibāo"},"en":{"text":"backpack","pronunciation":"ˈbækpæk"},"zh-CN":{"text":"背包","pronunciation":"bēibāo"},"zh-TW":{"text":"背包","pronunciation":"bēibāo"},"ru":{"text":"рюкзак","pronunciation":""}},"luggage":{"ja":{"text":"手荷物","pronunciation":"てにもの / tenimotsu"},"ko-kr":{"text":"짐","pronunciation":"jim"},"ko-kp":{"text":"짐","pronunciation":"jim"},"zh":{"text":"行李","pronunciation":"xíngli"},"en":{"text":"luggage","pronunciation":"ˈlʌɡɪdʒ"},"zh-CN":{"text":"行李","pronunciation":"xíngli"},"zh-TW":{"text":"行李","pronunciation":"xíngli"},"ru":{"text":"багаж","pronunciation":""}},"passport":{"ja":{"text":"パスポート","pronunciation":"パスポート / pasupooto"},"ko-kr":{"text":"여권","pronunciation":"yeogwon"},"ko-kp":{"text":"려권","pronunciation":"ryeogwon"},"zh":{"text":"护照","pronunciation":"hùzhào"},"en":{"text":"passport","pronunciation":"ˈpæspɔːrt"},"zh-CN":{"text":"护照","pronunciation":"hùzhào"},"zh-TW":{"text":"护照","pronunciation":"hùzhào"},"ru":{"text":"паспорт","pronunciation":""}},"ticket":{"ja":{"text":"切符","pronunciation":"きっぷ / kippu"},"ko-kr":{"text":"표","pronunciation":"pyo"},"ko-kp":{"text":"표","pronunciation":"pyo"},"zh":{"text":"票","pronunciation":"piào"},"en":{"text":"ticket","pronunciation":"ˈtɪkɪt"},"zh-CN":{"text":"票","pronunciation":"piào"},"zh-TW":{"text":"票","pronunciation":"piào"},"ru":{"text":"билет","pronunciation":""}},"wallet":{"ja":{"text":"財布","pronunciation":"さいふ / saifu"},"ko-kr":{"text":"지갑","pronunciation":"jigab"},"ko-kp":{"text":"지갑","pronunciation":"jigab"},"zh":{"text":"钱包","pronunciation":"qiánbāo"},"en":{"text":"wallet","pronunciation":"ˈwɒlɪt"},"zh-CN":{"text":"钱包","pronunciation":"qiánbāo"},"zh-TW":{"text":"錢包","pronunciation":"qiánbāo"},"ru":{"text":"кошелёк","pronunciation":""}},"umbrella":{"ja":{"text":"傘","pronunciation":"かさ / kasa"},"ko-kr":{"text":"우산","pronunciation":"usan"},"ko-kp":{"text":"우산","pronunciation":"usan"},"zh":{"text":"雨伞","pronunciation":"yǔsǎn"},"en":{"text":"umbrella","pronunciation":"ʌmˈbrɛlə"},"zh-CN":{"text":"雨伞","pronunciation":"yǔsǎn"},"zh-TW":{"text":"雨伞","pronunciation":"yǔsǎn"},"ru":{"text":"зонт","pronunciation":""}},"sunscreen":{"ja":{"text":"日焼け止め","pronunciation":"ひやけどめ / hiyakedome"},"ko-kr":{"text":"선크림","pronunciation":"seokeurim"},"ko-kp":{"text":"자외선차단제","pronunciation":"jaoeseonchadanjae"},"zh":{"text":"防晒霜","pronunciation":"fángshàishuāng"},"en":{"text":"sunscreen","pronunciation":"ˈsʌnskriːn"},"zh-CN":{"text":"防晒霜","pronunciation":"fángshàishuāng"},"zh-TW":{"text":"防晒霜","pronunciation":"fángshàishuāng"},"ru":{"text":"солнцезащитный крем","pronunciation":""}},"headphones":{"ja":{"text":"ヘッドホン","pronunciation":"ヘッドホン / heddohon"},"ko-kr":{"text":"헤드폰","pronunciation":"hedupon"},"ko-kp":{"text":"이어폰","pronunciation":"ieopon"},"zh":{"text":"耳机","pronunciation":"ěrjī"},"en":{"text":"headphones","pronunciation":"ˈhɛdfoʊnz"},"zh-CN":{"text":"耳机","pronunciation":"ěrjī"},"zh-TW":{"text":"耳机","pronunciation":"ěrjī"},"ru":{"text":"наушники","pronunciation":""}},"water_bottle":{"ja":{"text":"水筒","pronunciation":"すいとう / suoitou"},"ko-kr":{"text":"물병","pronunciation":"mulbyeong"},"ko-kp":{"text":"물병","pronunciation":"mulbyeong"},"zh":{"text":"水瓶","pronunciation":"shuǐpíng"},"en":{"text":"water bottle","pronunciation":"ˈwɔːtər ˈbɒtəl"},"zh-CN":{"text":"水瓶","pronunciation":"shuǐpíng"},"zh-TW":{"text":"水瓶","pronunciation":"shuǐpíng"},"ru":{"text":"бутылка воды","pronunciation":""}},"snack":{"ja":{"text":"おやつ","pronunciation":"おやつ / oyatsu"},"ko-kr":{"text":"간식","pronunciation":"gansik"},"ko-kp":{"text":"가벼운음식","pronunciation":"gabyeoun eumsik"},"zh":{"text":"零食","pronunciation":"língshí"},"en":{"text":"snack","pronunciation":"snæk"},"zh-CN":{"text":"零食","pronunciation":"língshí"},"zh-TW":{"text":"零食","pronunciation":"língshí"},"ru":{"text":"закуска","pronunciation":""}},"book":{"ja":{"text":"本","pronunciation":"ほん / hon"},"ko-kr":{"text":"책","pronunciation":"chaek"},"ko-kp":{"text":"책","pronunciation":"chaek"},"zh":{"text":"书","pronunciation":"shū"},"en":{"text":"book","pronunciation":"bʊk"},"zh-CN":{"text":"书","pronunciation":"shū"},"zh-TW":{"text":"書","pronunciation":"shū"},"ru":{"text":"книга","pronunciation":""}},"notebook":{"ja":{"text":"ノート","pronunciation":"ノート / nooto"},"ko-kr":{"text":"공책","pronunciation":"gongchaek"},"ko-kp":{"text":"공책","pronunciation":"gongchaek"},"zh":{"text":"笔记本","pronunciation":"bǐjìběn"},"en":{"text":"notebook","pronunciation":"ˈnoʊtbʊk"},"zh-CN":{"text":"笔记本","pronunciation":"bǐjìběn"},"zh-TW":{"text":"笔记本","pronunciation":"bǐjìběn"},"ru":{"text":"тетрадь","pronunciation":""}},"pen":{"ja":{"text":"ペン","pronunciation":"ペン / pen"},"ko-kr":{"text":"펜","pronunciation":"pen"},"ko-kp":{"text":"펜","pronunciation":"pen"},"zh":{"text":"笔","pronunciation":"bǐ"},"en":{"text":"pen","pronunciation":"pɛn"},"zh-CN":{"text":"笔","pronunciation":"bǐ"},"zh-TW":{"text":"笔","pronunciation":"bǐ"},"ru":{"text":"ручка","pronunciation":""}},"key":{"ja":{"text":"鍵","pronunciation":"かぎ / kagi"},"ko-kr":{"text":"열쇠","pronunciation":"yeolsoe"},"ko-kp":{"text":"열쇠","pronunciation":"yeolsoe"},"zh":{"text":"钥匙","pronunciation":"yàoshi"},"en":{"text":"key","pronunciation":"kiː"},"zh-CN":{"text":"钥匙","pronunciation":"yàoshi"},"zh-TW":{"text":"钥匙","pronunciation":"yàoshi"},"ru":{"text":"ключ","pronunciation":""}},"phone_charger":{"ja":{"text":"充電器","pronunciation":"じゅうでんき / juudenki"},"ko-kr":{"text":"충전기","pronunciation":"chungjeongi"},"ko-kp":{"text":"충전기","pronunciation":"chungjeongi"},"zh":{"text":"充电器","pronunciation":"chōngdiànqì"},"en":{"text":"phone charger","pronunciation":"foʊn ˈtʃɑːrdʒər"},"zh-CN":{"text":"充电器","pronunciation":"chōngdiànqì"},"zh-TW":{"text":"充電器","pronunciation":"chōngdiànqì"},"ru":{"text":"зарядное устройство для телефона","pronunciation":""}},"medication":{"ja":{"text":"薬","pronunciation":"くすり / kusuri"},"ko-kr":{"text":"약","pronunciation":"yak"},"ko-kp":{"text":"약","pronunciation":"yak"},"zh":{"text":"药","pronunciation":"yào"},"en":{"text":"medication","pronunciation":"ˌmɛdɪˈkeɪʃən"},"zh-CN":{"text":"药","pronunciation":"yào"},"zh-TW":{"text":"藥","pronunciation":"yào"},"ru":{"text":"лекарство","pronunciation":""}},"towel":{"ja":{"text":"タオル","pronunciation":"タオル / taoru"},"ko-kr":{"text":"수건","pronunciation":"sugeon"},"ko-kp":{"text":"수건","pronunciation":"sugeon"},"zh":{"text":"毛巾","pronunciation":"máojīn"},"en":{"text":"towel","pronunciation":"ˈtaʊəl"},"zh-CN":{"text":"毛巾","pronunciation":"máojīn"},"zh-TW":{"text":"毛巾","pronunciation":"máojīn"},"ru":{"text":"полотенце","pronunciation":""}},"sleeping_bag":{"ja":{"text":"寝袋","pronunciation":"ねぶくろ / nebukuro"},"ko-kr":{"text":"침낭","pronunciation":"chimnang"},"ko-kp":{"text":"침낭","pronunciation":"chimnang"},"zh":{"text":"睡袋","pronunciation":"shuìdài"},"en":{"text":"sleeping bag","pronunciation":"ˈsliːpɪŋ bæɡ"},"zh-CN":{"text":"睡袋","pronunciation":"shuìdài"},"zh-TW":{"text":"睡袋","pronunciation":"shuìdài"},"ru":{"text":"спальный мешок","pronunciation":""}},"power_adapter":{"ja":{"text":"変換アダプター","pronunciation":"へんかんアダプター / henkan adaputaa"},"ko-kr":{"text":"어댑터","pronunciation":"eodepoteo"},"ko-kp":{"text":"변환기","pronunciation":"byeonhwangi"},"zh":{"text":"转换器","pronunciation":"zhuǎnhuànqì"},"en":{"text":"power adapter","pronunciation":"ˈpaʊər əˈdæptər"},"zh-CN":{"text":"转换器","pronunciation":"zhuǎnhuànqì"},"zh-TW":{"text":"转换器","pronunciation":"zhuǎnhuànqì"},"ru":{"text":"адаптер питания","pronunciation":""}}}}
+{
+"entries": {
+"suitcase": {
+"ja": {
+"text": "スーツケース",
+"pronunciation": "スーツケース / sūtsukēsu"
+},
+"ko-kr": {
+"text": "여행가방",
+"pronunciation": "yeohaenggabang"
+},
+"ko-kp": {
+"text": "짐가방",
+"pronunciation": "jimgabang"
+},
+"zh": {
+"text": "行李箱",
+"pronunciation": "xínglǐxiāng"
+},
+"en": {
+"text": "suitcase",
+"pronunciation": "ˈsuːtkeɪs"
+},
+"zh-CN": {
+"text": "行李箱",
+"pronunciation": "xínglǐxiāng"
+},
+"zh-TW": {
+"text": "行李箱",
+"pronunciation": "xínglǐxiāng"
+},
+"ru": {
+"text": "чемодан",
+"pronunciation": "tɕɪmɐˈdan"
+}
+},
+"backpack": {
+"ja": {
+"text": "リュックサック",
+"pronunciation": "リュックサック / ryukkusakku"
+},
+"ko-kr": {
+"text": "배낭",
+"pronunciation": "baenang"
+},
+"ko-kp": {
+"text": "배낭",
+"pronunciation": "paenang"
+},
+"zh": {
+"text": "背包",
+"pronunciation": "bēibāo"
+},
+"en": {
+"text": "backpack",
+"pronunciation": "ˈbækpæk"
+},
+"zh-CN": {
+"text": "背包",
+"pronunciation": "bēibāo"
+},
+"zh-TW": {
+"text": "背包",
+"pronunciation": "bēibāo"
+},
+"ru": {
+"text": "рюкзак",
+"pronunciation": "rʲʉkˈzak"
+}
+},
+"luggage": {
+"ja": {
+"text": "荷物",
+"pronunciation": "にもつ / nimotsu"
+},
+"ko-kr": {
+"text": "짐",
+"pronunciation": "jim"
+},
+"ko-kp": {
+"text": "짐",
+"pronunciation": "jִm"
+},
+"zh": {
+"text": "行李",
+"pronunciation": "xíngli"
+},
+"en": {
+"text": "luggage",
+"pronunciation": "ˈlʌɡɪdʒ"
+},
+"zh-CN": {
+"text": "行李",
+"pronunciation": "xíngli"
+},
+"zh-TW": {
+"text": "行李",
+"pronunciation": "xíngli"
+},
+"ru": {
+"text": "багаж",
+"pronunciation": "baˈɡaʂ"
+}
+},
+"passport": {
+"ja": {
+"text": "パスポート",
+"pronunciation": "パスポート / pasupōto"
+},
+"ko-kr": {
+"text": "여권",
+"pronunciation": "yeogwon"
+},
+"ko-kp": {
+"text": "려권",
+"pronunciation": "ryeogwon"
+},
+"zh": {
+"text": "护照",
+"pronunciation": "hùzhào"
+},
+"en": {
+"text": "passport",
+"pronunciation": "ˈpæspɔːrt"
+},
+"zh-CN": {
+"text": "护照",
+"pronunciation": "hùzhào"
+},
+"zh-TW": {
+"text": "護照",
+"pronunciation": "hùzhào"
+},
+"ru": {
+"text": "паспорт",
+"pronunciation": "pɐˈspɔrt"
+}
+},
+"ticket": {
+"ja": {
+"text": "切符",
+"pronunciation": "きっぷ / kippu"
+},
+"ko-kr": {
+"text": "표",
+"pronunciation": "pyo"
+},
+"ko-kp": {
+"text": "표",
+"pronunciation": "phyo"
+},
+"zh": {
+"text": "票",
+"pronunciation": "piào"
+},
+"en": {
+"text": "ticket",
+"pronunciation": "ˈtɪkɪt"
+},
+"zh-CN": {
+"text": "票",
+"pronunciation": "piào"
+},
+"zh-TW": {
+"text": "票",
+"pronunciation": "piào"
+},
+"ru": {
+"text": "билет",
+"pronunciation": "bʲɪˈlʲet"
+}
+},
+"wallet": {
+"ja": {
+"text": "財布",
+"pronunciation": "さいふ / saifu"
+},
+"ko-kr": {
+"text": "지갑",
+"pronunciation": "jigap"
+},
+"ko-kp": {
+"text": "지갑",
+"pronunciation": "jigap"
+},
+"zh": {
+"text": "钱包",
+"pronunciation": "qiánbāo"
+},
+"en": {
+"text": "wallet",
+"pronunciation": "ˈwɒlɪt"
+},
+"zh-CN": {
+"text": "钱包",
+"pronunciation": "qiánbāo"
+},
+"zh-TW": {
+"text": "錢包",
+"pronunciation": "qiánbāo"
+},
+"ru": {
+"text": "кошелёк",
+"pronunciation": "kɐʂɨˈlʲɵk"
+}
+},
+"umbrella": {
+"ja": {
+"text": "傘",
+"pronunciation": "かさ / kasa"
+},
+"ko-kr": {
+"text": "우산",
+"pronunciation": "usan"
+},
+"ko-kp": {
+"text": "우산",
+"pronunciation": "usan"
+},
+"zh": {
+"text": "雨伞",
+"pronunciation": "yǔsǎn"
+},
+"en": {
+"text": "umbrella",
+"pronunciation": "ʌmˈbrɛlə"
+},
+"zh-CN": {
+"text": "雨伞",
+"pronunciation": "yǔsǎn"
+},
+"zh-TW": {
+"text": "雨傘",
+"pronunciation": "yǔsǎn"
+},
+"ru": {
+"text": "зонт",
+"pronunciation": "zont"
+}
+},
+"sunscreen": {
+"ja": {
+"text": "日焼け止め",
+"pronunciation": "ひやけどめ / hiyakedome"
+},
+"ko-kr": {
+"text": "선크림",
+"pronunciation": "seonkeurim"
+},
+"ko-kp": {
+"text": "자외선차단제",
+"pronunciation": "jaoeseonchadan-je"
+},
+"zh": {
+"text": "防晒霜",
+"pronunciation": "fángshàishuāng"
+},
+"en": {
+"text": "sunscreen",
+"pronunciation": "ˈsʌnskriːn"
+},
+"zh-CN": {
+"text": "防晒霜",
+"pronunciation": "fángshàishuāng"
+},
+"zh-TW": {
+"text": "防曬乳",
+"pronunciation": "fángshàirǔ"
+},
+"ru": {
+"text": "солнцезащитный крем",
+"pronunciation": "sɐlnt͡sɐzɐˈɕːitnɨj krem"
+}
+},
+"headphones": {
+"ja": {
+"text": "ヘッドホン",
+"pronunciation": "ヘッドホン / heddohon"
+},
+"ko-kr": {
+"text": "헤드폰",
+"pronunciation": "hedeupon"
+},
+"ko-kp": {
+"text": "헤드폰",
+"pronunciation": "hedeupon"
+},
+"zh": {
+"text": "头戴式耳机",
+"pronunciation": "tóudàishì ěrjī"
+},
+"en": {
+"text": "headphones",
+"pronunciation": "ˈhɛdfoʊnz"
+},
+"zh-CN": {
+"text": "头戴式耳机",
+"pronunciation": "tóudàishì ěrjī"
+},
+"zh-TW": {
+"text": "頭戴式耳機",
+"pronunciation": "tóudàishì ěrjī"
+},
+"ru": {
+"text": "наушники",
+"pronunciation": "nɐˈuʂnʲɪkʲɪ"
+}
+},
+"water_bottle": {
+"ja": {
+"text": "水筒",
+"pronunciation": "すいとう / suitō"
+},
+"ko-kr": {
+"text": "물병",
+"pronunciation": "mulbyeong"
+},
+"ko-kp": {
+"text": "물병",
+"pronunciation": "mulbyeong"
+},
+"zh": {
+"text": "水瓶",
+"pronunciation": "shuǐpíng"
+},
+"en": {
+"text": "water bottle",
+"pronunciation": "ˈwɔːtər ˈbɒtəl"
+},
+"zh-CN": {
+"text": "水瓶",
+"pronunciation": "shuǐpíng"
+},
+"zh-TW": {
+"text": "水瓶",
+"pronunciation": "shuǐpíng"
+},
+"ru": {
+"text": "бутылка воды",
+"pronunciation": "bʊˈtɨlkə vɐˈdɨ"
+}
+},
+"snack": {
+"ja": {
+"text": "おやつ",
+"pronunciation": "おやつ / oyatsu"
+},
+"ko-kr": {
+"text": "간식",
+"pronunciation": "gansik"
+},
+"ko-kp": {
+"text": "간식",
+"pronunciation": "gansik"
+},
+"zh": {
+"text": "零食",
+"pronunciation": "língshí"
+},
+"en": {
+"text": "snack",
+"pronunciation": "snæk"
+},
+"zh-CN": {
+"text": "零食",
+"pronunciation": "língshí"
+},
+"zh-TW": {
+"text": "零食",
+"pronunciation": "língshí"
+},
+"ru": {
+"text": "закуска",
+"pronunciation": "zɐˈkuskə"
+}
+},
+"book": {
+"ja": {
+"text": "本",
+"pronunciation": "ほん / hon"
+},
+"ko-kr": {
+"text": "책",
+"pronunciation": "chaek"
+},
+"ko-kp": {
+"text": "책",
+"pronunciation": "chaek"
+},
+"zh": {
+"text": "书",
+"pronunciation": "shū"
+},
+"en": {
+"text": "book",
+"pronunciation": "bʊk"
+},
+"zh-CN": {
+"text": "书",
+"pronunciation": "shū"
+},
+"zh-TW": {
+"text": "書",
+"pronunciation": "shū"
+},
+"ru": {
+"text": "книга",
+"pronunciation": "knʲɪˈɡa"
+}
+},
+"notebook": {
+"ja": {
+"text": "ノート",
+"pronunciation": "ノート / nōto"
+},
+"ko-kr": {
+"text": "공책",
+"pronunciation": "gongchaek"
+},
+"ko-kp": {
+"text": "공책",
+"pronunciation": "gongchaek"
+},
+"zh": {
+"text": "笔记本",
+"pronunciation": "bǐjìběn"
+},
+"en": {
+"text": "notebook",
+"pronunciation": "ˈnoʊtbʊk"
+},
+"zh-CN": {
+"text": "笔记本",
+"pronunciation": "bǐjìběn"
+},
+"zh-TW": {
+"text": "筆記本",
+"pronunciation": "bǐjìběn"
+},
+"ru": {
+"text": "тетрадь",
+"pronunciation": "tʲɪˈtratʲ"
+}
+},
+"pen": {
+"ja": {
+"text": "ペン",
+"pronunciation": "ペン / pen"
+},
+"ko-kr": {
+"text": "펜",
+"pronunciation": "pen"
+},
+"ko-kp": {
+"text": "펜",
+"pronunciation": "phen"
+},
+"zh": {
+"text": "笔",
+"pronunciation": "bǐ"
+},
+"en": {
+"text": "pen",
+"pronunciation": "pɛn"
+},
+"zh-CN": {
+"text": "笔",
+"pronunciation": "bǐ"
+},
+"zh-TW": {
+"text": "筆",
+"pronunciation": "bǐ"
+},
+"ru": {
+"text": "ручка",
+"pronunciation": "ˈrutɕkə"
+}
+},
+"key": {
+"ja": {
+"text": "鍵",
+"pronunciation": "かぎ / kagi"
+},
+"ko-kr": {
+"text": "열쇠",
+"pronunciation": "yeolsoe"
+},
+"ko-kp": {
+"text": "열쇠",
+"pronunciation": "yeolsoe"
+},
+"zh": {
+"text": "钥匙",
+"pronunciation": "yàoshi"
+},
+"en": {
+"text": "key",
+"pronunciation": "kiː"
+},
+"zh-CN": {
+"text": "钥匙",
+"pronunciation": "yàoshi"
+},
+"zh-TW": {
+"text": "鑰匙",
+"pronunciation": "yàoshi"
+},
+"ru": {
+"text": "ключ",
+"pronunciation": "klʲutɕ"
+}
+},
+"phone_charger": {
+"ja": {
+"text": "充電器",
+"pronunciation": "じゅうでんき / jūdenki"
+},
+"ko-kr": {
+"text": "충전기",
+"pronunciation": "chungjeongi"
+},
+"ko-kp": {
+"text": "충전기",
+"pronunciation": "chungjeongi"
+},
+"zh": {
+"text": "手机充电器",
+"pronunciation": "shǒujī chōngdiànqì"
+},
+"en": {
+"text": "phone charger",
+"pronunciation": "foʊn ˈtʃɑːrdʒər"
+},
+"zh-CN": {
+"text": "手机充电器",
+"pronunciation": "shǒujī chōngdiànqì"
+},
+"zh-TW": {
+"text": "手機充電器",
+"pronunciation": "shǒujī chōngdiànqì"
+},
+"ru": {
+"text": "зарядное устройство для телефона",
+"pronunciation": "zɐˈrʲadnəjə ʊstrɐˈjstvə dlʲə tʲɪlʲɪˈfonə"
+}
+},
+"medication": {
+"ja": {
+"text": "薬",
+"pronunciation": "くすり / kusuri"
+},
+"ko-kr": {
+"text": "약",
+"pronunciation": "yak"
+},
+"ko-kp": {
+"text": "약",
+"pronunciation": "yak"
+},
+"zh": {
+"text": "药物",
+"pronunciation": "yàowù"
+},
+"en": {
+"text": "medication",
+"pronunciation": "ˌmɛdɪˈkeɪʃən"
+},
+"zh-CN": {
+"text": "药物",
+"pronunciation": "yàowù"
+},
+"zh-TW": {
+"text": "藥物",
+"pronunciation": "yàowù"
+},
+"ru": {
+"text": "лекарство",
+"pronunciation": "lʲɪˈkarstvə"
+}
+},
+"towel": {
+"ja": {
+"text": "タオル",
+"pronunciation": "タオル / taoru"
+},
+"ko-kr": {
+"text": "수건",
+"pronunciation": "sugeon"
+},
+"ko-kp": {
+"text": "수건",
+"pronunciation": "sugeon"
+},
+"zh": {
+"text": "毛巾",
+"pronunciation": "máojīn"
+},
+"en": {
+"text": "towel",
+"pronunciation": "ˈtaʊəl"
+},
+"zh-CN": {
+"text": "毛巾",
+"pronunciation": "máojīn"
+},
+"zh-TW": {
+"text": "毛巾",
+"pronunciation": "máojīn"
+},
+"ru": {
+"text": "полотенце",
+"pronunciation": "pəlɐˈtʲent͡sə"
+}
+},
+"sleeping_bag": {
+"ja": {
+"text": "寝袋",
+"pronunciation": "ねぶくろ / nebukuro"
+},
+"ko-kr": {
+"text": "침낭",
+"pronunciation": "chimnang"
+},
+"ko-kp": {
+"text": "침낭",
+"pronunciation": "chimnang"
+},
+"zh": {
+"text": "睡袋",
+"pronunciation": "shuìdài"
+},
+"en": {
+"text": "sleeping bag",
+"pronunciation": "ˈsliːpɪŋ bæɡ"
+},
+"zh-CN": {
+"text": "睡袋",
+"pronunciation": "shuìdài"
+},
+"zh-TW": {
+"text": "睡袋",
+"pronunciation": "shuìdài"
+},
+"ru": {
+"text": "спальный мешок",
+"pronunciation": "ˈspalʲnɨj mʲɪˈʂok"
+}
+},
+"power_adapter": {
+"ja": {
+"text": "変換アダプター",
+"pronunciation": "へんかんアダプター / henkan adaputā"
+},
+"ko-kr": {
+"text": "전원 어댑터",
+"pronunciation": "jeonwon eodaepteo"
+},
+"ko-kp": {
+"text": "전원변환기",
+"pronunciation": "jeonwonbyeonhwangi"
+},
+"zh": {
+"text": "电源适配器",
+"pronunciation": "diànyuán shìpèiqì"
+},
+"en": {
+"text": "power adapter",
+"pronunciation": "ˈpaʊər əˌdæptər"
+},
+"zh-CN": {
+"text": "电源适配器",
+"pronunciation": "diànyuán shìpèiqì"
+},
+"zh-TW": {
+"text": "電源轉接器",
+"pronunciation": "diànyuán zhuǎnjiēqì"
+},
+"ru": {
+"text": "адаптер питания",
+"pronunciation": "ɐˈdaptʲɪr pʲɪˈtanʲɪjə"
+}
+}
+}
+}

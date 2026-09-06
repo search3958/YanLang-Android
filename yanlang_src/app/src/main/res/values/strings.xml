@@ -1,7 +1,16 @@
 <resources>
     <string name="app_name">YanLang</string>
-    <string name="analytics_consent_message">YanLang assigns and manages a unique ID per app to prevent misuse.\nUsage time and status are linked to each ID, but no unnecessary information is associated.\nWe also use Google Analytics to collect non-identifiable information to help improve the app.\nGoogle Analytics and personal IDs are never linked and are managed independently.\nThis is necessary for operation. If you do not agree, please close and do not use the app.</string>
-    <string name="analytics_consent_accept">Agree</string>
+    <string name="analytics_consent_message">YanLang prohibits the analysis, interception of communications, unauthorized access to or use of APIs/servers, and any other unauthorized use whatsoever. Absolutely do not engage in any such behavior.
+If unauthorized use is detected, measures such as service prohibition may be taken on services operated by Sentaro, including YanLang. This includes the Nidele series.
+YanLang issues and manages an ID per app to prevent unauthorized use, and records the date/time of use, IP address, and usage status. No unnecessary information other than these will be associated with the ID.
+Additionally, Google Analytics is used to collect information necessary for app improvement and development in a non-personally-identifiable format. Information obtained through Google Analytics is never associated with the app ID.
+This information collection and management is necessary for service operation and prevention of unauthorized use.
+If you cannot agree to this, please close the app and discontinue use.</string>
+    <string name="analytics_consent_accept">Close</string>
+    <string name="analytics_consent_title">Terms of Service &amp; Privacy Policy</string>
+    <string name="analytics_consent_skip">Skip</string>
+    <string name="analytics_consent_confirm_title">Confirm Consent</string>
+    <string name="analytics_consent_confirm_message">Do you agree to the analytics and account terms above?</string>
     <string name="ui_000">Nice to meet you</string>
     <string name="ui_001">Continue</string>
     <string name="ui_002">What is your native language?</string>
@@ -131,5 +140,17 @@
     <string name="ui_126">Play again</string>
     <string name="ui_127">Final score</string>
     <string name="ui_128">Resets daily</string>
+    <string name="ui_129">Vocabulary test</string>
+    <string name="ui_131">Choose the meaning of the word</string>
     <string name="ui_130">一部の単語が標準語と同様になっているか、正しくない場合があります</string>
+    <string name="credit_usage">%d%%使用済み</string>
+    <string name="credit_title">Credit Balance</string>
+    <string name="credit_message">Credits are used for AI translation and question features. They reset daily.</string>
+    <string name="credit_refresh">Refresh</string>
+    <string name="ai_server_response">AI Server Response</string>
+    <string name="close">Close</string>
+    <string name="boost">BOOST</string>
+    <string name="score">SCORE</string>
+    <string name="delete_confirmation">Are you sure you want to delete all words registered in "%s"? This action cannot be undone.</string>
+    <string name="show_latest">Show latest version</string>
 </resources>

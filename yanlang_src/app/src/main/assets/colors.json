@@ -1,1 +1,684 @@
-{"entries":{"red":{"ja":{"text":"赤","pronunciation":"あか / aka"},"ko-kr":{"text":"빨간색","pronunciation":"ppalgansek"},"ko-kp":{"text":"붉은색","pronunciation":"bulgeunsek"},"zh":{"text":"红色","pronunciation":"hóngsè"},"en":{"text":"red","pronunciation":"rɛd"},"zh-CN":{"text":"红色","pronunciation":"hóngsè"},"zh-TW":{"text":"紅色","pronunciation":"hóngsè"},"ru":{"text":"красный","pronunciation":""}},"blue":{"ja":{"text":"青","pronunciation":"あお / ao"},"ko-kr":{"text":"파란색","pronunciation":"paransekk"},"ko-kp":{"text":"푸른색","pronunciation":"pureunsek"},"zh":{"text":"蓝色","pronunciation":"lánsè"},"en":{"text":"blue","pronunciation":"bluː"},"zh-CN":{"text":"蓝色","pronunciation":"lánsè"},"zh-TW":{"text":"藍色","pronunciation":"lánsè"},"ru":{"text":"синий","pronunciation":""}},"green":{"ja":{"text":"緑","pronunciation":"みどり / midori"},"ko-kr":{"text":"초록색","pronunciation":"choroksek"},"ko-kp":{"text":"푸른색","pronunciation":"pureunsek"},"zh":{"text":"绿色","pronunciation":"lǜsè"},"en":{"text":"green","pronunciation":"ɡriːn"},"zh-CN":{"text":"绿色","pronunciation":"lǜsè"},"zh-TW":{"text":"綠色","pronunciation":"lǜsè"},"ru":{"text":"зелёный","pronunciation":""}},"yellow":{"ja":{"text":"黄色","pronunciation":"きいろ / kiiro"},"ko-kr":{"text":"노란색","pronunciation":"noransekk"},"ko-kp":{"text":"누른색","pronunciation":"nureunsek"},"zh":{"text":"黄色","pronunciation":"huángsè"},"en":{"text":"yellow","pronunciation":"ˈjɛloʊ"},"zh-CN":{"text":"黄色","pronunciation":"huángsè"},"zh-TW":{"text":"黃色","pronunciation":"huángsè"},"ru":{"text":"жёлтый","pronunciation":""}},"white":{"ja":{"text":"白","pronunciation":"しろ / shiro"},"ko-kr":{"text":"흰색","pronunciation":"huinsek"},"ko-kp":{"text":"흰색","pronunciation":"huinsek"},"zh":{"text":"白色","pronunciation":"báisè"},"en":{"text":"white","pronunciation":"waɪt"},"zh-CN":{"text":"白色","pronunciation":"báisè"},"zh-TW":{"text":"白色","pronunciation":"báisè"},"ru":{"text":"белый","pronunciation":""}},"black":{"ja":{"text":"黒","pronunciation":"くろ / kuro"},"ko-kr":{"text":"검은색","pronunciation":"geomeunsek"},"ko-kp":{"text":"검은색","pronunciation":"geomeunsek"},"zh":{"text":"黑色","pronunciation":"hēisè"},"en":{"text":"black","pronunciation":"blæk"},"zh-CN":{"text":"黑色","pronunciation":"hēisè"},"zh-TW":{"text":"黑色","pronunciation":"hēisè"},"ru":{"text":"чёрный","pronunciation":""}},"orange":{"ja":{"text":"橙色","pronunciation":"だいだいいろ / daidaiiro"},"ko-kr":{"text":"주황색","pronunciation":"juhwangsek"},"ko-kp":{"text":"주황색","pronunciation":"juhwangsek"},"zh":{"text":"橙色","pronunciation":"chéngsè"},"en":{"text":"orange","pronunciation":"ˈɔːrɪndʒ"},"zh-CN":{"text":"橙色","pronunciation":"chéngsè"},"zh-TW":{"text":"橙色","pronunciation":"chéngsè"},"ru":{"text":"апельсин","pronunciation":""}},"purple":{"ja":{"text":"紫","pronunciation":"むらさき / murasaki"},"ko-kr":{"text":"보라색","pronunciation":"borasek"},"ko-kp":{"text":"자주색","pronunciation":"jajusek"},"zh":{"text":"紫色","pronunciation":"zǐsè"},"en":{"text":"purple","pronunciation":"ˈpɜːrpəl"},"zh-CN":{"text":"紫色","pronunciation":"zǐsè"},"zh-TW":{"text":"紫色","pronunciation":"zǐsè"},"ru":{"text":"фиолетовый","pronunciation":""}},"pink":{"ja":{"text":"ピンク","pronunciation":"ピンク / pinku"},"ko-kr":{"text":"분홍색","pronunciation":"bunhongsek"},"ko-kp":{"text":"분홍색","pronunciation":"bunhongsek"},"zh":{"text":"粉色","pronunciation":"fěnsè"},"en":{"text":"pink","pronunciation":"pɪŋk"},"zh-CN":{"text":"粉色","pronunciation":"fěnsè"},"zh-TW":{"text":"粉色","pronunciation":"fěnsè"},"ru":{"text":"розовый","pronunciation":""}},"brown":{"ja":{"text":"茶色","pronunciation":"ちゃいろ / chairo"},"ko-kr":{"text":"갈색","pronunciation":"galsek"},"ko-kp":{"text":"갈색","pronunciation":"galsek"},"zh":{"text":"棕色","pronunciation":"zōngsè"},"en":{"text":"brown","pronunciation":"braʊn"},"zh-CN":{"text":"棕色","pronunciation":"zōngsè"},"zh-TW":{"text":"棕色","pronunciation":"zōngsè"},"ru":{"text":"коричневый","pronunciation":""}},"gray":{"ja":{"text":"灰色","pronunciation":"はいいろ / haiiro"},"ko-kr":{"text":"회색","pronunciation":"hoesek"},"ko-kp":{"text":"회색","pronunciation":"hoesek"},"zh":{"text":"灰色","pronunciation":"huīsè"},"en":{"text":"gray","pronunciation":"ɡreɪ"},"zh-CN":{"text":"灰色","pronunciation":"huīsè"},"zh-TW":{"text":"灰色","pronunciation":"huīsè"},"ru":{"text":"серый","pronunciation":""}},"silver":{"ja":{"text":"銀色","pronunciation":"ぎんいろ / giniro"},"ko-kr":{"text":"은색","pronunciation":"eunsek"},"ko-kp":{"text":"은색","pronunciation":"eunsek"},"zh":{"text":"银色","pronunciation":"yínsè"},"en":{"text":"silver","pronunciation":"ˈsɪlvər"},"zh-CN":{"text":"银色","pronunciation":"yínsè"},"zh-TW":{"text":"銀色","pronunciation":"yínsè"},"ru":{"text":"серебряный","pronunciation":""}},"gold":{"ja":{"text":"金色","pronunciation":"きんいろ / kiniro"},"ko-kr":{"text":"금색","pronunciation":"geumsek"},"ko-kp":{"text":"금색","pronunciation":"geumsek"},"zh":{"text":"金色","pronunciation":"jīnsè"},"en":{"text":"gold","pronunciation":"ɡoʊld"},"zh-CN":{"text":"金色","pronunciation":"jīnsè"},"zh-TW":{"text":"金色","pronunciation":"jīnsè"},"ru":{"text":"золотой","pronunciation":""}},"navy":{"ja":{"text":"紺色","pronunciation":"こんいろ / koniro"},"ko-kr":{"text":"남색","pronunciation":"namsek"},"ko-kp":{"text":"남색","pronunciation":"namsek"},"zh":{"text":"藏青色","pronunciation":"zàngqīngsè"},"en":{"text":"navy","pronunciation":"ˈneɪvi"},"zh-CN":{"text":"藏青色","pronunciation":"zàngqīngsè"},"zh-TW":{"text":"藏青色","pronunciation":"zàngqīngsè"},"ru":{"text":"тёмно-синий","pronunciation":""}},"beige":{"ja":{"text":"ベージュ","pronunciation":"ベージュ / bēju"},"ko-kr":{"text":"베이지","pronunciation":"beiji"},"ko-kp":{"text":"살색","pronunciation":"salsek"},"zh":{"text":"米色","pronunciation":"mǐsè"},"en":{"text":"beige","pronunciation":"beɪʒ"},"zh-CN":{"text":"米色","pronunciation":"mǐsè"},"zh-TW":{"text":"米色","pronunciation":"mǐsè"},"ru":{"text":"бежевый","pronunciation":""}},"cyan":{"ja":{"text":"水色","pronunciation":"みずいろ / mizuiro"},"ko-kr":{"text":"하늘색","pronunciation":"haneulsek"},"ko-kp":{"text":"옥색","pronunciation":"oksek"},"zh":{"text":"青色","pronunciation":"qīngsè"},"en":{"text":"cyan","pronunciation":"ˈsaɪən"},"zh-CN":{"text":"青色","pronunciation":"qīngsè"},"zh-TW":{"text":"青色","pronunciation":"qīngsè"},"ru":{"text":"голубой","pronunciation":""}},"magenta":{"ja":{"text":"マゼンタ","pronunciation":"マゼンタ / mazenta"},"ko-kr":{"text":"마젠타","pronunciation":"majenta"},"ko-kp":{"text":"자주색","pronunciation":"jajusek"},"zh":{"text":"品红色","pronunciation":"pǐnhóngsè"},"en":{"text":"magenta","pronunciation":"məˈdʒɛntə"},"zh-CN":{"text":"品红色","pronunciation":"pǐnhóngsè"},"zh-TW":{"text":"品紅色","pronunciation":"pǐnhóngsè"},"ru":{"text":"пурпурный","pronunciation":""}},"maroon":{"ja":{"text":"えび茶","pronunciation":"えびちゃ / ebicha"},"ko-kr":{"text":"밤색","pronunciation":"bamsek"},"ko-kp":{"text":"밤색","pronunciation":"bamsek"},"zh":{"text":"栗色","pronunciation":"lìsè"},"en":{"text":"maroon","pronunciation":"məˈruːn"},"zh-CN":{"text":"栗色","pronunciation":"lìsè"},"zh-TW":{"text":"栗色","pronunciation":"lìsè"},"ru":{"text":"бордовый","pronunciation":""}},"turquoise":{"ja":{"text":"エメラルドグリーン","pronunciation":"エメラルドグリーン / emerarudoguriin"},"ko-kr":{"text":"청록색","pronunciation":"cheongnoksek"},"ko-kp":{"text":"옥색","pronunciation":"oksek"},"zh":{"text":"绿松石色","pronunciation":"lǜ sōngshí sè"},"en":{"text":"turquoise","pronunciation":"ˈtɜːrkwɔɪz"},"zh-CN":{"text":"绿松石色","pronunciation":"lǜ sōngshí sè"},"zh-TW":{"text":"綠松石色","pronunciation":"lǜ sōngshí sè"},"ru":{"text":"бирюзовый","pronunciation":""}},"ivory":{"ja":{"text":"象牙色","pronunciation":"ぞうげいろ / zougeiro"},"ko-kr":{"text":"상아색","pronunciation":"sangasek"},"ko-kp":{"text":"상아색","pronunciation":"sangasek"},"zh":{"text":"象牙色","pronunciation":"xiàngyá sè"},"en":{"text":"ivory","pronunciation":"ˈaɪvəri"},"zh-CN":{"text":"象牙色","pronunciation":"xiàngyá sè"},"zh-TW":{"text":"象牙色","pronunciation":"xiàngyá sè"},"ru":{"text":"слоновая кость","pronunciation":""}}}}
+{
+"entries": {
+"red": {
+"ja": {
+"text": "赤",
+"pronunciation": "あか / aka"
+},
+"ko-kr": {
+"text": "빨간색",
+"pronunciation": "ppalgansaek"
+},
+"ko-kp": {
+"text": "붉은색",
+"pronunciation": "bulgeunsaek"
+},
+"zh": {
+"text": "红色",
+"pronunciation": "hóngsè"
+},
+"en": {
+"text": "red",
+"pronunciation": "rɛd"
+},
+"zh-CN": {
+"text": "红色",
+"pronunciation": "hóngsè"
+},
+"zh-TW": {
+"text": "紅色",
+"pronunciation": "hóngsè"
+},
+"ru": {
+"text": "красный",
+"pronunciation": "ˈkrasnɨj"
+}
+},
+"blue": {
+"ja": {
+"text": "青",
+"pronunciation": "あお / ao"
+},
+"ko-kr": {
+"text": "파란색",
+"pronunciation": "paransaek"
+},
+"ko-kp": {
+"text": "푸른색",
+"pronunciation": "pureunsaek"
+},
+"zh": {
+"text": "蓝色",
+"pronunciation": "lánsè"
+},
+"en": {
+"text": "blue",
+"pronunciation": "bluː"
+},
+"zh-CN": {
+"text": "蓝色",
+"pronunciation": "lánsè"
+},
+"zh-TW": {
+"text": "藍色",
+"pronunciation": "lánsè"
+},
+"ru": {
+"text": "синий",
+"pronunciation": "ˈsʲinʲij"
+}
+},
+"green": {
+"ja": {
+"text": "緑",
+"pronunciation": "みどり / midori"
+},
+"ko-kr": {
+"text": "초록색",
+"pronunciation": "choroksaek"
+},
+"ko-kp": {
+"text": "초록색",
+"pronunciation": "choroksaek"
+},
+"zh": {
+"text": "绿色",
+"pronunciation": "lǜsè"
+},
+"en": {
+"text": "green",
+"pronunciation": "ɡriːn"
+},
+"zh-CN": {
+"text": "绿色",
+"pronunciation": "lǜsè"
+},
+"zh-TW": {
+"text": "綠色",
+"pronunciation": "lǜsè"
+},
+"ru": {
+"text": "зелёный",
+"pronunciation": "zʲɪˈlʲɵnɨj"
+}
+},
+"yellow": {
+"ja": {
+"text": "黄色",
+"pronunciation": "きいろ / kiiro"
+},
+"ko-kr": {
+"text": "노란색",
+"pronunciation": "noransaek"
+},
+"ko-kp": {
+"text": "누른색",
+"pronunciation": "nureunsaek"
+},
+"zh": {
+"text": "黄色",
+"pronunciation": "huángsè"
+},
+"en": {
+"text": "yellow",
+"pronunciation": "ˈjɛloʊ"
+},
+"zh-CN": {
+"text": "黄色",
+"pronunciation": "huángsè"
+},
+"zh-TW": {
+"text": "黃色",
+"pronunciation": "huángsè"
+},
+"ru": {
+"text": "жёлтый",
+"pronunciation": "ˈʐɵltɨj"
+}
+},
+"white": {
+"ja": {
+"text": "白",
+"pronunciation": "しろ / shiro"
+},
+"ko-kr": {
+"text": "흰색",
+"pronunciation": "huinsaek"
+},
+"ko-kp": {
+"text": "흰색",
+"pronunciation": "huinsaek"
+},
+"zh": {
+"text": "白色",
+"pronunciation": "báisè"
+},
+"en": {
+"text": "white",
+"pronunciation": "waɪt"
+},
+"zh-CN": {
+"text": "白色",
+"pronunciation": "báisè"
+},
+"zh-TW": {
+"text": "白色",
+"pronunciation": "báisè"
+},
+"ru": {
+"text": "белый",
+"pronunciation": "ˈbʲelɨj"
+}
+},
+"black": {
+"ja": {
+"text": "黒",
+"pronunciation": "くろ / kuro"
+},
+"ko-kr": {
+"text": "검은색",
+"pronunciation": "geomeunsaek"
+},
+"ko-kp": {
+"text": "검은색",
+"pronunciation": "geomeunsaek"
+},
+"zh": {
+"text": "黑色",
+"pronunciation": "hēisè"
+},
+"en": {
+"text": "black",
+"pronunciation": "blæk"
+},
+"zh-CN": {
+"text": "黑色",
+"pronunciation": "hēisè"
+},
+"zh-TW": {
+"text": "黑色",
+"pronunciation": "hēisè"
+},
+"ru": {
+"text": "чёрный",
+"pronunciation": "ˈtɕɵrnɨj"
+}
+},
+"orange": {
+"ja": {
+"text": "橙色",
+"pronunciation": "だいだいいろ / daidaiiro"
+},
+"ko-kr": {
+"text": "주황색",
+"pronunciation": "juhwangsaek"
+},
+"ko-kp": {
+"text": "주황색",
+"pronunciation": "juhwangsaek"
+},
+"zh": {
+"text": "橙色",
+"pronunciation": "chéngsè"
+},
+"en": {
+"text": "orange",
+"pronunciation": "ˈɔːrɪndʒ"
+},
+"zh-CN": {
+"text": "橙色",
+"pronunciation": "chéngsè"
+},
+"zh-TW": {
+"text": "橙色",
+"pronunciation": "chéngsè"
+},
+"ru": {
+"text": "оранжевый",
+"pronunciation": "ɐˈranʐɨvɨj"
+}
+},
+"purple": {
+"ja": {
+"text": "紫",
+"pronunciation": "むらさき / murasaki"
+},
+"ko-kr": {
+"text": "보라색",
+"pronunciation": "borasaek"
+},
+"ko-kp": {
+"text": "보라색",
+"pronunciation": "borasaek"
+},
+"zh": {
+"text": "紫色",
+"pronunciation": "zǐsè"
+},
+"en": {
+"text": "purple",
+"pronunciation": "ˈpɜːrpəl"
+},
+"zh-CN": {
+"text": "紫色",
+"pronunciation": "zǐsè"
+},
+"zh-TW": {
+"text": "紫色",
+"pronunciation": "zǐsè"
+},
+"ru": {
+"text": "фиолетовый",
+"pronunciation": "fʲɪɐˈlʲɛtɐvɨj"
+}
+},
+"pink": {
+"ja": {
+"text": "ピンク",
+"pronunciation": "ピンク / pinku"
+},
+"ko-kr": {
+"text": "분홍색",
+"pronunciation": "bunhongsaek"
+},
+"ko-kp": {
+"text": "분홍색",
+"pronunciation": "bunhongsaek"
+},
+"zh": {
+"text": "粉色",
+"pronunciation": "fěnsè"
+},
+"en": {
+"text": "pink",
+"pronunciation": "pɪŋk"
+},
+"zh-CN": {
+"text": "粉色",
+"pronunciation": "fěnsè"
+},
+"zh-TW": {
+"text": "粉紅色",
+"pronunciation": "fěnhóngsè"
+},
+"ru": {
+"text": "розовый",
+"pronunciation": "ˈrozəvɨj"
+}
+},
+"brown": {
+"ja": {
+"text": "茶色",
+"pronunciation": "ちゃいろ / chairo"
+},
+"ko-kr": {
+"text": "갈색",
+"pronunciation": "galsaek"
+},
+"ko-kp": {
+"text": "갈색",
+"pronunciation": "galsaek"
+},
+"zh": {
+"text": "棕色",
+"pronunciation": "zōngsè"
+},
+"en": {
+"text": "brown",
+"pronunciation": "braʊn"
+},
+"zh-CN": {
+"text": "棕色",
+"pronunciation": "zōngsè"
+},
+"zh-TW": {
+"text": "棕色",
+"pronunciation": "zōngsè"
+},
+"ru": {
+"text": "коричневый",
+"pronunciation": "kɐˈrʲitɕnʲɪvɨj"
+}
+},
+"gray": {
+"ja": {
+"text": "灰色",
+"pronunciation": "はいいろ / haiiro"
+},
+"ko-kr": {
+"text": "회색",
+"pronunciation": "hoesaek"
+},
+"ko-kp": {
+"text": "회색",
+"pronunciation": "hoesaek"
+},
+"zh": {
+"text": "灰色",
+"pronunciation": "huīsè"
+},
+"en": {
+"text": "gray",
+"pronunciation": "ɡreɪ"
+},
+"zh-CN": {
+"text": "灰色",
+"pronunciation": "huīsè"
+},
+"zh-TW": {
+"text": "灰色",
+"pronunciation": "huīsè"
+},
+"ru": {
+"text": "серый",
+"pronunciation": "ˈsʲerɨj"
+}
+},
+"silver": {
+"ja": {
+"text": "銀色",
+"pronunciation": "ぎんいろ / giniro"
+},
+"ko-kr": {
+"text": "은색",
+"pronunciation": "eunsaek"
+},
+"ko-kp": {
+"text": "은색",
+"pronunciation": "eunsaek"
+},
+"zh": {
+"text": "银色",
+"pronunciation": "yínsè"
+},
+"en": {
+"text": "silver",
+"pronunciation": "ˈsɪlvər"
+},
+"zh-CN": {
+"text": "银色",
+"pronunciation": "yínsè"
+},
+"zh-TW": {
+"text": "銀色",
+"pronunciation": "yínsè"
+},
+"ru": {
+"text": "серебряный",
+"pronunciation": "sʲɪrʲɪˈbrʲanɨj"
+}
+},
+"gold": {
+"ja": {
+"text": "金色",
+"pronunciation": "きんいろ / kiniro"
+},
+"ko-kr": {
+"text": "금색",
+"pronunciation": "geumsaek"
+},
+"ko-kp": {
+"text": "금색",
+"pronunciation": "geumsaek"
+},
+"zh": {
+"text": "金色",
+"pronunciation": "jīnsè"
+},
+"en": {
+"text": "gold",
+"pronunciation": "ɡoʊld"
+},
+"zh-CN": {
+"text": "金色",
+"pronunciation": "jīnsè"
+},
+"zh-TW": {
+"text": "金色",
+"pronunciation": "jīnsè"
+},
+"ru": {
+"text": "золотой",
+"pronunciation": "zələtɐˈj"
+}
+},
+"navy": {
+"ja": {
+"text": "紺色",
+"pronunciation": "こんいろ / koniro"
+},
+"ko-kr": {
+"text": "남색",
+"pronunciation": "namsaek"
+},
+"ko-kp": {
+"text": "남색",
+"pronunciation": "namsaek"
+},
+"zh": {
+"text": "藏青色",
+"pronunciation": "zàngqīngsè"
+},
+"en": {
+"text": "navy",
+"pronunciation": "ˈneɪvi"
+},
+"zh-CN": {
+"text": "藏青色",
+"pronunciation": "zàngqīngsè"
+},
+"zh-TW": {
+"text": "藏青色",
+"pronunciation": "zàngqīngsè"
+},
+"ru": {
+"text": "тёмно-синий",
+"pronunciation": "ˈtʲɵmnəsʲinʲij"
+}
+},
+"beige": {
+"ja": {
+"text": "ベージュ",
+"pronunciation": "ベージュ / bēju"
+},
+"ko-kr": {
+"text": "베이지색",
+"pronunciation": "beijisaek"
+},
+"ko-kp": {
+"text": "베이지색",
+"pronunciation": "beijisaek"
+},
+"zh": {
+"text": "米色",
+"pronunciation": "mǐsè"
+},
+"en": {
+"text": "beige",
+"pronunciation": "beɪʒ"
+},
+"zh-CN": {
+"text": "米色",
+"pronunciation": "mǐsè"
+},
+"zh-TW": {
+"text": "米色",
+"pronunciation": "mǐsè"
+},
+"ru": {
+"text": "бежевый",
+"pronunciation": "ˈbɛʐɨvɨj"
+}
+},
+"cyan": {
+"ja": {
+"text": "水色",
+"pronunciation": "みずいろ / mizuiro"
+},
+"ko-kr": {
+"text": "하늘색",
+"pronunciation": "haneulsaek"
+},
+"ko-kp": {
+"text": "하늘색",
+"pronunciation": "haneulsaek"
+},
+"zh": {
+"text": "青绿色",
+"pronunciation": "qīnglǜsè"
+},
+"en": {
+"text": "cyan",
+"pronunciation": "ˈsaɪən"
+},
+"zh-CN": {
+"text": "青绿色",
+"pronunciation": "qīnglǜsè"
+},
+"zh-TW": {
+"text": "青綠色",
+"pronunciation": "qīnglǜsè"
+},
+"ru": {
+"text": "голубой",
+"pronunciation": "ɡəlʊˈboj"
+}
+},
+"magenta": {
+"ja": {
+"text": "マゼンタ",
+"pronunciation": "マゼンタ / mazenta"
+},
+"ko-kr": {
+"text": "마젠타",
+"pronunciation": "majenta"
+},
+"ko-kp": {
+"text": "자주색",
+"pronunciation": "jajusaek"
+},
+"zh": {
+"text": "品红色",
+"pronunciation": "pǐnhóngsè"
+},
+"en": {
+"text": "magenta",
+"pronunciation": "məˈdʒɛntə"
+},
+"zh-CN": {
+"text": "品红色",
+"pronunciation": "pǐnhóngsè"
+},
+"zh-TW": {
+"text": "品紅色",
+"pronunciation": "pǐnhóngsè"
+},
+"ru": {
+"text": "пурпурный",
+"pronunciation": "pʊrˈpurnɨj"
+}
+},
+"maroon": {
+"ja": {
+"text": "えび茶",
+"pronunciation": "えびちゃ / ebicha"
+},
+"ko-kr": {
+"text": "밤색",
+"pronunciation": "bamsaek"
+},
+"ko-kp": {
+"text": "밤색",
+"pronunciation": "bamsaek"
+},
+"zh": {
+"text": "栗色",
+"pronunciation": "lìsè"
+},
+"en": {
+"text": "maroon",
+"pronunciation": "məˈruːn"
+},
+"zh-CN": {
+"text": "栗色",
+"pronunciation": "lìsè"
+},
+"zh-TW": {
+"text": "栗色",
+"pronunciation": "lìsè"
+},
+"ru": {
+"text": "бордовый",
+"pronunciation": "bɐrˈdovɨj"
+}
+},
+"turquoise": {
+"ja": {
+"text": "ターコイズ",
+"pronunciation": "ターコイズ / tākoizu"
+},
+"ko-kr": {
+"text": "청록색",
+"pronunciation": "cheongnoksaek"
+},
+"ko-kp": {
+"text": "청록색",
+"pronunciation": "cheongnoksaek"
+},
+"zh": {
+"text": "绿松石色",
+"pronunciation": "lǜsōngshísè"
+},
+"en": {
+"text": "turquoise",
+"pronunciation": "ˈtɜːrk(w)ɔɪz"
+},
+"zh-CN": {
+"text": "绿松石色",
+"pronunciation": "lǜsōngshísè"
+},
+"zh-TW": {
+"text": "綠松石色",
+"pronunciation": "lǜsōngshísè"
+},
+"ru": {
+"text": "бирюзовый",
+"pronunciation": "bʲɪrʲʊˈzovɨj"
+}
+},
+"ivory": {
+"ja": {
+"text": "象牙色",
+"pronunciation": "ぞうげいろ / zōgeiro"
+},
+"ko-kr": {
+"text": "상아색",
+"pronunciation": "sangasaek"
+},
+"ko-kp": {
+"text": "상아색",
+"pronunciation": "sangasaek"
+},
+"zh": {
+"text": "象牙色",
+"pronunciation": "xiàngyásè"
+},
+"en": {
+"text": "ivory",
+"pronunciation": "ˈaɪvəri"
+},
+"zh-CN": {
+"text": "象牙色",
+"pronunciation": "xiàngyásè"
+},
+"zh-TW": {
+"text": "象牙色",
+"pronunciation": "xiàngyásè"
+},
+"ru": {
+"text": "цвет слоновой кости",
+"pronunciation": "tsvʲet slɐˈnovəj ˈkostʲi"
+}
+}
+}
+}

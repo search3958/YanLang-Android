@@ -1,1 +1,684 @@
-{"entries":{"animal":{"ja":{"text":"動物","pronunciation":"どうぶつ / doubutsu"},"ko-kr":{"text":"동물","pronunciation":"dongmul"},"ko-kp":{"text":"동물","pronunciation":"dongmul"},"zh":{"text":"动物","pronunciation":"dòngwù"},"en":{"text":"animal","pronunciation":"ˈænɪməl"},"zh-CN":{"text":"动物","pronunciation":"dòngwù"},"zh-TW":{"text":"動物","pronunciation":"dòngwù"},"ru":{"text":"животное","pronunciation":""}},"plant":{"ja":{"text":"植物","pronunciation":"しょくぶつ / shokubutsu"},"ko-kr":{"text":"식물","pronunciation":"singmul"},"ko-kp":{"text":"식물","pronunciation":"singmul"},"zh":{"text":"植物","pronunciation":"zhíwù"},"en":{"text":"plant","pronunciation":"plænt"},"zh-CN":{"text":"植物","pronunciation":"zhíwù"},"zh-TW":{"text":"植物","pronunciation":"zhíwù"},"ru":{"text":"растение","pronunciation":""}},"bird":{"ja":{"text":"鳥","pronunciation":"とり / tori"},"ko-kr":{"text":"새","pronunciation":"sae"},"ko-kp":{"text":"새","pronunciation":"sae"},"zh":{"text":"鸟","pronunciation":"niǎo"},"en":{"text":"bird","pronunciation":"bɜːrd"},"zh-CN":{"text":"鸟","pronunciation":"niǎo"},"zh-TW":{"text":"鳥","pronunciation":"niǎo"},"ru":{"text":"птица","pronunciation":""}},"fish":{"ja":{"text":"魚","pronunciation":"さかな / sakana"},"ko-kr":{"text":"물고기","pronunciation":"mulgogi"},"ko-kp":{"text":"물고기","pronunciation":"mulgogi"},"zh":{"text":"鱼","pronunciation":"yú"},"en":{"text":"fish","pronunciation":"fɪʃ"},"zh-CN":{"text":"鱼","pronunciation":"yú"},"zh-TW":{"text":"魚","pronunciation":"yú"},"ru":{"text":"рыба","pronunciation":""}},"insect":{"ja":{"text":"昆虫","pronunciation":"こんちゅう / konchuu"},"ko-kr":{"text":"곤충","pronunciation":"gonchung"},"ko-kp":{"text":"곤충","pronunciation":"gonchung"},"zh":{"text":"昆虫","pronunciation":"kūnchóng"},"en":{"text":"insect","pronunciation":"ˈɪnsɛkt"},"zh-CN":{"text":"昆虫","pronunciation":"kūnchóng"},"zh-TW":{"text":"昆虫","pronunciation":"kūnchóng"},"ru":{"text":"насекомое","pronunciation":""}},"mammal":{"ja":{"text":"哺乳類","pronunciation":"ほにゅうるい / honyuuru"},"ko-kr":{"text":"포유류","pronunciation":"poyuryu"},"ko-kp":{"text":"포유류","pronunciation":"poyuryu"},"zh":{"text":"哺乳动物","pronunciation":"bǔrǔ dòngwù"},"en":{"text":"mammal","pronunciation":"ˈmæməl"},"zh-CN":{"text":"哺乳动物","pronunciation":"bǔrǔ dòngwù"},"zh-TW":{"text":"哺乳動物","pronunciation":"bǔrǔ dòngwù"},"ru":{"text":"млекопитающее","pronunciation":""}},"reptile":{"ja":{"text":"爬虫類","pronunciation":"はちゅうるい / hachuu rui"},"ko-kr":{"text":"파충류","pronunciation":"pachungryu"},"ko-kp":{"text":"파충류","pronunciation":"pachungryu"},"zh":{"text":"爬行动物","pronunciation":"páxíng dòngwù"},"en":{"text":"reptile","pronunciation":"ˈrɛptaɪl"},"zh-CN":{"text":"爬行动物","pronunciation":"páxíng dòngwù"},"zh-TW":{"text":"爬行動物","pronunciation":"páxíng dòngwù"},"ru":{"text":"рептилия","pronunciation":""}},"amphibian":{"ja":{"text":"両生類","pronunciation":"りょうせいるい / ryousei rui"},"ko-kr":{"text":"양서류","pronunciation":"yangseoryu"},"ko-kp":{"text":"양서류","pronunciation":"yangseoryu"},"zh":{"text":"两栖动物","pronunciation":"liǎngqī dòngwù"},"en":{"text":"amphibian","pronunciation":"æmˈfɪbiən"},"zh-CN":{"text":"两栖动物","pronunciation":"liǎngqī dòngwù"},"zh-TW":{"text":"兩栖動物","pronunciation":"liǎngqī dòngwù"},"ru":{"text":"земноводное","pronunciation":""}},"cell":{"ja":{"text":"細胞","pronunciation":"さいぼう / saibou"},"ko-kr":{"text":"세포","pronunciation":"sepoo"},"ko-kp":{"text":"세포","pronunciation":"sepoo"},"zh":{"text":"细胞","pronunciation":"xìbāo"},"en":{"text":"cell","pronunciation":"sɛl"},"zh-CN":{"text":"细胞","pronunciation":"xìbāo"},"zh-TW":{"text":"细胞","pronunciation":"xìbāo"},"ru":{"text":"клетка","pronunciation":""}},"dna":{"ja":{"text":"DNA","pronunciation":"ディーエヌエー / diienuuee"},"ko-kr":{"text":"DNA","pronunciation":"DNA"},"ko-kp":{"text":"DNA","pronunciation":"DNA"},"zh":{"text":"DNA","pronunciation":"DNA"},"en":{"text":"DNA","pronunciation":"diːɛnˈeɪ"},"zh-CN":{"text":"DNA","pronunciation":"DNA"},"zh-TW":{"text":"DNA","pronunciation":"DNA"},"ru":{"text":"ДНК","pronunciation":""}},"gene":{"ja":{"text":"遺伝子","pronunciation":"いでんし / idenshi"},"ko-kr":{"text":"유전자","pronunciation":"yujenja"},"ko-kp":{"text":"유전자","pronunciation":"yujenja"},"zh":{"text":"基因","pronunciation":"jīyīn"},"en":{"text":"gene","pronunciation":"dʒiːn"},"zh-CN":{"text":"基因","pronunciation":"jīyīn"},"zh-TW":{"text":"基因","pronunciation":"jīyīn"},"ru":{"text":"ген","pronunciation":""}},"evolution":{"ja":{"text":"進化","pronunciation":"しんか / shinka"},"ko-kr":{"text":"진화","pronunciation":"jinhwa"},"ko-kp":{"text":"진화","pronunciation":"jinhwa"},"zh":{"text":"进化","pronunciation":"jìnhuà"},"en":{"text":"evolution","pronunciation":"ˌɛvəˈluːʃən"},"zh-CN":{"text":"进化","pronunciation":"jìnhuà"},"zh-TW":{"text":"進化","pronunciation":"jìnhuà"},"ru":{"text":"эволюция","pronunciation":""}},"organism":{"ja":{"text":"生物","pronunciation":"せいぶつ / seibutsu"},"ko-kr":{"text":"생물","pronunciation":"saengmul"},"ko-kp":{"text":"생물","pronunciation":"saengmul"},"zh":{"text":"生物","pronunciation":"shēngwù"},"en":{"text":"organism","pronunciation":"ˈɔːrɡənɪzəm"},"zh-CN":{"text":"生物","pronunciation":"shēngwù"},"zh-TW":{"text":"生物","pronunciation":"shēngwù"},"ru":{"text":"организм","pronunciation":""}},"habitat":{"ja":{"text":"生息地","pronunciation":"せいそくち / seisokuchi"},"ko-kr":{"text":"서식지","pronunciation":"seosikji"},"ko-kp":{"text":"서식지","pronunciation":"seosikji"},"zh":{"text":"栖息地","pronunciation":"qīxīdì"},"en":{"text":"habitat","pronunciation":"ˈhæbɪtæt"},"zh-CN":{"text":"栖息地","pronunciation":"qīxīdì"},"zh-TW":{"text":"栖息地","pronunciation":"qīxīdì"},"ru":{"text":"среда обитания","pronunciation":""}},"ecosystem":{"ja":{"text":"生態系","pronunciation":"せいたいけい / seitaikes"},"ko-kr":{"text":"생태계","pronunciation":"saengtaegye"},"ko-kp":{"text":"생태계","pronunciation":"saengtaegye"},"zh":{"text":"生态系统","pronunciation":"shēngtài xìtǒng"},"en":{"text":"ecosystem","pronunciation":"ˈiːkoʊsɪstəm"},"zh-CN":{"text":"生态系统","pronunciation":"shēngtài xìtǒng"},"zh-TW":{"text":"生态系统","pronunciation":"shēngtài xìtǒng"},"ru":{"text":"экосистема","pronunciation":""}},"photosynthesis":{"ja":{"text":"光合成","pronunciation":"こうごうせい / kougousei"},"ko-kr":{"text":"광합성","pronunciation":"gwhanghapseong"},"ko-kp":{"text":"광합성","pronunciation":"gwhanghapseong"},"zh":{"text":"光合作用","pronunciation":"guānghé zuòyòng"},"en":{"text":"photosynthesis","pronunciation":"ˌfoʊtoʊˈsɪnθəsɪs"},"zh-CN":{"text":"光合作用","pronunciation":"guānghé zuòyòng"},"zh-TW":{"text":"光合作用","pronunciation":"guānghé zuòyòng"},"ru":{"text":"фотосинтез","pronunciation":""}},"mitochondria":{"ja":{"text":"ミトコンドリア","pronunciation":"ミトコンドリア / mitokondoria"},"ko-kr":{"text":"미토콘드리아","pronunciation":"mitokondeuria"},"ko-kp":{"text":"미토콘드리아","pronunciation":"mitokondeuria"},"zh":{"text":"线粒体","pronunciation":"xiànlìtǐ"},"en":{"text":"mitochondria","pronunciation":"ˌmaɪtoʊˈkɒndriə"},"zh-CN":{"text":"线粒体","pronunciation":"xiànlìtǐ"},"zh-TW":{"text":"線粒體","pronunciation":"xiànlìtǐ"},"ru":{"text":"митохондрия","pronunciation":""}},"species":{"ja":{"text":"種","pronunciation":"しゅ / shu"},"ko-kr":{"text":"종","pronunciation":"jong"},"ko-kp":{"text":"종","pronunciation":"jong"},"zh":{"text":"物种","pronunciation":"wùzhǒng"},"en":{"text":"species","pronunciation":"ˈspiːʃiːz"},"zh-CN":{"text":"物种","pronunciation":"wùzhǒng"},"zh-TW":{"text":"物種","pronunciation":"wùzhǒng"},"ru":{"text":"вид","pronunciation":""}},"extinction":{"ja":{"text":"絶滅","pronunciation":"ぜつめつ / zetsumetsu"},"ko-kr":{"text":"멸종","pronunciation":"myeoljong"},"ko-kp":{"text":"멸종","pronunciation":"myeoljong"},"zh":{"text":"灭绝","pronunciation":"mièjué"},"en":{"text":"extinction","pronunciation":"ɪkˈstɪŋkʃən"},"zh-CN":{"text":"灭绝","pronunciation":"mièjué"},"zh-TW":{"text":"灭绝","pronunciation":"mièjué"},"ru":{"text":"вымирание","pronunciation":""}},"bacteria":{"ja":{"text":"細菌","pronunciation":"さいきん / saikin"},"ko-kr":{"text":"세균","pronunciation":"segyun"},"ko-kp":{"text":"세균","pronunciation":"segyun"},"zh":{"text":"细菌","pronunciation":"xìjūn"},"en":{"text":"bacteria","pronunciation":"bækˈtɪriə"},"zh-CN":{"text":"细菌","pronunciation":"xìjūn"},"zh-TW":{"text":"细菌","pronunciation":"xìjūn"},"ru":{"text":"бактерии","pronunciation":""}}}}
+{
+"entries": {
+"animal": {
+"ja": {
+"text": "動物",
+"pronunciation": "どうぶつ / doubutsu"
+},
+"ko-kr": {
+"text": "동물",
+"pronunciation": "dongmul"
+},
+"ko-kp": {
+"text": "동물",
+"pronunciation": "dongmul"
+},
+"zh": {
+"text": "动物",
+"pronunciation": "dòngwù"
+},
+"en": {
+"text": "animal",
+"pronunciation": "ˈænɪməl"
+},
+"zh-CN": {
+"text": "动物",
+"pronunciation": "dòngwù"
+},
+"zh-TW": {
+"text": "動物",
+"pronunciation": "dòngwù"
+},
+"ru": {
+"text": "животное",
+"pronunciation": "ʐɨˈvotnəjə"
+}
+},
+"plant": {
+"ja": {
+"text": "植物",
+"pronunciation": "しょくぶつ / shokubutsu"
+},
+"ko-kr": {
+"text": "식물",
+"pronunciation": "singmul"
+},
+"ko-kp": {
+"text": "식물",
+"pronunciation": "singmul"
+},
+"zh": {
+"text": "植物",
+"pronunciation": "zhíwù"
+},
+"en": {
+"text": "plant",
+"pronunciation": "plænt"
+},
+"zh-CN": {
+"text": "植物",
+"pronunciation": "zhíwù"
+},
+"zh-TW": {
+"text": "植物",
+"pronunciation": "zhíwù"
+},
+"ru": {
+"text": "растение",
+"pronunciation": "rɐsˈtʲenʲɪje"
+}
+},
+"bird": {
+"ja": {
+"text": "鳥",
+"pronunciation": "とり / tori"
+},
+"ko-kr": {
+"text": "새",
+"pronunciation": "sae"
+},
+"ko-kp": {
+"text": "새",
+"pronunciation": "sae"
+},
+"zh": {
+"text": "鸟",
+"pronunciation": "niǎo"
+},
+"en": {
+"text": "bird",
+"pronunciation": "bɜːrd"
+},
+"zh-CN": {
+"text": "鸟",
+"pronunciation": "niǎo"
+},
+"zh-TW": {
+"text": "鳥",
+"pronunciation": "niǎo"
+},
+"ru": {
+"text": "птица",
+"pronunciation": "ˈptʲitsə"
+}
+},
+"fish": {
+"ja": {
+"text": "魚",
+"pronunciation": "さかな / sakana"
+},
+"ko-kr": {
+"text": "물고기",
+"pronunciation": "mulgogi"
+},
+"ko-kp": {
+"text": "물고기",
+"pronunciation": "mulgogi"
+},
+"zh": {
+"text": "鱼",
+"pronunciation": "yú"
+},
+"en": {
+"text": "fish",
+"pronunciation": "fɪʃ"
+},
+"zh-CN": {
+"text": "鱼",
+"pronunciation": "yú"
+},
+"zh-TW": {
+"text": "魚",
+"pronunciation": "yú"
+},
+"ru": {
+"text": "рыба",
+"pronunciation": "ˈrɨbə"
+}
+},
+"insect": {
+"ja": {
+"text": "昆虫",
+"pronunciation": "こんちゅう / konchū"
+},
+"ko-kr": {
+"text": "곤충",
+"pronunciation": "gonchung"
+},
+"ko-kp": {
+"text": "곤충",
+"pronunciation": "gonchung"
+},
+"zh": {
+"text": "昆虫",
+"pronunciation": "kūnchóng"
+},
+"en": {
+"text": "insect",
+"pronunciation": "ˈɪn.sekt"
+},
+"zh-CN": {
+"text": "昆虫",
+"pronunciation": "kūnchóng"
+},
+"zh-TW": {
+"text": "昆蟲",
+"pronunciation": "kūnchóng"
+},
+"ru": {
+"text": "насекомое",
+"pronunciation": "nəsʲɪˈkoməjə"
+}
+},
+"mammal": {
+"ja": {
+"text": "哺乳類",
+"pronunciation": "ほにゅうるい / honyūrui"
+},
+"ko-kr": {
+"text": "포유류",
+"pronunciation": "poyuryu"
+},
+"ko-kp": {
+"text": "포유류",
+"pronunciation": "poyuryu"
+},
+"zh": {
+"text": "哺乳动物",
+"pronunciation": "bǔrǔ dòngwù"
+},
+"en": {
+"text": "mammal",
+"pronunciation": "ˈmæməl"
+},
+"zh-CN": {
+"text": "哺乳动物",
+"pronunciation": "bǔrǔ dòngwù"
+},
+"zh-TW": {
+"text": "哺乳動物",
+"pronunciation": "bǔrǔ dòngwù"
+},
+"ru": {
+"text": "млекопитающее",
+"pronunciation": "mlʲɪkəpʲɪˈtajʉɕːɪjə"
+}
+},
+"reptile": {
+"ja": {
+"text": "爬虫類",
+"pronunciation": "はちゅうるい / hachūrui"
+},
+"ko-kr": {
+"text": "파충류",
+"pronunciation": "pachungnyu"
+},
+"ko-kp": {
+"text": "파충류",
+"pronunciation": "pachungnyu"
+},
+"zh": {
+"text": "爬行动物",
+"pronunciation": "páxíng dòngwù"
+},
+"en": {
+"text": "reptile",
+"pronunciation": "ˈrɛptaɪl"
+},
+"zh-CN": {
+"text": "爬行动物",
+"pronunciation": "páxíng dòngwù"
+},
+"zh-TW": {
+"text": "爬行動物",
+"pronunciation": "páxíng dòngwù"
+},
+"ru": {
+"text": "рептилия",
+"pronunciation": "rʲɪpˈtʲilʲɪjə"
+}
+},
+"amphibian": {
+"ja": {
+"text": "両生類",
+"pronunciation": "りょうせいるい / ryōseirui"
+},
+"ko-kr": {
+"text": "양서류",
+"pronunciation": "yangseoryu"
+},
+"ko-kp": {
+"text": "량서류",
+"pronunciation": "ryangseoryu"
+},
+"zh": {
+"text": "两栖动物",
+"pronunciation": "liǎngqī dòngwù"
+},
+"en": {
+"text": "amphibian",
+"pronunciation": "æmˈfɪbiən"
+},
+"zh-CN": {
+"text": "两栖动物",
+"pronunciation": "liǎngqī dòngwù"
+},
+"zh-TW": {
+"text": "兩棲動物",
+"pronunciation": "liǎngqī dòngwù"
+},
+"ru": {
+"text": "земноводное",
+"pronunciation": "zʲɪmnɐˈvodnəjə"
+}
+},
+"cell": {
+"ja": {
+"text": "細胞",
+"pronunciation": "さいぼう / saibō"
+},
+"ko-kr": {
+"text": "세포",
+"pronunciation": "sepo"
+},
+"ko-kp": {
+"text": "세포",
+"pronunciation": "sepo"
+},
+"zh": {
+"text": "细胞",
+"pronunciation": "xìbāo"
+},
+"en": {
+"text": "cell",
+"pronunciation": "sɛl"
+},
+"zh-CN": {
+"text": "细胞",
+"pronunciation": "xìbāo"
+},
+"zh-TW": {
+"text": "細胞",
+"pronunciation": "xìbāo"
+},
+"ru": {
+"text": "клетка",
+"pronunciation": "ˈklʲetkə"
+}
+},
+"dna": {
+"ja": {
+"text": "DNA",
+"pronunciation": "ディーエヌエー / dīenuē"
+},
+"ko-kr": {
+"text": "DNA",
+"pronunciation": "dienei"
+},
+"ko-kp": {
+"text": "DNA",
+"pronunciation": "dienei"
+},
+"zh": {
+"text": "DNA",
+"pronunciation": "DNA"
+},
+"en": {
+"text": "DNA",
+"pronunciation": "ˌdiː.enˈeɪ"
+},
+"zh-CN": {
+"text": "DNA",
+"pronunciation": "DNA"
+},
+"zh-TW": {
+"text": "DNA",
+"pronunciation": "DNA"
+},
+"ru": {
+"text": "ДНК",
+"pronunciation": "dɛ.ɛn.ˈka"
+}
+},
+"gene": {
+"ja": {
+"text": "遺伝子",
+"pronunciation": "いでんし / idenshi"
+},
+"ko-kr": {
+"text": "유전자",
+"pronunciation": "yujeonja"
+},
+"ko-kp": {
+"text": "유전자",
+"pronunciation": "yujeonja"
+},
+"zh": {
+"text": "基因",
+"pronunciation": "jīyīn"
+},
+"en": {
+"text": "gene",
+"pronunciation": "dʒiːn"
+},
+"zh-CN": {
+"text": "基因",
+"pronunciation": "jīyīn"
+},
+"zh-TW": {
+"text": "基因",
+"pronunciation": "jīyīn"
+},
+"ru": {
+"text": "ген",
+"pronunciation": "ɡʲen"
+}
+},
+"evolution": {
+"ja": {
+"text": "進化",
+"pronunciation": "しんか / shinka"
+},
+"ko-kr": {
+"text": "진화",
+"pronunciation": "jinhwa"
+},
+"ko-kp": {
+"text": "진화",
+"pronunciation": "jinhwa"
+},
+"zh": {
+"text": "进化",
+"pronunciation": "jìnhuà"
+},
+"en": {
+"text": "evolution",
+"pronunciation": "ˌiːvəˈluːʃən"
+},
+"zh-CN": {
+"text": "进化",
+"pronunciation": "jìnhuà"
+},
+"zh-TW": {
+"text": "進化",
+"pronunciation": "jìnhuà"
+},
+"ru": {
+"text": "эволюция",
+"pronunciation": "ɛvɐˈlʲutsɨjə"
+}
+},
+"organism": {
+"ja": {
+"text": "生物",
+"pronunciation": "せいぶつ / seibutsu"
+},
+"ko-kr": {
+"text": "생물",
+"pronunciation": "saengmul"
+},
+"ko-kp": {
+"text": "생물",
+"pronunciation": "saengmul"
+},
+"zh": {
+"text": "生物",
+"pronunciation": "shēngwù"
+},
+"en": {
+"text": "organism",
+"pronunciation": "ˈɔːrɡənɪzəm"
+},
+"zh-CN": {
+"text": "生物",
+"pronunciation": "shēngwù"
+},
+"zh-TW": {
+"text": "生物",
+"pronunciation": "shēngwù"
+},
+"ru": {
+"text": "организм",
+"pronunciation": "ɐrɡɐˈnʲizm"
+}
+},
+"habitat": {
+"ja": {
+"text": "生息地",
+"pronunciation": "せいそくち / seisokuchi"
+},
+"ko-kr": {
+"text": "서식지",
+"pronunciation": "seosikji"
+},
+"ko-kp": {
+"text": "서식지",
+"pronunciation": "seosikji"
+},
+"zh": {
+"text": "栖息地",
+"pronunciation": "qīxīdì"
+},
+"en": {
+"text": "habitat",
+"pronunciation": "ˈhæbɪtæt"
+},
+"zh-CN": {
+"text": "栖息地",
+"pronunciation": "qīxīdì"
+},
+"zh-TW": {
+"text": "棲息地",
+"pronunciation": "qīxídì"
+},
+"ru": {
+"text": "среда обитания",
+"pronunciation": "srʲɪˈda ɐbʲɪˈtanʲɪjə"
+}
+},
+"ecosystem": {
+"ja": {
+"text": "生態系",
+"pronunciation": "せいたいけい / seitaikei"
+},
+"ko-kr": {
+"text": "생태계",
+"pronunciation": "saengtaegye"
+},
+"ko-kp": {
+"text": "생태계",
+"pronunciation": "saengtaegye"
+},
+"zh": {
+"text": "生态系统",
+"pronunciation": "shēngtài xìtǒng"
+},
+"en": {
+"text": "ecosystem",
+"pronunciation": "ˈiːkoʊˌsɪstəm"
+},
+"zh-CN": {
+"text": "生态系统",
+"pronunciation": "shēngtài xìtǒng"
+},
+"zh-TW": {
+"text": "生態系統",
+"pronunciation": "shēngtài xìtǒng"
+},
+"ru": {
+"text": "экосистема",
+"pronunciation": "ɛkəsʲɪˈtʲemə"
+}
+},
+"photosynthesis": {
+"ja": {
+"text": "光合成",
+"pronunciation": "こうごうせい / kōgōsei"
+},
+"ko-kr": {
+"text": "광합성",
+"pronunciation": "gwanghapseong"
+},
+"ko-kp": {
+"text": "빛합성",
+"pronunciation": "pichapseong"
+},
+"zh": {
+"text": "光合作用",
+"pronunciation": "guānghé zuòyòng"
+},
+"en": {
+"text": "photosynthesis",
+"pronunciation": "ˌfoʊtoʊˈsɪnθəsɪs"
+},
+"zh-CN": {
+"text": "光合作用",
+"pronunciation": "guānghé zuòyòng"
+},
+"zh-TW": {
+"text": "光合作用",
+"pronunciation": "guānghé zuòyòng"
+},
+"ru": {
+"text": "фотосинтез",
+"pronunciation": "fətəsʲɪnˈtʲez"
+}
+},
+"mitochondria": {
+"ja": {
+"text": "ミトコンドリア",
+"pronunciation": "ミトコンドリア / mitokondoria"
+},
+"ko-kr": {
+"text": "미토콘드리아",
+"pronunciation": "mitokondeuria"
+},
+"ko-kp": {
+"text": "미토콘드리아",
+"pronunciation": "mitokondeuria"
+},
+"zh": {
+"text": "线粒体",
+"pronunciation": "xiànlìtǐ"
+},
+"en": {
+"text": "mitochondria",
+"pronunciation": "ˌmaɪtəˈkɒndriə"
+},
+"zh-CN": {
+"text": "线粒体",
+"pronunciation": "xiànlìtǐ"
+},
+"zh-TW": {
+"text": "線粒體",
+"pronunciation": "xiànlìtǐ"
+},
+"ru": {
+"text": "митохондрия",
+"pronunciation": "mʲɪtɐˈxondrʲɪjə"
+}
+},
+"species": {
+"ja": {
+"text": "種",
+"pronunciation": "しゅ / shu"
+},
+"ko-kr": {
+"text": "종",
+"pronunciation": "jong"
+},
+"ko-kp": {
+"text": "종",
+"pronunciation": "jong"
+},
+"zh": {
+"text": "物种",
+"pronunciation": "wùzhǒng"
+},
+"en": {
+"text": "species",
+"pronunciation": "ˈspiːʃiːz"
+},
+"zh-CN": {
+"text": "物种",
+"pronunciation": "wùzhǒng"
+},
+"zh-TW": {
+"text": "物種",
+"pronunciation": "wùzhǒng"
+},
+"ru": {
+"text": "вид",
+"pronunciation": "vʲit"
+}
+},
+"extinction": {
+"ja": {
+"text": "絶滅",
+"pronunciation": "ぜつめつ / zetsumetsu"
+},
+"ko-kr": {
+"text": "멸종",
+"pronunciation": "myeoljong"
+},
+"ko-kp": {
+"text": "멸종",
+"pronunciation": "myeoljong"
+},
+"zh": {
+"text": "灭绝",
+"pronunciation": "mièjué"
+},
+"en": {
+"text": "extinction",
+"pronunciation": "ɪkˈstɪŋkʃən"
+},
+"zh-CN": {
+"text": "灭绝",
+"pronunciation": "mièjué"
+},
+"zh-TW": {
+"text": "滅絕",
+"pronunciation": "mièjué"
+},
+"ru": {
+"text": "вымирание",
+"pronunciation": "vɨmʲɪˈranʲɪje"
+}
+},
+"bacteria": {
+"ja": {
+"text": "細菌",
+"pronunciation": "さいきん / saikin"
+},
+"ko-kr": {
+"text": "세균",
+"pronunciation": "segyun"
+},
+"ko-kp": {
+"text": "세균",
+"pronunciation": "segyun"
+},
+"zh": {
+"text": "细菌",
+"pronunciation": "xìjūn"
+},
+"en": {
+"text": "bacteria",
+"pronunciation": "bækˈtɪəriə"
+},
+"zh-CN": {
+"text": "细菌",
+"pronunciation": "xìjūn"
+},
+"zh-TW": {
+"text": "細菌",
+"pronunciation": "xìjūn"
+},
+"ru": {
+"text": "бактерии",
+"pronunciation": "bɐkˈtʲerʲɪɪ"
+}
+}
+}
+}

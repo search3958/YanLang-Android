@@ -1,1 +1,264 @@
-{"entries":{"1":{"ja":{"text":"一つ","pronunciation":"ひとつ / hitotsu"},"ko-kr":{"text":"하나","pronunciation":"hana"},"ko-kp":{"text":"하나","pronunciation":"hana"},"zh":{"text":"一个","pronunciation":"yī gè"},"en":{"text":"one","pronunciation":"wʌn"},"zh-CN":{"text":"一个","pronunciation":"yī gè"},"zh-TW":{"text":"一個","pronunciation":"yī gè"},"ru":{"text":"один","pronunciation":""}},"2":{"ja":{"text":"二つ","pronunciation":"ふたつ / futatsu"},"ko-kr":{"text":"둘","pronunciation":"dul"},"ko-kp":{"text":"둘","pronunciation":"dul"},"zh":{"text":"两个","pronunciation":"liǎng gè"},"en":{"text":"two","pronunciation":"tuː"},"zh-CN":{"text":"两个","pronunciation":"liǎng gè"},"zh-TW":{"text":"兩個","pronunciation":"liǎng gè"},"ru":{"text":"два","pronunciation":""}},"3":{"ja":{"text":"三つ","pronunciation":"みっつ / mittsu"},"ko-kr":{"text":"셋","pronunciation":"set"},"ko-kp":{"text":"셋","pronunciation":"set"},"zh":{"text":"三个","pronunciation":"sān gè"},"en":{"text":"three","pronunciation":"θriː"},"zh-CN":{"text":"三个","pronunciation":"sān gè"},"zh-TW":{"text":"三個","pronunciation":"sān gè"},"ru":{"text":"три","pronunciation":""}},"4":{"ja":{"text":"四つ","pronunciation":"よっつ / yottsu"},"ko-kr":{"text":"넷","pronunciation":"net"},"ko-kp":{"text":"넷","pronunciation":"net"},"zh":{"text":"四个","pronunciation":"sì gè"},"en":{"text":"four","pronunciation":"fɔːr"},"zh-CN":{"text":"四个","pronunciation":"sì gè"},"zh-TW":{"text":"四個","pronunciation":"sì gè"},"ru":{"text":"четыре","pronunciation":""}},"5":{"ja":{"text":"五つ","pronunciation":"いつつ / itsutsu"},"ko-kr":{"text":"다섯","pronunciation":"daseot"},"ko-kp":{"text":"다섯","pronunciation":"daseot"},"zh":{"text":"五个","pronunciation":"wǔ gè"},"en":{"text":"five","pronunciation":"faɪv"},"zh-CN":{"text":"五个","pronunciation":"wǔ gè"},"zh-TW":{"text":"五個","pronunciation":"wǔ gè"},"ru":{"text":"пять","pronunciation":""}},"6":{"ja":{"text":"六つ","pronunciation":"むっつ / muttsu"},"ko-kr":{"text":"여섯","pronunciation":"yeoseot"},"ko-kp":{"text":"여섯","pronunciation":"yeoseot"},"zh":{"text":"六个","pronunciation":"liù gè"},"en":{"text":"six","pronunciation":"sɪks"},"zh-CN":{"text":"六个","pronunciation":"liù gè"},"zh-TW":{"text":"六個","pronunciation":"liù gè"},"ru":{"text":"шесть","pronunciation":""}},"7":{"ja":{"text":"七つ","pronunciation":"ななつ / nanatsu"},"ko-kr":{"text":"일곱","pronunciation":"ilgop"},"ko-kp":{"text":"일곱","pronunciation":"ilgop"},"zh":{"text":"七个","pronunciation":"qī gè"},"en":{"text":"seven","pronunciation":"ˈsɛvən"},"zh-CN":{"text":"七个","pronunciation":"qī gè"},"zh-TW":{"text":"七個","pronunciation":"qī gè"},"ru":{"text":"семь","pronunciation":""}},"8":{"ja":{"text":"八つ","pronunciation":"やっつ / yattsu"},"ko-kr":{"text":"여덟","pronunciation":"yeodeol"},"ko-kp":{"text":"여덟","pronunciation":"yeodeol"},"zh":{"text":"八个","pronunciation":"bā gè"},"en":{"text":"eight","pronunciation":"eɪt"},"zh-CN":{"text":"八个","pronunciation":"bā gè"},"zh-TW":{"text":"八個","pronunciation":"bā gè"},"ru":{"text":"восемь","pronunciation":""}},"9":{"ja":{"text":"九つ","pronunciation":"ここのつ / kokonotsu"},"ko-kr":{"text":"아홉","pronunciation":"ahop"},"ko-kp":{"text":"아홉","pronunciation":"ahop"},"zh":{"text":"九个","pronunciation":"jiǔ gè"},"en":{"text":"nine","pronunciation":"naɪn"},"zh-CN":{"text":"九个","pronunciation":"jiǔ gè"},"zh-TW":{"text":"九個","pronunciation":"jiǔ gè"},"ru":{"text":"девять","pronunciation":""}},"10":{"ja":{"text":"十","pronunciation":"とお / tou"},"ko-kr":{"text":"열","pronunciation":"yeol"},"ko-kp":{"text":"열","pronunciation":"yeol"},"zh":{"text":"十个","pronunciation":"shí gè"},"en":{"text":"ten","pronunciation":"tɛn"},"zh-CN":{"text":"十个","pronunciation":"shí gè"},"zh-TW":{"text":"十個","pronunciation":"shí gè"},"ru":{"text":"десять","pronunciation":""}},"11":{"ja":{"text":"十一","pronunciation":"じゅういち / juuichi"},"ko-kr":{"text":"열하나","pronunciation":"yeolhana"},"ko-kp":{"text":"열하나","pronunciation":"yeolhana"},"zh":{"text":"十一个","pronunciation":"shíyī gè"},"en":{"text":"eleven","pronunciation":"ɪˈlɛvən"},"zh-CN":{"text":"十一个","pronunciation":"shíyī gè"},"zh-TW":{"text":"十一個","pronunciation":"shíyī gè"},"ru":{"text":"одиннадцать","pronunciation":""}},"12":{"ja":{"text":"十二","pronunciation":"じゅうに / juuni"},"ko-kr":{"text":"열둘","pronunciation":"yeoldul"},"ko-kp":{"text":"열둘","pronunciation":"yeoldul"},"zh":{"text":"十二个","pronunciation":"shí'èr gè"},"en":{"text":"twelve","pronunciation":"twɛlv"},"zh-CN":{"text":"十二个","pronunciation":"shí'èr gè"},"zh-TW":{"text":"十二個","pronunciation":"shí'èr gè"},"ru":{"text":"двенадцать","pronunciation":""}},"13":{"ja":{"text":"十三","pronunciation":"じゅうさん / juusan"},"ko-kr":{"text":"열셋","pronunciation":"yeolset"},"ko-kp":{"text":"열셋","pronunciation":"yeolset"},"zh":{"text":"十三个","pronunciation":"shísān gè"},"en":{"text":"thirteen","pronunciation":"θɜːrˈtiːn"},"zh-CN":{"text":"十三个","pronunciation":"shísān gè"},"zh-TW":{"text":"十三個","pronunciation":"shísān gè"},"ru":{"text":"тринадцать","pronunciation":""}},"14":{"ja":{"text":"十四","pronunciation":"じゅうし / juushi"},"ko-kr":{"text":"열넷","pronunciation":"yeolnet"},"ko-kp":{"text":"열넷","pronunciation":"yeolnet"},"zh":{"text":"十四个","pronunciation":"shísì gè"},"en":{"text":"fourteen","pronunciation":"fɔːrˈtiːn"},"zh-CN":{"text":"十四个","pronunciation":"shísì gè"},"zh-TW":{"text":"十四個","pronunciation":"shísì gè"},"ru":{"text":"четырнадцать","pronunciation":""}},"15":{"ja":{"text":"十五","pronunciation":"じゅうご / juugo"},"ko-kr":{"text":"열다섯","pronunciation":"yeoldaseot"},"ko-kp":{"text":"열다섯","pronunciation":"yeoldaseot"},"zh":{"text":"十五个","pronunciation":"shíwǔ gè"},"en":{"text":"fifteen","pronunciation":"fɪfˈtiːn"},"zh-CN":{"text":"十五个","pronunciation":"shíwǔ gè"},"zh-TW":{"text":"十五個","pronunciation":"shíwǔ gè"},"ru":{"text":"пятнадцать","pronunciation":""}},"20":{"ja":{"text":"二十","pronunciation":"はた / hata"},"ko-kr":{"text":"스물","pronunciation":"seumul"},"ko-kp":{"text":"스물","pronunciation":"seumul"},"zh":{"text":"二十个","pronunciation":"èrshí gè"},"en":{"text":"twenty","pronunciation":"ˈtwɛnti"},"zh-CN":{"text":"二十个","pronunciation":"èrshí gè"},"zh-TW":{"text":"二十個","pronunciation":"èrshí gè"},"ru":{"text":"двадцать","pronunciation":""}},"30":{"ja":{"text":"三十","pronunciation":"さんじゅう / sanjuu"},"ko-kr":{"text":"서른","pronunciation":"seoreun"},"ko-kp":{"text":"서른","pronunciation":"seoreun"},"zh":{"text":"三十个","pronunciation":"sānshí gè"},"en":{"text":"thirty","pronunciation":"ˈθɜːrti"},"zh-CN":{"text":"三十个","pronunciation":"sānshí gè"},"zh-TW":{"text":"三十個","pronunciation":"sānshí gè"},"ru":{"text":"тридцать","pronunciation":""}},"40":{"ja":{"text":"四十","pronunciation":"よんじゅう / yonjuu"},"ko-kr":{"text":"마흔","pronunciation":"maheun"},"ko-kp":{"text":"마흔","pronunciation":"maheun"},"zh":{"text":"四十个","pronunciation":"sìshí gè"},"en":{"text":"forty","pronunciation":"ˈfɔːrti"},"zh-CN":{"text":"四十个","pronunciation":"sìshí gè"},"zh-TW":{"text":"四十個","pronunciation":"sìshí gè"},"ru":{"text":"сорок","pronunciation":""}},"50":{"ja":{"text":"五十","pronunciation":"いそ / iso"},"ko-kr":{"text":"쉰","pronunciation":"swin"},"ko-kp":{"text":"쉰","pronunciation":"swin"},"zh":{"text":"五十个","pronunciation":"wǔshí gè"},"en":{"text":"fifty","pronunciation":"ˈfɪfti"},"zh-CN":{"text":"五十个","pronunciation":"wǔshí gè"},"zh-TW":{"text":"五十個","pronunciation":"wǔshí gè"},"ru":{"text":"пятьдесят","pronunciation":""}},"60":{"ja":{"text":"六十","pronunciation":"ろくじゅう / rokujuu"},"ko-kr":{"text":"예순","pronunciation":"yesun"},"ko-kp":{"text":"예순","pronunciation":"yesun"},"zh":{"text":"六十个","pronunciation":"liùshí gè"},"en":{"text":"sixty","pronunciation":"ˈsɪksti"},"zh-CN":{"text":"六十个","pronunciation":"liùshí gè"},"zh-TW":{"text":"六十個","pronunciation":"liùshí gè"},"ru":{"text":"шестьдесят","pronunciation":""}},"70":{"ja":{"text":"七十","pronunciation":"ななじゅう / nanajuu"},"ko-kr":{"text":"일흔","pronunciation":"ilheun"},"ko-kp":{"text":"일흔","pronunciation":"ilheun"},"zh":{"text":"七十个","pronunciation":"qīshí gè"},"en":{"text":"seventy","pronunciation":"ˈsɛvənti"},"zh-CN":{"text":"七十个","pronunciation":"qīshí gè"},"zh-TW":{"text":"七十個","pronunciation":"qīshí gè"},"ru":{"text":"семьдесят","pronunciation":""}},"80":{"ja":{"text":"八十","pronunciation":"はちじゅう / hachijuu"},"ko-kr":{"text":"여든","pronunciation":"yeodeun"},"ko-kp":{"text":"여든","pronunciation":"yeodeun"},"zh":{"text":"八十个","pronunciation":"bāshí gè"},"en":{"text":"eighty","pronunciation":"ˈeɪti"},"zh-CN":{"text":"八十个","pronunciation":"bāshí gè"},"zh-TW":{"text":"八十個","pronunciation":"bāshí gè"},"ru":{"text":"восемьдесят","pronunciation":""}},"90":{"ja":{"text":"九十","pronunciation":"きゅうじゅう / kyuujuu"},"ko-kr":{"text":"아흔","pronunciation":"aheun"},"ko-kp":{"text":"아흔","pronunciation":"aheun"},"zh":{"text":"九十个","pronunciation":"jiǔshí gè"},"en":{"text":"ninety","pronunciation":"ˈnaɪnti"},"zh-CN":{"text":"九十个","pronunciation":"jiǔshí gè"},"zh-TW":{"text":"九十個","pronunciation":"jiǔshí gè"},"ru":{"text":"девяносто","pronunciation":""}},"100":{"ja":{"text":"百","pronunciation":"ひゃく / hyaku"},"ko-kr":{"text":"백","pronunciation":"baek"},"ko-kp":{"text":"백","pronunciation":"baek"},"zh":{"text":"一百个","pronunciation":"yībǎi gè"},"en":{"text":"hundred","pronunciation":"ˈhʌndrəd"},"zh-CN":{"text":"一百个","pronunciation":"yībǎi gè"},"zh-TW":{"text":"一百個","pronunciation":"yībǎi gè"},"ru":{"text":"сто","pronunciation":""}},"1000":{"ja":{"text":"千","pronunciation":"せん / sen"},"ko-kr":{"text":"천","pronunciation":"cheon"},"ko-kp":{"text":"천","pronunciation":"cheon"},"zh":{"text":"一千个","pronunciation":"yīqiān gè"},"en":{"text":"thousand","pronunciation":"ˈθaʊzənd"},"zh-CN":{"text":"一千个","pronunciation":"yīqiān gè"},"zh-TW":{"text":"一千個","pronunciation":"yīqiān gè"},"ru":{"text":"тысяча","pronunciation":""}},"10000":{"ja":{"text":"一万","pronunciation":"いちまん / ichiman"},"ko-kr":{"text":"만","pronunciation":"man"},"ko-kp":{"text":"만","pronunciation":"man"},"zh":{"text":"一万个","pronunciation":"yīwàn gè"},"en":{"text":"ten thousand","pronunciation":"tɛn ˈθaʊzənd"},"zh-CN":{"text":"一万个","pronunciation":"yīwàn gè"},"zh-TW":{"text":"一万個","pronunciation":"yīwàn gè"},"ru":{"text":"десять тысяч","pronunciation":""}}}}
+{
+"entries": {
+"1": {
+"ja": {"text": "一つ", "pronunciation": "ひとつ / hitotsu"},
+"ko-kr": {"text": "하나", "pronunciation": "hana"},
+"ko-kp": {"text": "하나", "pronunciation": "hana"},
+"zh": {"text": "一", "pronunciation": "yī"},
+"en": {"text": "one", "pronunciation": "wʌn"},
+"zh-CN": {"text": "一", "pronunciation": "yī"},
+"zh-TW": {"text": "一", "pronunciation": "yī"},
+"ru": {"text": "один", "pronunciation": ""}
+},
+"2": {
+"ja": {"text": "二つ", "pronunciation": "ふたつ / futatsu"},
+"ko-kr": {"text": "둘", "pronunciation": "dul"},
+"ko-kp": {"text": "둘", "pronunciation": "dul"},
+"zh": {"text": "二", "pronunciation": "èr"},
+"en": {"text": "two", "pronunciation": "tuː"},
+"zh-CN": {"text": "二", "pronunciation": "èr"},
+"zh-TW": {"text": "二", "pronunciation": "èr"},
+"ru": {"text": "два", "pronunciation": ""}
+},
+"3": {
+"ja": {"text": "三つ", "pronunciation": "みっつ / mittsu"},
+"ko-kr": {"text": "셋", "pronunciation": "set"},
+"ko-kp": {"text": "셋", "pronunciation": "set"},
+"zh": {"text": "三", "pronunciation": "sān"},
+"en": {"text": "three", "pronunciation": "θriː"},
+"zh-CN": {"text": "三", "pronunciation": "sān"},
+"zh-TW": {"text": "三", "pronunciation": "sān"},
+"ru": {"text": "три", "pronunciation": ""}
+},
+"4": {
+"ja": {"text": "四つ", "pronunciation": "よっつ / yottsu"},
+"ko-kr": {"text": "넷", "pronunciation": "net"},
+"ko-kp": {"text": "넷", "pronunciation": "net"},
+"zh": {"text": "四", "pronunciation": "sì"},
+"en": {"text": "four", "pronunciation": "fɔːr"},
+"zh-CN": {"text": "四", "pronunciation": "sì"},
+"zh-TW": {"text": "四", "pronunciation": "sì"},
+"ru": {"text": "четыре", "pronunciation": ""}
+},
+"5": {
+"ja": {"text": "五つ", "pronunciation": "いつつ / itsutsu"},
+"ko-kr": {"text": "다섯", "pronunciation": "daseot"},
+"ko-kp": {"text": "다섯", "pronunciation": "daseot"},
+"zh": {"text": "五", "pronunciation": "wǔ"},
+"en": {"text": "five", "pronunciation": "faɪv"},
+"zh-CN": {"text": "五", "pronunciation": "wǔ"},
+"zh-TW": {"text": "五", "pronunciation": "wǔ"},
+"ru": {"text": "пять", "pronunciation": ""}
+},
+"6": {
+"ja": {"text": "六つ", "pronunciation": "むっつ / muttsu"},
+"ko-kr": {"text": "여섯", "pronunciation": "yeoseot"},
+"ko-kp": {"text": "여섯", "pronunciation": "yeoseot"},
+"zh": {"text": "六", "pronunciation": "liù"},
+"en": {"text": "six", "pronunciation": "sɪks"},
+"zh-CN": {"text": "六", "pronunciation": "liù"},
+"zh-TW": {"text": "六", "pronunciation": "liù"},
+"ru": {"text": "шесть", "pronunciation": ""}
+},
+"7": {
+"ja": {"text": "七つ", "pronunciation": "ななつ / nanatsu"},
+"ko-kr": {"text": "일곱", "pronunciation": "ilgop"},
+"ko-kp": {"text": "일곱", "pronunciation": "ilgop"},
+"zh": {"text": "七", "pronunciation": "qī"},
+"en": {"text": "seven", "pronunciation": "ˈsɛvən"},
+"zh-CN": {"text": "七", "pronunciation": "qī"},
+"zh-TW": {"text": "七", "pronunciation": "qī"},
+"ru": {"text": "семь", "pronunciation": ""}
+},
+"8": {
+"ja": {"text": "八つ", "pronunciation": "やっつ / yattsu"},
+"ko-kr": {"text": "여덟", "pronunciation": "yeodeol"},
+"ko-kp": {"text": "여덟", "pronunciation": "yeodeol"},
+"zh": {"text": "八", "pronunciation": "bā"},
+"en": {"text": "eight", "pronunciation": "eɪt"},
+"zh-CN": {"text": "八", "pronunciation": "bā"},
+"zh-TW": {"text": "八", "pronunciation": "bā"},
+"ru": {"text": "восемь", "pronunciation": ""}
+},
+"9": {
+"ja": {"text": "九つ", "pronunciation": "ここのつ / kokonotsu"},
+"ko-kr": {"text": "아홉", "pronunciation": "ahop"},
+"ko-kp": {"text": "아홉", "pronunciation": "ahop"},
+"zh": {"text": "九", "pronunciation": "jiǔ"},
+"en": {"text": "nine", "pronunciation": "naɪn"},
+"zh-CN": {"text": "九", "pronunciation": "jiǔ"},
+"zh-TW": {"text": "九", "pronunciation": "jiǔ"},
+"ru": {"text": "девять", "pronunciation": ""}
+},
+"10": {
+"ja": {"text": "十", "pronunciation": "じゅう / juu"},
+"ko-kr": {"text": "열", "pronunciation": "yeol"},
+"ko-kp": {"text": "열", "pronunciation": "yeol"},
+"zh": {"text": "十", "pronunciation": "shí"},
+"en": {"text": "ten", "pronunciation": "tɛn"},
+"zh-CN": {"text": "十", "pronunciation": "shí"},
+"zh-TW": {"text": "十", "pronunciation": "shí"},
+"ru": {"text": "десять", "pronunciation": ""}
+},
+"11": {
+"ja": {"text": "十一", "pronunciation": "じゅういち / juuichi"},
+"ko-kr": {"text": "열하나", "pronunciation": "yeolhana"},
+"ko-kp": {"text": "열하나", "pronunciation": "yeolhana"},
+"zh": {"text": "十一", "pronunciation": "shíyī"},
+"en": {"text": "eleven", "pronunciation": "ɪˈlɛvən"},
+"zh-CN": {"text": "十一", "pronunciation": "shíyī"},
+"zh-TW": {"text": "十一", "pronunciation": "shíyī"},
+"ru": {"text": "одиннадцать", "pronunciation": ""}
+},
+"12": {
+"ja": {"text": "十二", "pronunciation": "じゅうに / juuni"},
+"ko-kr": {"text": "열둘", "pronunciation": "yeoldul"},
+"ko-kp": {"text": "열둘", "pronunciation": "yeoldul"},
+"zh": {"text": "十二", "pronunciation": "shí'èr"},
+"en": {"text": "twelve", "pronunciation": "twɛlv"},
+"zh-CN": {"text": "十二", "pronunciation": "shí'èr"},
+"zh-TW": {"text": "十二", "pronunciation": "shí'èr"},
+"ru": {"text": "двенадцать", "pronunciation": ""}
+},
+"13": {
+"ja": {"text": "十三", "pronunciation": "じゅうさん / juusan"},
+"ko-kr": {"text": "열셋", "pronunciation": "yeolset"},
+"ko-kp": {"text": "열셋", "pronunciation": "yeolset"},
+"zh": {"text": "十三", "pronunciation": "shísān"},
+"en": {"text": "thirteen", "pronunciation": "θɜːrˈtiːn"},
+"zh-CN": {"text": "十三", "pronunciation": "shísān"},
+"zh-TW": {"text": "十三", "pronunciation": "shísān"},
+"ru": {"text": "тринадцать", "pronunciation": ""}
+},
+"14": {
+"ja": {"text": "十四", "pronunciation": "じゅうよん / juuyon"},
+"ko-kr": {"text": "열넷", "pronunciation": "yeolnet"},
+"ko-kp": {"text": "열넷", "pronunciation": "yeolnet"},
+"zh": {"text": "十四", "pronunciation": "shísì"},
+"en": {"text": "fourteen", "pronunciation": "fɔːrˈtiːn"},
+"zh-CN": {"text": "十四", "pronunciation": "shísì"},
+"zh-TW": {"text": "十四", "pronunciation": "shísì"},
+"ru": {"text": "четырнадцать", "pronunciation": ""}
+},
+"15": {
+"ja": {"text": "十五", "pronunciation": "じゅうご / juugo"},
+"ko-kr": {"text": "열다섯", "pronunciation": "yeoldaseot"},
+"ko-kp": {"text": "열다섯", "pronunciation": "yeoldaseot"},
+"zh": {"text": "十五", "pronunciation": "shíwǔ"},
+"en": {"text": "fifteen", "pronunciation": "fɪfˈtiːn"},
+"zh-CN": {"text": "十五", "pronunciation": "shíwǔ"},
+"zh-TW": {"text": "十五", "pronunciation": "shíwǔ"},
+"ru": {"text": "пятнадцать", "pronunciation": ""}
+},
+"20": {
+"ja": {"text": "二十", "pronunciation": "にじゅう / nijuu"},
+"ko-kr": {"text": "스물", "pronunciation": "seumul"},
+"ko-kp": {"text": "스물", "pronunciation": "seumul"},
+"zh": {"text": "二十", "pronunciation": "èrshí"},
+"en": {"text": "twenty", "pronunciation": "ˈtwɛnti"},
+"zh-CN": {"text": "二十", "pronunciation": "èrshí"},
+"zh-TW": {"text": "二十", "pronunciation": "èrshí"},
+"ru": {"text": "двадцать", "pronunciation": ""}
+},
+"30": {
+"ja": {"text": "三十", "pronunciation": "さんじゅう / sanjuu"},
+"ko-kr": {"text": "서른", "pronunciation": "seoreun"},
+"ko-kp": {"text": "서른", "pronunciation": "seoreun"},
+"zh": {"text": "三十", "pronunciation": "sānshí"},
+"en": {"text": "thirty", "pronunciation": "ˈθɜːrti"},
+"zh-CN": {"text": "三十", "pronunciation": "sānshí"},
+"zh-TW": {"text": "三十", "pronunciation": "sānshí"},
+"ru": {"text": "тридцать", "pronunciation": ""}
+},
+"40": {
+"ja": {"text": "四十", "pronunciation": "よんじゅう / yonjuu"},
+"ko-kr": {"text": "마흔", "pronunciation": "maheun"},
+"ko-kp": {"text": "마흔", "pronunciation": "maheun"},
+"zh": {"text": "四十", "pronunciation": "sìshí"},
+"en": {"text": "forty", "pronunciation": "ˈfɔːrti"},
+"zh-CN": {"text": "四十", "pronunciation": "sìshí"},
+"zh-TW": {"text": "四十", "pronunciation": "sìshí"},
+"ru": {"text": "сорок", "pronunciation": ""}
+},
+"50": {
+"ja": {"text": "五十", "pronunciation": "ごじゅう / gojuu"},
+"ko-kr": {"text": "쉰", "pronunciation": "swin"},
+"ko-kp": {"text": "쉰", "pronunciation": "swin"},
+"zh": {"text": "五十", "pronunciation": "wǔshí"},
+"en": {"text": "fifty", "pronunciation": "ˈfɪfti"},
+"zh-CN": {"text": "五十", "pronunciation": "wǔshí"},
+"zh-TW": {"text": "五十", "pronunciation": "wǔshí"},
+"ru": {"text": "пятьдесят", "pronunciation": ""}
+},
+"60": {
+"ja": {"text": "六十", "pronunciation": "ろくじゅう / rokujuu"},
+"ko-kr": {"text": "예순", "pronunciation": "yesun"},
+"ko-kp": {"text": "예순", "pronunciation": "yesun"},
+"zh": {"text": "六十", "pronunciation": "liùshí"},
+"en": {"text": "sixty", "pronunciation": "ˈsɪksti"},
+"zh-CN": {"text": "六十", "pronunciation": "liùshí"},
+"zh-TW": {"text": "六十", "pronunciation": "liùshí"},
+"ru": {"text": "шестьдесят", "pronunciation": ""}
+},
+"70": {
+"ja": {"text": "七十", "pronunciation": "ななじゅう / nanajuu"},
+"ko-kr": {"text": "일흔", "pronunciation": "ilheun"},
+"ko-kp": {"text": "일흔", "pronunciation": "ilheun"},
+"zh": {"text": "七十", "pronunciation": "qīshí"},
+"en": {"text": "seventy", "pronunciation": "ˈsɛvənti"},
+"zh-CN": {"text": "七十", "pronunciation": "qīshí"},
+"zh-TW": {"text": "七十", "pronunciation": "qīshí"},
+"ru": {"text": "семьдесят", "pronunciation": ""}
+},
+"80": {
+"ja": {"text": "八十", "pronunciation": "はちじゅう / hachijuu"},
+"ko-kr": {"text": "여든", "pronunciation": "yeodeun"},
+"ko-kp": {"text": "여든", "pronunciation": "yeodeun"},
+"zh": {"text": "八十", "pronunciation": "bāshí"},
+"en": {"text": "eighty", "pronunciation": "ˈeɪti"},
+"zh-CN": {"text": "八十", "pronunciation": "bāshí"},
+"zh-TW": {"text": "八十", "pronunciation": "bāshí"},
+"ru": {"text": "восемьдесят", "pronunciation": ""}
+},
+"90": {
+"ja": {"text": "九十", "pronunciation": "きゅうじゅう / kyuujuu"},
+"ko-kr": {"text": "아흔", "pronunciation": "aheun"},
+"ko-kp": {"text": "아흔", "pronunciation": "aheun"},
+"zh": {"text": "九十", "pronunciation": "jiǔshí"},
+"en": {"text": "ninety", "pronunciation": "ˈnaɪnti"},
+"zh-CN": {"text": "九十", "pronunciation": "jiǔshí"},
+"zh-TW": {"text": "九十", "pronunciation": "jiǔshí"},
+"ru": {"text": "девяносто", "pronunciation": ""}
+},
+"100": {
+"ja": {"text": "百", "pronunciation": "ひゃく / hyaku"},
+"ko-kr": {"text": "백", "pronunciation": "baek"},
+"ko-kp": {"text": "백", "pronunciation": "baek"},
+"zh": {"text": "一百", "pronunciation": "yībǎi"},
+"en": {"text": "hundred", "pronunciation": "ˈhʌndrəd"},
+"zh-CN": {"text": "一百", "pronunciation": "yībǎi"},
+"zh-TW": {"text": "一百", "pronunciation": "yībǎi"},
+"ru": {"text": "сто", "pronunciation": ""}
+},
+"1000": {
+"ja": {"text": "千", "pronunciation": "せん / sen"},
+"ko-kr": {"text": "천", "pronunciation": "cheon"},
+"ko-kp": {"text": "천", "pronunciation": "cheon"},
+"zh": {"text": "一千", "pronunciation": "yīqiān"},
+"en": {"text": "thousand", "pronunciation": "ˈθaʊzənd"},
+"zh-CN": {"text": "一千", "pronunciation": "yīqiān"},
+"zh-TW": {"text": "一千", "pronunciation": "yīqiān"},
+"ru": {"text": "тысяча", "pronunciation": ""}
+},
+"10000": {
+"ja": {"text": "一万", "pronunciation": "いちまん / ichiman"},
+"ko-kr": {"text": "만", "pronunciation": "man"},
+"ko-kp": {"text": "만", "pronunciation": "man"},
+"zh": {"text": "一万", "pronunciation": "yīwàn"},
+"en": {"text": "ten thousand", "pronunciation": "tɛn ˈθaʊzənd"},
+"zh-CN": {"text": "一万", "pronunciation": "yīwàn"},
+"zh-TW": {"text": "一萬", "pronunciation": "yīwàn"},
+"ru": {"text": "десять тысяч", "pronunciation": ""}
+}
+}
+}

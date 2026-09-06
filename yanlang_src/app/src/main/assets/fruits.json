@@ -1,1 +1,684 @@
-{"entries":{"apple":{"ja":{"text":"りんご","pronunciation":"りんご / ringo"},"ko-kr":{"text":"사과","pronunciation":"sagwa"},"ko-kp":{"text":"사과","pronunciation":"sagwa"},"zh":{"text":"苹果","pronunciation":"píngguǒ"},"en":{"text":"apple","pronunciation":"ˈæpəl"},"zh-CN":{"text":"苹果","pronunciation":"píngguǒ"},"zh-TW":{"text":"苹果","pronunciation":"píngguǒ"},"ru":{"text":"яблоко","pronunciation":""}},"banana":{"ja":{"text":"バナナ","pronunciation":"バナナ / banana"},"ko-kr":{"text":"바나나","pronunciation":"banana"},"ko-kp":{"text":"바나나","pronunciation":"banana"},"zh":{"text":"香蕉","pronunciation":"xiāngjiāo"},"en":{"text":"banana","pronunciation":"bəˈnænə"},"zh-CN":{"text":"香蕉","pronunciation":"xiāngjiāo"},"zh-TW":{"text":"香蕉","pronunciation":"xiāngjiāo"},"ru":{"text":"банан","pronunciation":""}},"orange":{"ja":{"text":"オレンジ","pronunciation":"オレンジ / orenji"},"ko-kr":{"text":"오렌지","pronunciation":"orenji"},"ko-kp":{"text":"오렌지","pronunciation":"orenji"},"zh":{"text":"橙子","pronunciation":"chéngzi"},"en":{"text":"orange","pronunciation":"ˈɔrɪndʒ"},"zh-CN":{"text":"橙子","pronunciation":"chéngzi"},"zh-TW":{"text":"橙子","pronunciation":"chéngzi"},"ru":{"text":"апельсин","pronunciation":""}},"grape":{"ja":{"text":"ぶどう","pronunciation":"ぶどう / budou"},"ko-kr":{"text":"포도","pronunciation":"podo"},"ko-kp":{"text":"포도","pronunciation":"podo"},"zh":{"text":"葡萄","pronunciation":"pútáo"},"en":{"text":"grape","pronunciation":"ɡreɪp"},"zh-CN":{"text":"葡萄","pronunciation":"pútáo"},"zh-TW":{"text":"葡萄","pronunciation":"pútáo"},"ru":{"text":"виноград","pronunciation":""}},"strawberry":{"ja":{"text":"いちご","pronunciation":"いちご / ichigo"},"ko-kr":{"text":"딸기","pronunciation":"ttalgi"},"ko-kp":{"text":"딸기","pronunciation":"ttalgi"},"zh":{"text":"草莓","pronunciation":"cǎoméi"},"en":{"text":"strawberry","pronunciation":"ˈstrɔːberi"},"zh-CN":{"text":"草莓","pronunciation":"cǎoméi"},"zh-TW":{"text":"草莓","pronunciation":"cǎoméi"},"ru":{"text":"клубника","pronunciation":""}},"watermelon":{"ja":{"text":"すいか","pronunciation":"すいか / suika"},"ko-kr":{"text":"수박","pronunciation":"subak"},"ko-kp":{"text":"수박","pronunciation":"subak"},"zh":{"text":"西瓜","pronunciation":"xīguā"},"en":{"text":"watermelon","pronunciation":"ˈwɔːtərmɛlən"},"zh-CN":{"text":"西瓜","pronunciation":"xīguā"},"zh-TW":{"text":"西瓜","pronunciation":"xīguā"},"ru":{"text":"арбуз","pronunciation":""}},"peach":{"ja":{"text":"もも","pronunciation":"もも / momo"},"ko-kr":{"text":"복숭아","pronunciation":"boksunga"},"ko-kp":{"text":"복숭아","pronunciation":"boksunga"},"zh":{"text":"桃子","pronunciation":"táozi"},"en":{"text":"peach","pronunciation":"piːtʃ"},"zh-CN":{"text":"桃子","pronunciation":"táozi"},"zh-TW":{"text":"桃子","pronunciation":"táozi"},"ru":{"text":"персик","pronunciation":""}},"pear":{"ja":{"text":"なし","pronunciation":"なし / nashi"},"ko-kr":{"text":"배","pronunciation":"bae"},"ko-kp":{"text":"배","pronunciation":"bae"},"zh":{"text":"梨","pronunciation":"lí"},"en":{"text":"pear","pronunciation":"pɛər"},"zh-CN":{"text":"梨","pronunciation":"lí"},"zh-TW":{"text":"梨","pronunciation":"lí"},"ru":{"text":"груша","pronunciation":""}},"mango":{"ja":{"text":"マンゴー","pronunciation":"マンゴー / mangoo"},"ko-kr":{"text":"망고","pronunciation":"manggo"},"ko-kp":{"text":"망고","pronunciation":"manggo"},"zh":{"text":"芒果","pronunciation":"mángguǒ"},"en":{"text":"mango","pronunciation":"ˈmæŋɡoʊ"},"zh-CN":{"text":"芒果","pronunciation":"mángguǒ"},"zh-TW":{"text":"芒果","pronunciation":"mángguǒ"},"ru":{"text":"манго","pronunciation":""}},"pineapple":{"ja":{"text":"パイナップル","pronunciation":"パイナップル / painappuru"},"ko-kr":{"text":"파인애플","pronunciation":"painaepeul"},"ko-kp":{"text":"파인애플","pronunciation":"painaepeul"},"zh":{"text":"菠萝","pronunciation":"bōluó"},"en":{"text":"pineapple","pronunciation":"ˈpaɪnæpəl"},"zh-CN":{"text":"菠萝","pronunciation":"bōluó"},"zh-TW":{"text":"菠萝","pronunciation":"bōluó"},"ru":{"text":"ананас","pronunciation":""}},"cherry":{"ja":{"text":"さくらんぼ","pronunciation":"さくらんぼ / sakuranbo"},"ko-kr":{"text":"체리","pronunciation":"cheri"},"ko-kp":{"text":"체리","pronunciation":"cheri"},"zh":{"text":"樱桃","pronunciation":"yīngtáo"},"en":{"text":"cherry","pronunciation":"ˈtʃɛri"},"zh-CN":{"text":"樱桃","pronunciation":"yīngtáo"},"zh-TW":{"text":"樱桃","pronunciation":"yīngtáo"},"ru":{"text":"вишня","pronunciation":""}},"kiwi":{"ja":{"text":"キウイ","pronunciation":"キウイ / kiiui"},"ko-kr":{"text":"키위","pronunciation":"kiwi"},"ko-kp":{"text":"키위","pronunciation":"kiwi"},"zh":{"text":"猕猴桃","pronunciation":"míhóutáo"},"en":{"text":"kiwi","pronunciation":"ˈkiːwiː"},"zh-CN":{"text":"猕猴桃","pronunciation":"míhóutáo"},"zh-TW":{"text":"猕猴桃","pronunciation":"míhóutáo"},"ru":{"text":"киви","pronunciation":""}},"grapefruit":{"ja":{"text":"グレープフルーツ","pronunciation":"グレープフルーツ / gurēpufurūtsu"},"ko-kr":{"text":"자몽","pronunciation":"jamong"},"ko-kp":{"text":"자몽","pronunciation":"jamong"},"zh":{"text":"葡萄柚","pronunciation":"pútáoyòu"},"en":{"text":"grapefruit","pronunciation":"ˈɡreɪpfruːt"},"zh-CN":{"text":"葡萄柚","pronunciation":"pútáoyòu"},"zh-TW":{"text":"葡萄柚","pronunciation":"pútáoyòu"},"ru":{"text":"грейпфрут","pronunciation":""}},"blueberry":{"ja":{"text":"ブルーベリー","pronunciation":"ブルーベリー / burīberī"},"ko-kr":{"text":"블루베리","pronunciation":"beulluberi"},"ko-kp":{"text":"블루베리","pronunciation":"beulluberi"},"zh":{"text":"蓝莓","pronunciation":"lánméi"},"en":{"text":"blueberry","pronunciation":"ˈbluːbɛri"},"zh-CN":{"text":"蓝莓","pronunciation":"lánméi"},"zh-TW":{"text":"藍莓","pronunciation":"lánméi"},"ru":{"text":"черника","pronunciation":""}},"lemon":{"ja":{"text":"レモン","pronunciation":"レモン / remon"},"ko-kr":{"text":"레몬","pronunciation":"remon"},"ko-kp":{"text":"레몬","pronunciation":"remon"},"zh":{"text":"柠檬","pronunciation":"níngméng"},"en":{"text":"lemon","pronunciation":"ˈlɛmən"},"zh-CN":{"text":"柠檬","pronunciation":"níngméng"},"zh-TW":{"text":"柠檬","pronunciation":"níngméng"},"ru":{"text":"лимон","pronunciation":""}},"lime":{"ja":{"text":"ライム","pronunciation":"ライ姆 / raimu"},"ko-kr":{"text":"라임","pronunciation":"raim"},"ko-kp":{"text":"라임","pronunciation":"raim"},"zh":{"text":"青柠","pronunciation":"qīngníng"},"en":{"text":"lime","pronunciation":"laɪm"},"zh-CN":{"text":"青柠","pronunciation":"qīngníng"},"zh-TW":{"text":"青柠","pronunciation":"qīngníng"},"ru":{"text":"лайм","pronunciation":""}},"pomegranate":{"ja":{"text":"ざくろ","pronunciation":"ざくろ / zakuro"},"ko-kr":{"text":"석류","pronunciation":"seongnyu"},"ko-kp":{"text":"석류","pronunciation":"seongnyu"},"zh":{"text":"石榴","pronunciation":"shíliú"},"en":{"text":"pomegranate","pronunciation":"ˈpɒmɪɡrænɪt"},"zh-CN":{"text":"石榴","pronunciation":"shíliú"},"zh-TW":{"text":"石榴","pronunciation":"shíliú"},"ru":{"text":"гранат","pronunciation":""}},"fig":{"ja":{"text":"いちじく","pronunciation":"いちじく / ichijiku"},"ko-kr":{"text":"무화과","pronunciation":"muhwagwa"},"ko-kp":{"text":"무화과","pronunciation":"muhwagwa"},"zh":{"text":"无花果","pronunciation":"wúhuāguǒ"},"en":{"text":"fig","pronunciation":"fɪɡ"},"zh-CN":{"text":"无花果","pronunciation":"wúhuāguǒ"},"zh-TW":{"text":"無花果","pronunciation":"wúhuāguǒ"},"ru":{"text":"инжир","pronunciation":""}},"dragonfruit":{"ja":{"text":"ドラゴンフルーツ","pronunciation":"ドラゴンフルーツ / doragonfurūtsu"},"ko-kr":{"text":"용과","pronunciation":"yonggwa"},"ko-kp":{"text":"용과","pronunciation":"yonggwa"},"zh":{"text":"火龙果","pronunciation":"huǒlóngguǒ"},"en":{"text":"dragonfruit","pronunciation":"ˈdræɡənfruːt"},"zh-CN":{"text":"火龙果","pronunciation":"huǒlóngguǒ"},"zh-TW":{"text":"火龙果","pronunciation":"huǒlóngguǒ"},"ru":{"text":"питахайя","pronunciation":""}},"avocado":{"ja":{"text":"アボカド","pronunciation":"アボカド / abokado"},"ko-kr":{"text":"아보카도","pronunciation":"abokado"},"ko-kp":{"text":"아보카도","pronunciation":"abokado"},"zh":{"text":"牛油果","pronunciation":"niúyóuguǒ"},"en":{"text":"avocado","pronunciation":"ˌævəˈkɑːdoʊ"},"zh-CN":{"text":"牛油果","pronunciation":"niúyóuguǒ"},"zh-TW":{"text":"牛油果","pronunciation":"niúyóuguǒ"},"ru":{"text":"авокадо","pronunciation":""}}}}
+{
+"entries": {
+"apple": {
+"ja": {
+"text": "りんご",
+"pronunciation": "りんご / ringo"
+},
+"ko-kr": {
+"text": "사과",
+"pronunciation": "sagwa"
+},
+"ko-kp": {
+"text": "사과",
+"pronunciation": "sagwa"
+},
+"zh": {
+"text": "苹果",
+"pronunciation": "píngguǒ"
+},
+"en": {
+"text": "apple",
+"pronunciation": "ˈæpəl"
+},
+"zh-CN": {
+"text": "苹果",
+"pronunciation": "píngguǒ"
+},
+"zh-TW": {
+"text": "蘋果",
+"pronunciation": "píngguǒ"
+},
+"ru": {
+"text": "яблоко",
+"pronunciation": "ˈjabləkə"
+}
+},
+"banana": {
+"ja": {
+"text": "バナナ",
+"pronunciation": "バナナ / banana"
+},
+"ko-kr": {
+"text": "바나나",
+"pronunciation": "banana"
+},
+"ko-kp": {
+"text": "바나나",
+"pronunciation": "banana"
+},
+"zh": {
+"text": "香蕉",
+"pronunciation": "xiāngjiāo"
+},
+"en": {
+"text": "banana",
+"pronunciation": "bəˈnænə"
+},
+"zh-CN": {
+"text": "香蕉",
+"pronunciation": "xiāngjiāo"
+},
+"zh-TW": {
+"text": "香蕉",
+"pronunciation": "xiāngjiāo"
+},
+"ru": {
+"text": "банан",
+"pronunciation": "bəˈnan"
+}
+},
+"orange": {
+"ja": {
+"text": "オレンジ",
+"pronunciation": "オレンジ / orenji"
+},
+"ko-kr": {
+"text": "오렌지",
+"pronunciation": "orenji"
+},
+"ko-kp": {
+"text": "귤",
+"pronunciation": "gyul"
+},
+"zh": {
+"text": "橙子",
+"pronunciation": "chéngzi"
+},
+"en": {
+"text": "orange",
+"pronunciation": "ˈɔːrɪndʒ"
+},
+"zh-CN": {
+"text": "橙子",
+"pronunciation": "chéngzi"
+},
+"zh-TW": {
+"text": "柳橙",
+"pronunciation": "liǔchéng"
+},
+"ru": {
+"text": "апельсин",
+"pronunciation": "ɐpʲɪlʲˈsʲin"
+}
+},
+"grape": {
+"ja": {
+"text": "ぶどう",
+"pronunciation": "ぶどう / budō"
+},
+"ko-kr": {
+"text": "포도",
+"pronunciation": "podo"
+},
+"ko-kp": {
+"text": "포도",
+"pronunciation": "podo"
+},
+"zh": {
+"text": "葡萄",
+"pronunciation": "pútáo"
+},
+"en": {
+"text": "grape",
+"pronunciation": "ɡreɪp"
+},
+"zh-CN": {
+"text": "葡萄",
+"pronunciation": "pútáo"
+},
+"zh-TW": {
+"text": "葡萄",
+"pronunciation": "pútáo"
+},
+"ru": {
+"text": "виноград",
+"pronunciation": "vʲɪnɐˈɡrat"
+}
+},
+"strawberry": {
+"ja": {
+"text": "いちご",
+"pronunciation": "いちご / ichigo"
+},
+"ko-kr": {
+"text": "딸기",
+"pronunciation": "ttalgi"
+},
+"ko-kp": {
+"text": "딸기",
+"pronunciation": "ttalgi"
+},
+"zh": {
+"text": "草莓",
+"pronunciation": "cǎoméi"
+},
+"en": {
+"text": "strawberry",
+"pronunciation": "ˈstrɔːbəri"
+},
+"zh-CN": {
+"text": "草莓",
+"pronunciation": "cǎoméi"
+},
+"zh-TW": {
+"text": "草莓",
+"pronunciation": "cǎoméi"
+},
+"ru": {
+"text": "клубника",
+"pronunciation": "klubˈnʲikə"
+}
+},
+"watermelon": {
+"ja": {
+"text": "すいか",
+"pronunciation": "すいか / suika"
+},
+"ko-kr": {
+"text": "수박",
+"pronunciation": "subak"
+},
+"ko-kp": {
+"text": "수박",
+"pronunciation": "subak"
+},
+"zh": {
+"text": "西瓜",
+"pronunciation": "xīguā"
+},
+"en": {
+"text": "watermelon",
+"pronunciation": "ˈwɔːtərˌmɛlən"
+},
+"zh-CN": {
+"text": "西瓜",
+"pronunciation": "xīguā"
+},
+"zh-TW": {
+"text": "西瓜",
+"pronunciation": "xīguā"
+},
+"ru": {
+"text": "арбуз",
+"pronunciation": "ɐrˈbus"
+}
+},
+"peach": {
+"ja": {
+"text": "もも",
+"pronunciation": "もも / momo"
+},
+"ko-kr": {
+"text": "복숭아",
+"pronunciation": "boksunga"
+},
+"ko-kp": {
+"text": "복숭아",
+"pronunciation": "boksunga"
+},
+"zh": {
+"text": "桃子",
+"pronunciation": "táozi"
+},
+"en": {
+"text": "peach",
+"pronunciation": "piːtʃ"
+},
+"zh-CN": {
+"text": "桃子",
+"pronunciation": "táozi"
+},
+"zh-TW": {
+"text": "桃子",
+"pronunciation": "táozi"
+},
+"ru": {
+"text": "персик",
+"pronunciation": "ˈpʲersʲɪk"
+}
+},
+"pear": {
+"ja": {
+"text": "なし",
+"pronunciation": "なし / nashi"
+},
+"ko-kr": {
+"text": "배",
+"pronunciation": "bae"
+},
+"ko-kp": {
+"text": "배",
+"pronunciation": "pae"
+},
+"zh": {
+"text": "梨",
+"pronunciation": "lí"
+},
+"en": {
+"text": "pear",
+"pronunciation": "pɛər"
+},
+"zh-CN": {
+"text": "梨",
+"pronunciation": "lí"
+},
+"zh-TW": {
+"text": "梨",
+"pronunciation": "lí"
+},
+"ru": {
+"text": "груша",
+"pronunciation": "ˈɡruʂə"
+}
+},
+"mango": {
+"ja": {
+"text": "マンゴー",
+"pronunciation": "マンゴー / mangō"
+},
+"ko-kr": {
+"text": "망고",
+"pronunciation": "manggo"
+},
+"ko-kp": {
+"text": "망고",
+"pronunciation": "manggo"
+},
+"zh": {
+"text": "芒果",
+"pronunciation": "mángguǒ"
+},
+"en": {
+"text": "mango",
+"pronunciation": "ˈmæŋɡoʊ"
+},
+"zh-CN": {
+"text": "芒果",
+"pronunciation": "mángguǒ"
+},
+"zh-TW": {
+"text": "芒果",
+"pronunciation": "mángguǒ"
+},
+"ru": {
+"text": "манго",
+"pronunciation": "ˈmanɡə"
+}
+},
+"pineapple": {
+"ja": {
+"text": "パイナップル",
+"pronunciation": "パイナップル / painappuru"
+},
+"ko-kr": {
+"text": "파인애플",
+"pronunciation": "painaepeul"
+},
+"ko-kp": {
+"text": "파인애플",
+"pronunciation": "painaepeul"
+},
+"zh": {
+"text": "菠萝",
+"pronunciation": "bōluó"
+},
+"en": {
+"text": "pineapple",
+"pronunciation": "ˈpaɪnæpəl"
+},
+"zh-CN": {
+"text": "菠萝",
+"pronunciation": "bōluó"
+},
+"zh-TW": {
+"text": "鳳梨",
+"pronunciation": "fènglí"
+},
+"ru": {
+"text": "ананас",
+"pronunciation": "ɐnɐˈnas"
+}
+},
+"cherry": {
+"ja": {
+"text": "さくらんぼ",
+"pronunciation": "さくらんぼ / sakuranbo"
+},
+"ko-kr": {
+"text": "체리",
+"pronunciation": "cheri"
+},
+"ko-kp": {
+"text": "체리",
+"pronunciation": "cheri"
+},
+"zh": {
+"text": "樱桃",
+"pronunciation": "yīngtáo"
+},
+"en": {
+"text": "cherry",
+"pronunciation": "ˈtʃɛri"
+},
+"zh-CN": {
+"text": "樱桃",
+"pronunciation": "yīngtáo"
+},
+"zh-TW": {
+"text": "櫻桃",
+"pronunciation": "yīngtáo"
+},
+"ru": {
+"text": "вишня",
+"pronunciation": "ˈvʲiʂnʲə"
+}
+},
+"kiwi": {
+"ja": {
+"text": "キウイ",
+"pronunciation": "キウイ / kiui"
+},
+"ko-kr": {
+"text": "키위",
+"pronunciation": "kiwi"
+},
+"ko-kp": {
+"text": "키위",
+"pronunciation": "kiwi"
+},
+"zh": {
+"text": "猕猴桃",
+"pronunciation": "míhóutáo"
+},
+"en": {
+"text": "kiwi",
+"pronunciation": "ˈkiːwiː"
+},
+"zh-CN": {
+"text": "猕猴桃",
+"pronunciation": "míhóutáo"
+},
+"zh-TW": {
+"text": "奇異果",
+"pronunciation": "qíyìguǒ"
+},
+"ru": {
+"text": "киви",
+"pronunciation": "ˈkʲivʲi"
+}
+},
+"grapefruit": {
+"ja": {
+"text": "グレープフルーツ",
+"pronunciation": "グレープフルーツ / gurēpufurūtsu"
+},
+"ko-kr": {
+"text": "자몽",
+"pronunciation": "jamong"
+},
+"ko-kp": {
+"text": "자몽",
+"pronunciation": "jamong"
+},
+"zh": {
+"text": "葡萄柚",
+"pronunciation": "pútáoyòu"
+},
+"en": {
+"text": "grapefruit",
+"pronunciation": "ˈɡreɪpfruːt"
+},
+"zh-CN": {
+"text": "葡萄柚",
+"pronunciation": "pútáoyòu"
+},
+"zh-TW": {
+"text": "葡萄柚",
+"pronunciation": "pútáoyòu"
+},
+"ru": {
+"text": "грейпфрут",
+"pronunciation": "ɡrʲɪjˈfrut"
+}
+},
+"blueberry": {
+"ja": {
+"text": "ブルーベリー",
+"pronunciation": "ブルーベリー / burūberī"
+},
+"ko-kr": {
+"text": "블루베리",
+"pronunciation": "beulluberi"
+},
+"ko-kp": {
+"text": "블루베리",
+"pronunciation": "beulluberi"
+},
+"zh": {
+"text": "蓝莓",
+"pronunciation": "lánméi"
+},
+"en": {
+"text": "blueberry",
+"pronunciation": "ˈbluːbɛri"
+},
+"zh-CN": {
+"text": "蓝莓",
+"pronunciation": "lánméi"
+},
+"zh-TW": {
+"text": "藍莓",
+"pronunciation": "lánméi"
+},
+"ru": {
+"text": "голубика",
+"pronunciation": "ɡɐlʊˈbʲikə"
+}
+},
+"lemon": {
+"ja": {
+"text": "レモン",
+"pronunciation": "レモン / remon"
+},
+"ko-kr": {
+"text": "레몬",
+"pronunciation": "remon"
+},
+"ko-kp": {
+"text": "레몬",
+"pronunciation": "remon"
+},
+"zh": {
+"text": "柠檬",
+"pronunciation": "níngméng"
+},
+"en": {
+"text": "lemon",
+"pronunciation": "ˈlɛmən"
+},
+"zh-CN": {
+"text": "柠檬",
+"pronunciation": "níngméng"
+},
+"zh-TW": {
+"text": "檸檬",
+"pronunciation": "níngméng"
+},
+"ru": {
+"text": "лимон",
+"pronunciation": "lʲɪˈmon"
+}
+},
+"lime": {
+"ja": {
+"text": "ライム",
+"pronunciation": "ライム / raimu"
+},
+"ko-kr": {
+"text": "라임",
+"pronunciation": "raim"
+},
+"ko-kp": {
+"text": "라임",
+"pronunciation": "raim"
+},
+"zh": {
+"text": "青柠",
+"pronunciation": "qīngníng"
+},
+"en": {
+"text": "lime",
+"pronunciation": "laɪm"
+},
+"zh-CN": {
+"text": "青柠",
+"pronunciation": "qīngníng"
+},
+"zh-TW": {
+"text": "萊姆",
+"pronunciation": "láimǔ"
+},
+"ru": {
+"text": "лайм",
+"pronunciation": "lajm"
+}
+},
+"pomegranate": {
+"ja": {
+"text": "ざくろ",
+"pronunciation": "ざくろ / zakuro"
+},
+"ko-kr": {
+"text": "석류",
+"pronunciation": "seongnyu"
+},
+"ko-kp": {
+"text": "석류",
+"pronunciation": "seongnyu"
+},
+"zh": {
+"text": "石榴",
+"pronunciation": "shíliú"
+},
+"en": {
+"text": "pomegranate",
+"pronunciation": "ˈpɒmɪɡrænɪt"
+},
+"zh-CN": {
+"text": "石榴",
+"pronunciation": "shíliú"
+},
+"zh-TW": {
+"text": "石榴",
+"pronunciation": "shíliú"
+},
+"ru": {
+"text": "гранат",
+"pronunciation": "ɡrɐˈnat"
+}
+},
+"fig": {
+"ja": {
+"text": "いちじく",
+"pronunciation": "いちじく / ichijiku"
+},
+"ko-kr": {
+"text": "무화과",
+"pronunciation": "muhwaga"
+},
+"ko-kp": {
+"text": "무화과",
+"pronunciation": "muhwaga"
+},
+"zh": {
+"text": "无花果",
+"pronunciation": "wúhuāguǒ"
+},
+"en": {
+"text": "fig",
+"pronunciation": "fɪɡ"
+},
+"zh-CN": {
+"text": "无花果",
+"pronunciation": "wúhuāguǒ"
+},
+"zh-TW": {
+"text": "無花果",
+"pronunciation": "wúhuāguǒ"
+},
+"ru": {
+"text": "инжир",
+"pronunciation": "inˈʐir"
+}
+},
+"dragonfruit": {
+"ja": {
+"text": "ドラゴンフルーツ",
+"pronunciation": "ドラゴンフルーツ / doragonfurūtsu"
+},
+"ko-kr": {
+"text": "용과",
+"pronunciation": "yonggwa"
+},
+"ko-kp": {
+"text": "용과",
+"pronunciation": "yonggwa"
+},
+"zh": {
+"text": "火龙果",
+"pronunciation": "huǒlóngguǒ"
+},
+"en": {
+"text": "dragon fruit",
+"pronunciation": "ˈdræɡən fruːt"
+},
+"zh-CN": {
+"text": "火龙果",
+"pronunciation": "huǒlóngguǒ"
+},
+"zh-TW": {
+"text": "火龍果",
+"pronunciation": "huǒlóngguǒ"
+},
+"ru": {
+"text": "питахайя",
+"pronunciation": "pʲɪtɐˈxajjə"
+}
+},
+"avocado": {
+"ja": {
+"text": "アボカド",
+"pronunciation": "アボカド / abokado"
+},
+"ko-kr": {
+"text": "아보카도",
+"pronunciation": "abokado"
+},
+"ko-kp": {
+"text": "아보카도",
+"pronunciation": "abokado"
+},
+"zh": {
+"text": "牛油果",
+"pronunciation": "niúyóuguǒ"
+},
+"en": {
+"text": "avocado",
+"pronunciation": "ˌævəˈkɑːdoʊ"
+},
+"zh-CN": {
+"text": "牛油果",
+"pronunciation": "niúyóuguǒ"
+},
+"zh-TW": {
+"text": "酪梨",
+"pronunciation": "làolí"
+},
+"ru": {
+"text": "авокадо",
+"pronunciation": "avɐˈkadə"
+}
+}
+}
+}

@@ -79,6 +79,12 @@ private val GameRed = Color(0xFFD63031)
 private val GameGate = Color(0xFFE2E8F0)
 private val GameGateText = Color(0xFF718096)
 private val GameInk = Color(0xFF2D3436)
+private val ChoiceNormal = Color(0xFFf4f4f4)
+private val ChoiceNormalText = Color(0xFF000000)
+private val ChoiceCorrect = Color(0xFFaac7ff)
+private val ChoiceCorrectText = Color(0xFF0b305f)
+private val ChoiceWrong = Color(0xFFffb4ab)
+private val ChoiceWrongText = Color(0xFF690005)
 private const val PlayerY = 0.62f
 private const val PlayerRadius = 51f
 private const val PlayerOutlineWidth = 12f
@@ -274,23 +280,13 @@ internal fun YanRunnerGame(
     }
 
     val playerScaleX by animateFloatAsState(
-        targetValue = when {
-            flash > 0.65f && popCorrect -> 1.45f
-            flash > 0.65f -> 0.65f
-            boost -> 1.18f
-            else -> 1f + min(0.16f, abs(targetX - playerX) * 1.7f)
-        },
-        animationSpec = spring(dampingRatio = 0.48f, stiffness = 520f),
+        targetValue = 1f,
+        animationSpec = tween(0),
         label = "player-scale-x",
     )
     val playerScaleY by animateFloatAsState(
-        targetValue = when {
-            flash > 0.65f && popCorrect -> 0.65f
-            flash > 0.65f -> 1.4f
-            boost -> 0.84f
-            else -> 1f
-        },
-        animationSpec = spring(dampingRatio = 0.48f, stiffness = 520f),
+        targetValue = 1f,
+        animationSpec = tween(0),
         label = "player-scale-y",
     )
 
@@ -351,7 +347,7 @@ internal fun YanRunnerGame(
                 canvas.drawCircle(
                     Offset.Zero,
                     PlayerRadius - PlayerOutlineWidth,
-                    Paint().apply { color = GameBlue },
+                    Paint().apply { color = Color.Black },
                 )
                 canvas.restore()
             }
@@ -363,7 +359,7 @@ internal fun YanRunnerGame(
                     if (popCorrect) "+5" else "-3",
                     Offset(size.width / 2f, size.height * 0.74f - progress * size.height * 0.23f),
                     (if (popCorrect) GameBlue else GameRed).copy(alpha = alpha),
-                    54f,
+                    size.width * 0.2f,
                 )
             }
         }
@@ -374,6 +370,7 @@ internal fun YanRunnerGame(
                 questionNumber = currentIndex + 1,
                 questionCount = tokens.size,
                 question = currentToken.source,
+                questionKey = currentIndex,
             )
         }
 
@@ -383,7 +380,7 @@ internal fun YanRunnerGame(
                     .align(Alignment.BottomEnd)
                     .padding(20.dp)
                     .size(64.dp)
-                    .pointerInput(runId) {
+                    .pointerInput(Unit) {
                         awaitEachGesture {
                             awaitFirstDown(requireUnconsumed = false)
                             boost = true
@@ -462,6 +459,10 @@ private fun spawnParticles(playerX: Float, correct: Boolean): List<GameParticle>
     }
 }
 
+private const val GateCornerRadius = 40f
+private const val LaneMargin = 16f
+private const val LaneGap = 14f
+
 private fun DrawScope.drawWave(
     wave: RunnerWave,
     width: Float,
@@ -469,7 +470,7 @@ private fun DrawScope.drawWave(
     shakeX: Float,
     shakeY: Float,
 ) {
-    val laneWidth = width / 3f
+    val laneWidth = (width - LaneMargin * 2 - LaneGap * 2) / 3f
     val gateHeight = height * GateHeight
     val gateY = height * wave.y + shakeY
     val reactionProgress = 1f - wave.reaction
@@ -486,17 +487,25 @@ private fun DrawScope.drawWave(
         } else 0f
         val pull = if (selected && wave.result == GateResult.CORRECT) wave.reaction else wave.pull
         val indent = pull * 15f
-        val left = lane * laneWidth + shakeX + wrongWobble
+        val left = LaneMargin + lane * (laneWidth + LaneGap) + shakeX + wrongWobble
         val top = gateY + jump + recoil
         val color = when {
-            selected && wave.result == GateResult.CORRECT -> blend(GameGate, GameBlue, 1f - wave.reaction)
-            selected && wave.result == GateResult.WRONG -> blend(GameGate, GameRed, 1f - wave.reaction)
-            else -> GameGate
+            selected && wave.result == GateResult.CORRECT -> ChoiceCorrect
+            selected && wave.result == GateResult.WRONG -> ChoiceWrong
+            else -> ChoiceNormal
         }
+        val textColor = when {
+            selected && wave.result == GateResult.CORRECT -> ChoiceCorrectText
+            selected && wave.result == GateResult.WRONG -> ChoiceWrongText
+            else -> ChoiceNormalText
+        }
+        val cr = GateCornerRadius
         val path = Path().apply {
-            moveTo(left, top)
-            lineTo(left + laneWidth, top)
-            lineTo(left + laneWidth, top + gateHeight)
+            moveTo(left + cr, top)
+            lineTo(left + laneWidth - cr, top)
+            quadraticTo(left + laneWidth, top, left + laneWidth, top + cr)
+            lineTo(left + laneWidth, top + gateHeight - cr)
+            quadraticTo(left + laneWidth, top + gateHeight, left + laneWidth - cr, top + gateHeight)
             lineTo(left + laneWidth * 0.64f, top + gateHeight)
             quadraticTo(
                 left + laneWidth / 2f,
@@ -504,7 +513,10 @@ private fun DrawScope.drawWave(
                 left + laneWidth * 0.36f,
                 top + gateHeight,
             )
-            lineTo(left, top + gateHeight)
+            lineTo(left + cr, top + gateHeight)
+            quadraticTo(left, top + gateHeight, left, top + gateHeight - cr)
+            lineTo(left, top + cr)
+            quadraticTo(left, top, left + cr, top)
             close()
         }
         drawPath(path, color)
@@ -514,11 +526,15 @@ private fun DrawScope.drawWave(
             Offset(left + laneWidth, top + gateHeight),
             1f,
         )
+        val textSize = min(
+            laneWidth / choice.length.coerceAtLeast(1) * 0.65f,
+            gateHeight * 0.55f,
+        )
         drawCenteredText(
             choice,
             Offset(left + laneWidth / 2f, top + gateHeight / 2f + indent * 0.22f),
-            if (selected && wave.result != GateResult.NORMAL) Color.White else GameGateText,
-            min(39f, 24f + (8 - choice.length).coerceAtLeast(0) * 1.5f),
+            textColor,
+            textSize,
         )
     }
 }
@@ -528,6 +544,7 @@ private fun BoxScope.GameQuestionHud(
     questionNumber: Int,
     questionCount: Int,
     question: String,
+    questionKey: Int,
 ) {
     val scale by animateFloatAsState(
         targetValue = 1f,
@@ -544,7 +561,7 @@ private fun BoxScope.GameQuestionHud(
         shape = SmoothCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
         border = BorderStroke(1.dp, Color(0xFFEDF2F7)),
-        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
     ) {
         Column {
             Row(
@@ -552,16 +569,16 @@ private fun BoxScope.GameQuestionHud(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center,
             ) {
-                Text(
-                    "Q$questionNumber / $questionCount",
-                    color = Color(0xFFA0AEC0),
-                    fontSize = 11.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.background(Color(0xFFEDF2F7), SmoothCornerShape(999.dp))
-                        .padding(horizontal = 10.dp, vertical = 4.dp),
-                )
-                Spacer(Modifier.width(14.dp))
-                Text(question, fontSize = 23.sp, fontWeight = FontWeight.Black, maxLines = 1)
+                AnimatedContent(
+                    questionKey,
+                    transitionSpec = {
+                        slideInVertically { it } + fadeIn() togetherWith
+                            slideOutVertically { -it } + fadeOut()
+                    },
+                    label = "question-transition",
+                ) { _ ->
+                    Text(question, fontSize = 28.sp, fontWeight = FontWeight.Black, maxLines = 1)
+                }
             }
             LinearProgressIndicator(
                 progress = { questionNumber.toFloat() / questionCount.coerceAtLeast(1) },
@@ -591,7 +608,7 @@ private fun GameScoreHud(score: Int, modifier: Modifier = Modifier) {
         shape = SmoothCornerShape(999.dp),
         color = Color.White.copy(alpha = 0.94f),
         border = BorderStroke(1.dp, Color(0xFFEDF2F7)),
-        shadowElevation = 4.dp,
+        shadowElevation = 1.dp,
     ) {
         Row(
             Modifier.padding(horizontal = 15.dp, vertical = 7.dp),

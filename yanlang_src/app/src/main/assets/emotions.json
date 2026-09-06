@@ -1,1 +1,684 @@
-{"entries":{"happy":{"ja":{"text":"嬉しい","pronunciation":"うれしい / ureshii"},"ko-kr":{"text":"행복한","pronunciation":"haengbokan"},"ko-kp":{"text":"행복한","pronunciation":"haengbokan"},"zh":{"text":"高兴","pronunciation":"gāoxìng"},"en":{"text":"happy","pronunciation":"ˈhæpi"},"zh-CN":{"text":"高兴","pronunciation":"gāoxìng"},"zh-TW":{"text":"高兴","pronunciation":"gāoxìng"},"ru":{"text":"счастливый","pronunciation":""}},"sad":{"ja":{"text":"悲しい","pronunciation":"かなしい / kanashii"},"ko-kr":{"text":"슬픈","pronunciation":"seulpeun"},"ko-kp":{"text":"슬픈","pronunciation":"seulpeun"},"zh":{"text":"悲伤","pronunciation":"bēishāng"},"en":{"text":"sad","pronunciation":"sæd"},"zh-CN":{"text":"悲伤","pronunciation":"bēishāng"},"zh-TW":{"text":"悲伤","pronunciation":"bēishāng"},"ru":{"text":"грустный","pronunciation":""}},"angry":{"ja":{"text":"怒った","pronunciation":"おこった / okotta"},"ko-kr":{"text":"화난","pronunciation":"hwanan"},"ko-kp":{"text":"화난","pronunciation":"hwanan"},"zh":{"text":"生气","pronunciation":"shēngqì"},"en":{"text":"angry","pronunciation":"ˈæŋɡri"},"zh-CN":{"text":"生气","pronunciation":"shēngqì"},"zh-TW":{"text":"生氣","pronunciation":"shēngqì"},"ru":{"text":"злой","pronunciation":""}},"scared":{"ja":{"text":"怖い","pronunciation":"こわい / kowai"},"ko-kr":{"text":"무서운","pronunciation":"museoun"},"ko-kp":{"text":"무서운","pronunciation":"museoun"},"zh":{"text":"害怕","pronunciation":"hàipà"},"en":{"text":"scared","pronunciation":"skɛərd"},"zh-CN":{"text":"害怕","pronunciation":"hàipà"},"zh-TW":{"text":"害怕","pronunciation":"hàipà"},"ru":{"text":"испуганный","pronunciation":""}},"surprised":{"ja":{"text":"驚いた","pronunciation":"おどろいた / odoroita"},"ko-kr":{"text":"놀란","pronunciation":"nollan"},"ko-kp":{"text":"놀란","pronunciation":"nollan"},"zh":{"text":"惊讶","pronunciation":"jīngyà"},"en":{"text":"surprised","pronunciation":"sərˈpraɪzd"},"zh-CN":{"text":"惊讶","pronunciation":"jīngyà"},"zh-TW":{"text":"惊讶","pronunciation":"jīngyà"},"ru":{"text":"удивлённый","pronunciation":""}},"tired":{"ja":{"text":"疲れた","pronunciation":"つかれた / tsukareta"},"ko-kr":{"text":"피곤한","pronunciation":"pigonhan"},"ko-kp":{"text":"피곤한","pronunciation":"pigonhan"},"zh":{"text":"累","pronunciation":"lèi"},"en":{"text":"tired","pronunciation":"taɪərd"},"zh-CN":{"text":"累","pronunciation":"lèi"},"zh-TW":{"text":"累","pronunciation":"lèi"},"ru":{"text":"уставший","pronunciation":""}},"excited":{"ja":{"text":"ワクワク","pronunciation":"ワクワク / wakuwaku"},"ko-kr":{"text":"신나는","pronunciation":"shinnaneun"},"ko-kp":{"text":"신나는","pronunciation":"shinnaneun"},"zh":{"text":"兴奋","pronunciation":"xīngfèn"},"en":{"text":"excited","pronunciation":"ɪkˈsaɪtɪd"},"zh-CN":{"text":"兴奋","pronunciation":"xīngfèn"},"zh-TW":{"text":"兴奋","pronunciation":"xīngfèn"},"ru":{"text":"взволнованный","pronunciation":""}},"calm":{"ja":{"text":"穏やか","pronunciation":"おだやか / odayaka"},"ko-kr":{"text":"평온한","pronunciation":"pyeongonhan"},"ko-kp":{"text":"평온한","pronunciation":"pyeongonhan"},"zh":{"text":"平静","pronunciation":"píngjìng"},"en":{"text":"calm","pronunciation":"kɑːm"},"zh-CN":{"text":"平静","pronunciation":"píngjìng"},"zh-TW":{"text":"平静","pronunciation":"píngjìng"},"ru":{"text":"спокойный","pronunciation":""}},"confused":{"ja":{"text":"困惑した","pronunciation":"こんわくした / konwakushita"},"ko-kr":{"text":"혼란스러운","pronunciation":"honranseureoun"},"ko-kp":{"text":"혼란스러운","pronunciation":"honranseureoun"},"zh":{"text":"困惑","pronunciation":"kùnhuò"},"en":{"text":"confused","pronunciation":"kənˈfjuːzd"},"zh-CN":{"text":"困惑","pronunciation":"kùnhuò"},"zh-TW":{"text":"困惑","pronunciation":"kùnhuò"},"ru":{"text":"растерянный","pronunciation":""}},"proud":{"ja":{"text":"誇らしい","pronunciation":"ほこらしい / hokorashii"},"ko-kr":{"text":"자랑스러운","pronunciation":"jarangseureoun"},"ko-kp":{"text":"자랑스러운","pronunciation":"jarangseureoun"},"zh":{"text":"骄傲","pronunciation":"jiāo'ào"},"en":{"text":"proud","pronunciation":"praʊd"},"zh-CN":{"text":"骄傲","pronunciation":"jiāo'ào"},"zh-TW":{"text":"骄傲","pronunciation":"jiāo'ào"},"ru":{"text":"гордый","pronunciation":""}},"lonely":{"ja":{"text":"寂しい","pronunciation":"さびしい / sabishii"},"ko-kr":{"text":"외로운","pronunciation":"oeroun"},"ko-kp":{"text":"외로운","pronunciation":"oeroun"},"zh":{"text":"孤独","pronunciation":"gūdú"},"en":{"text":"lonely","pronunciation":"ˈloʊnli"},"zh-CN":{"text":"孤独","pronunciation":"gūdú"},"zh-TW":{"text":"孤独","pronunciation":"gūdú"},"ru":{"text":"одинокий","pronunciation":""}},"grateful":{"ja":{"text":"感謝している","pronunciation":"かんしゃしている / kanshashiteiru"},"ko-kr":{"text":"감사한","pronunciation":"gamsahan"},"ko-kp":{"text":"감사한","pronunciation":"gamsahan"},"zh":{"text":"感激","pronunciation":"gǎnjī"},"en":{"text":"grateful","pronunciation":"ˈɡreɪtfəl"},"zh-CN":{"text":"感激","pronunciation":"gǎnjī"},"zh-TW":{"text":"感激","pronunciation":"gǎnjī"},"ru":{"text":"благодарный","pronunciation":""}},"jealous":{"ja":{"text":"嫉妬している","pronunciation":"しっどしている / shittoshiteiru"},"ko-kr":{"text":"질투하는","pronunciation":"jiltuhaneun"},"ko-kp":{"text":"질투하는","pronunciation":"jiltuhaneun"},"zh":{"text":"嫉妒","pronunciation":"jídù"},"en":{"text":"jealous","pronunciation":"ˈdʒɛləs"},"zh-CN":{"text":"嫉妒","pronunciation":"jídù"},"zh-TW":{"text":"嫉妒","pronunciation":"jídù"},"ru":{"text":"ревнивый","pronunciation":""}},"embarrassed":{"ja":{"text":"恥ずかしい","pronunciation":"はずかしい / hazukashii"},"ko-kr":{"text":"민망한","pronunciation":"minmanghan"},"ko-kp":{"text":"민망한","pronunciation":"minmanghan"},"zh":{"text":"尴尬","pronunciation":"gāngà"},"en":{"text":"embarrassed","pronunciation":"ɪmˈbærəst"},"zh-CN":{"text":"尴尬","pronunciation":"gāngà"},"zh-TW":{"text":"尴尬","pronunciation":"gāngà"},"ru":{"text":"смущённый","pronunciation":""}},"hopeful":{"ja":{"text":"希望に満ちた","pronunciation":"きぼうにみちた / kibou ni michita"},"ko-kr":{"text":"희망찬","pronunciation":"huimangchan"},"ko-kp":{"text":"희망찬","pronunciation":"huimangchan"},"zh":{"text":"充满希望","pronunciation":"chōngmǎn xīwàng"},"en":{"text":"hopeful","pronunciation":"ˈhoʊpfəl"},"zh-CN":{"text":"充满希望","pronunciation":"chōngmǎn xīwàng"},"zh-TW":{"text":"充满希望","pronunciation":"chōngmǎn xīwàng"},"ru":{"text":"полный надежды","pronunciation":""}},"disappointed":{"ja":{"text":"がっかりした","pronunciation":"がっかりした / gakkari shita"},"ko-kr":{"text":"실망한","pronunciation":"shilmanghan"},"ko-kp":{"text":"실망한","pronunciation":"shilmanghan"},"zh":{"text":"失望","pronunciation":"shīwàng"},"en":{"text":"disappointed","pronunciation":"ˌdɪsəˈpɔɪntɪd"},"zh-CN":{"text":"失望","pronunciation":"shīwàng"},"zh-TW":{"text":"失望","pronunciation":"shīwàng"},"ru":{"text":"разочарованный","pronunciation":""}},"anxious":{"ja":{"text":"不安","pronunciation":"ふあん / fuan"},"ko-kr":{"text":"불안한","pronunciation":"bullanhan"},"ko-kp":{"text":"불안한","pronunciation":"bullanhan"},"zh":{"text":"焦虑","pronunciation":"jiāolǜ"},"en":{"text":"anxious","pronunciation":"ˈæŋkʃəs"},"zh-CN":{"text":"焦虑","pronunciation":"jiāolǜ"},"zh-TW":{"text":"焦虑","pronunciation":"jiāolǜ"},"ru":{"text":"тревожный","pronunciation":""}},"nostalgic":{"ja":{"text":"懐かしい","pronunciation":"なつかしい / natsukashii"},"ko-kr":{"text":"그리운","pronunciation":"geuriun"},"ko-kp":{"text":"그리운","pronunciation":"geuriun"},"zh":{"text":"怀旧","pronunciation":"huáijiù"},"en":{"text":"nostalgic","pronunciation":"nɒˈstældʒɪk"},"zh-CN":{"text":"怀旧","pronunciation":"huáijiù"},"zh-TW":{"text":"怀旧","pronunciation":"huáijiù"},"ru":{"text":"ностальгический","pronunciation":""}},"relieved":{"ja":{"text":"ほっとした","pronunciation":"ほっとした / hotto shita"},"ko-kr":{"text":"안도하는","pronunciation":"andohaneun"},"ko-kp":{"text":"안도하는","pronunciation":"andohaneun"},"zh":{"text":"如释重负","pronunciation":"rúshìzhòngfù"},"en":{"text":"relieved","pronunciation":"rɪˈliːvd"},"zh-CN":{"text":"如释重负","pronunciation":"rúshìzhòngfù"},"zh-TW":{"text":"如释重负","pronunciation":"rúshìzhòngfù"},"ru":{"text":"испытывающий облегчение","pronunciation":""}},"content":{"ja":{"text":"満足した","pronunciation":"まんぞくした / manzoku shita"},"ko-kr":{"text":"만족한","pronunciation":"manjokhan"},"ko-kp":{"text":"만족한","pronunciation":"manjokhan"},"zh":{"text":"满足","pronunciation":"mǎnzú"},"en":{"text":"content","pronunciation":"kənˈtɛnt"},"zh-CN":{"text":"满足","pronunciation":"mǎnzú"},"zh-TW":{"text":"满足","pronunciation":"mǎnzú"},"ru":{"text":"довольный","pronunciation":""}}}}
+{
+"entries": {
+"happy": {
+"ja": {
+"text": "嬉しい",
+"pronunciation": "うれしい / ureshii"
+},
+"ko-kr": {
+"text": "행복한",
+"pronunciation": "haengbokan"
+},
+"ko-kp": {
+"text": "행복한",
+"pronunciation": "haengbokan"
+},
+"zh": {
+"text": "高兴",
+"pronunciation": "gāoxìng"
+},
+"en": {
+"text": "happy",
+"pronunciation": "ˈhæpi"
+},
+"zh-CN": {
+"text": "高兴",
+"pronunciation": "gāoxìng"
+},
+"zh-TW": {
+"text": "高興",
+"pronunciation": "gāoxìng"
+},
+"ru": {
+"text": "счастливый",
+"pronunciation": "ˈɕːaslʲɪvɨj"
+}
+},
+"sad": {
+"ja": {
+"text": "悲しい",
+"pronunciation": "かなしい / kanashii"
+},
+"ko-kr": {
+"text": "슬픈",
+"pronunciation": "seulpeun"
+},
+"ko-kp": {
+"text": "슬픈",
+"pronunciation": "seulpeun"
+},
+"zh": {
+"text": "悲伤",
+"pronunciation": "bēishāng"
+},
+"en": {
+"text": "sad",
+"pronunciation": "sæd"
+},
+"zh-CN": {
+"text": "悲伤",
+"pronunciation": "bēishāng"
+},
+"zh-TW": {
+"text": "悲傷",
+"pronunciation": "bēishāng"
+},
+"ru": {
+"text": "грустный",
+"pronunciation": "ˈɡrusnɨj"
+}
+},
+"angry": {
+"ja": {
+"text": "怒った",
+"pronunciation": "おこった / okotta"
+},
+"ko-kr": {
+"text": "화난",
+"pronunciation": "hwanan"
+},
+"ko-kp": {
+"text": "화난",
+"pronunciation": "hwanan"
+},
+"zh": {
+"text": "生气",
+"pronunciation": "shēngqì"
+},
+"en": {
+"text": "angry",
+"pronunciation": "ˈæŋɡri"
+},
+"zh-CN": {
+"text": "生气",
+"pronunciation": "shēngqì"
+},
+"zh-TW": {
+"text": "生氣",
+"pronunciation": "shēngqì"
+},
+"ru": {
+"text": "злой",
+"pronunciation": "zloj"
+}
+},
+"scared": {
+"ja": {
+"text": "怖い",
+"pronunciation": "こわい / kowai"
+},
+"ko-kr": {
+"text": "무서운",
+"pronunciation": "museoun"
+},
+"ko-kp": {
+"text": "무서운",
+"pronunciation": "museoun"
+},
+"zh": {
+"text": "害怕",
+"pronunciation": "hàipà"
+},
+"en": {
+"text": "scared",
+"pronunciation": "skɛərd"
+},
+"zh-CN": {
+"text": "害怕",
+"pronunciation": "hàipà"
+},
+"zh-TW": {
+"text": "害怕",
+"pronunciation": "hàipà"
+},
+"ru": {
+"text": "испуганный",
+"pronunciation": "ɪspʊˈɡanːɨj"
+}
+},
+"surprised": {
+"ja": {
+"text": "驚いた",
+"pronunciation": "おどろいた / odoroita"
+},
+"ko-kr": {
+"text": "놀란",
+"pronunciation": "nollan"
+},
+"ko-kp": {
+"text": "놀란",
+"pronunciation": "nollan"
+},
+"zh": {
+"text": "惊讶",
+"pronunciation": "jīngyà"
+},
+"en": {
+"text": "surprised",
+"pronunciation": "sərˈpraɪzd"
+},
+"zh-CN": {
+"text": "惊讶",
+"pronunciation": "jīngyà"
+},
+"zh-TW": {
+"text": "驚訝",
+"pronunciation": "jīngyà"
+},
+"ru": {
+"text": "удивлённый",
+"pronunciation": "ʊdʲɪˈvlʲɵnːɨj"
+}
+},
+"tired": {
+"ja": {
+"text": "疲れた",
+"pronunciation": "つかれた / tsukareta"
+},
+"ko-kr": {
+"text": "피곤한",
+"pronunciation": "pigonhan"
+},
+"ko-kp": {
+"text": "피곤한",
+"pronunciation": "pigonhan"
+},
+"zh": {
+"text": "累",
+"pronunciation": "lèi"
+},
+"en": {
+"text": "tired",
+"pronunciation": "taɪərd"
+},
+"zh-CN": {
+"text": "累",
+"pronunciation": "lèi"
+},
+"zh-TW": {
+"text": "累",
+"pronunciation": "lèi"
+},
+"ru": {
+"text": "уставший",
+"pronunciation": "ʊˈstafʂɨj"
+}
+},
+"excited": {
+"ja": {
+"text": "ワクワク",
+"pronunciation": "ワクワク / wakuwaku"
+},
+"ko-kr": {
+"text": "신나는",
+"pronunciation": "sinnaneun"
+},
+"ko-kp": {
+"text": "흥분한",
+"pronunciation": "heungbunhan"
+},
+"zh": {
+"text": "兴奋",
+"pronunciation": "xīngfèn"
+},
+"en": {
+"text": "excited",
+"pronunciation": "ɪkˈsaɪtɪd"
+},
+"zh-CN": {
+"text": "兴奋",
+"pronunciation": "xīngfèn"
+},
+"zh-TW": {
+"text": "興奮",
+"pronunciation": "xīngfèn"
+},
+"ru": {
+"text": "взволнованный",
+"pronunciation": "vzvɐlˈnovənːɨj"
+}
+},
+"calm": {
+"ja": {
+"text": "穏やか",
+"pronunciation": "おだやか / odayaka"
+},
+"ko-kr": {
+"text": "평온한",
+"pronunciation": "pyeongonhan"
+},
+"ko-kp": {
+"text": "평온한",
+"pronunciation": "pyeongonhan"
+},
+"zh": {
+"text": "平静",
+"pronunciation": "píngjìng"
+},
+"en": {
+"text": "calm",
+"pronunciation": "kɑːm"
+},
+"zh-CN": {
+"text": "平静",
+"pronunciation": "píngjìng"
+},
+"zh-TW": {
+"text": "平靜",
+"pronunciation": "píngjìng"
+},
+"ru": {
+"text": "спокойный",
+"pronunciation": "spɐˈkoj.nɨj"
+}
+},
+"confused": {
+"ja": {
+"text": "困惑した",
+"pronunciation": "こんわくした / konwaku shita"
+},
+"ko-kr": {
+"text": "혼란스러운",
+"pronunciation": "honranseureoun"
+},
+"ko-kp": {
+"text": "혼란스러운",
+"pronunciation": "honranseureoun"
+},
+"zh": {
+"text": "困惑",
+"pronunciation": "kùnhuò"
+},
+"en": {
+"text": "confused",
+"pronunciation": "kənˈfjuːzd"
+},
+"zh-CN": {
+"text": "困惑",
+"pronunciation": "kùnhuò"
+},
+"zh-TW": {
+"text": "困惑",
+"pronunciation": "kùnhuò"
+},
+"ru": {
+"text": "растерянный",
+"pronunciation": "rɐˈstʲerʲɪnːɨj"
+}
+},
+"proud": {
+"ja": {
+"text": "誇らしい",
+"pronunciation": "ほこらしい / hokorashii"
+},
+"ko-kr": {
+"text": "자랑스러운",
+"pronunciation": "jarangseureoun"
+},
+"ko-kp": {
+"text": "자랑스러운",
+"pronunciation": "jarangseureoun"
+},
+"zh": {
+"text": "骄傲",
+"pronunciation": "jiāo'ào"
+},
+"en": {
+"text": "proud",
+"pronunciation": "praʊd"
+},
+"zh-CN": {
+"text": "骄傲",
+"pronunciation": "jiāo'ào"
+},
+"zh-TW": {
+"text": "驕傲",
+"pronunciation": "jiāo'ào"
+},
+"ru": {
+"text": "гордый",
+"pronunciation": "ˈɡordɨj"
+}
+},
+"lonely": {
+"ja": {
+"text": "寂しい",
+"pronunciation": "さびしい / sabishii"
+},
+"ko-kr": {
+"text": "외로운",
+"pronunciation": "oeroun"
+},
+"ko-kp": {
+"text": "외로운",
+"pronunciation": "oeroun"
+},
+"zh": {
+"text": "孤独",
+"pronunciation": "gūdú"
+},
+"en": {
+"text": "lonely",
+"pronunciation": "ˈloʊnli"
+},
+"zh-CN": {
+"text": "孤独",
+"pronunciation": "gūdú"
+},
+"zh-TW": {
+"text": "孤獨",
+"pronunciation": "gūdú"
+},
+"ru": {
+"text": "одинокий",
+"pronunciation": "ɐdʲɪˈnokʲɪj"
+}
+},
+"grateful": {
+"ja": {
+"text": "感謝している",
+"pronunciation": "かんしゃしている / kansha shiteiru"
+},
+"ko-kr": {
+"text": "감사한",
+"pronunciation": "gamsahan"
+},
+"ko-kp": {
+"text": "감사한",
+"pronunciation": "gamsahan"
+},
+"zh": {
+"text": "感激",
+"pronunciation": "gǎnjī"
+},
+"en": {
+"text": "grateful",
+"pronunciation": "ˈɡreɪtfəl"
+},
+"zh-CN": {
+"text": "感激",
+"pronunciation": "gǎnjī"
+},
+"zh-TW": {
+"text": "感激",
+"pronunciation": "gǎnjī"
+},
+"ru": {
+"text": "благодарный",
+"pronunciation": "blɐɡɐˈdar.nɨj"
+}
+},
+"jealous": {
+"ja": {
+"text": "嫉妬している",
+"pronunciation": "しっとしている / shitto shiteiru"
+},
+"ko-kr": {
+"text": "질투하는",
+"pronunciation": "jiltuhaneun"
+},
+"ko-kp": {
+"text": "질투하는",
+"pronunciation": "jiltuhaneun"
+},
+"zh": {
+"text": "嫉妒",
+"pronunciation": "jídù"
+},
+"en": {
+"text": "jealous",
+"pronunciation": "ˈdʒɛləs"
+},
+"zh-CN": {
+"text": "嫉妒",
+"pronunciation": "jídù"
+},
+"zh-TW": {
+"text": "嫉妒",
+"pronunciation": "jídù"
+},
+"ru": {
+"text": "ревнивый",
+"pronunciation": "rʲɪvˈnʲivɨj"
+}
+},
+"embarrassed": {
+"ja": {
+"text": "恥ずかしい",
+"pronunciation": "はずかしい / hazukashii"
+},
+"ko-kr": {
+"text": "민망한",
+"pronunciation": "minmanghan"
+},
+"ko-kp": {
+"text": "민망한",
+"pronunciation": "minmanghan"
+},
+"zh": {
+"text": "尴尬",
+"pronunciation": "gāngà"
+},
+"en": {
+"text": "embarrassed",
+"pronunciation": "ɪmˈbærəst"
+},
+"zh-CN": {
+"text": "尴尬",
+"pronunciation": "gāngà"
+},
+"zh-TW": {
+"text": "尷尬",
+"pronunciation": "gāngà"
+},
+"ru": {
+"text": "смущённый",
+"pronunciation": "smʊˈɕːɵnːɨj"
+}
+},
+"hopeful": {
+"ja": {
+"text": "希望に満ちた",
+"pronunciation": "きぼうにみちた / kibō ni michita"
+},
+"ko-kr": {
+"text": "희망찬",
+"pronunciation": "huimangchan"
+},
+"ko-kp": {
+"text": "희망찬",
+"pronunciation": "huimangchan"
+},
+"zh": {
+"text": "充满希望",
+"pronunciation": "chōngmǎn xīwàng"
+},
+"en": {
+"text": "hopeful",
+"pronunciation": "ˈhoʊpfəl"
+},
+"zh-CN": {
+"text": "充满希望",
+"pronunciation": "chōngmǎn xīwàng"
+},
+"zh-TW": {
+"text": "充滿希望",
+"pronunciation": "chōngmǎn xīwàng"
+},
+"ru": {
+"text": "полный надежды",
+"pronunciation": "ˈpolnɨj nɐˈdʲeʐdɨ"
+}
+},
+"disappointed": {
+"ja": {
+"text": "がっかりした",
+"pronunciation": "がっかりした / gakkari shita"
+},
+"ko-kr": {
+"text": "실망한",
+"pronunciation": "silmanghan"
+},
+"ko-kp": {
+"text": "실망한",
+"pronunciation": "silmanghan"
+},
+"zh": {
+"text": "失望",
+"pronunciation": "shīwàng"
+},
+"en": {
+"text": "disappointed",
+"pronunciation": "ˌdɪsəˈpɔɪntɪd"
+},
+"zh-CN": {
+"text": "失望",
+"pronunciation": "shīwàng"
+},
+"zh-TW": {
+"text": "失望",
+"pronunciation": "shīwàng"
+},
+"ru": {
+"text": "разочарованный",
+"pronunciation": "rɐzɐˈtɕorɐvənːɨj"
+}
+},
+"anxious": {
+"ja": {
+"text": "不安",
+"pronunciation": "ふあん / fuan"
+},
+"ko-kr": {
+"text": "불안한",
+"pronunciation": "buranhan"
+},
+"ko-kp": {
+"text": "불안한",
+"pronunciation": "buranhan"
+},
+"zh": {
+"text": "焦虑",
+"pronunciation": "jiāolǜ"
+},
+"en": {
+"text": "anxious",
+"pronunciation": "ˈæŋkʃəs"
+},
+"zh-CN": {
+"text": "焦虑",
+"pronunciation": "jiāolǜ"
+},
+"zh-TW": {
+"text": "焦慮",
+"pronunciation": "jiāolǜ"
+},
+"ru": {
+"text": "тревожный",
+"pronunciation": "trʲɪˈvoʐnɨj"
+}
+},
+"nostalgic": {
+"ja": {
+"text": "懐かしい",
+"pronunciation": "なつかしい / natsukashii"
+},
+"ko-kr": {
+"text": "그리운",
+"pronunciation": "geuriun"
+},
+"ko-kp": {
+"text": "그리운",
+"pronunciation": "geuriun"
+},
+"zh": {
+"text": "怀旧",
+"pronunciation": "huáijiù"
+},
+"en": {
+"text": "nostalgic",
+"pronunciation": "nɒˈstældʒɪk"
+},
+"zh-CN": {
+"text": "怀旧",
+"pronunciation": "huáijiù"
+},
+"zh-TW": {
+"text": "懷舊",
+"pronunciation": "huáijiù"
+},
+"ru": {
+"text": "ностальгический",
+"pronunciation": "nɐstalʲˈɡʲitɕɪskʲij"
+}
+},
+"relieved": {
+"ja": {
+"text": "ほっとした",
+"pronunciation": "ほっとした / hotto shita"
+},
+"ko-kr": {
+"text": "안도한",
+"pronunciation": "andohan"
+},
+"ko-kp": {
+"text": "안도한",
+"pronunciation": "andohan"
+},
+"zh": {
+"text": "如释重负",
+"pronunciation": "rúshìzhòngfù"
+},
+"en": {
+"text": "relieved",
+"pronunciation": "rɪˈliːvd"
+},
+"zh-CN": {
+"text": "如释重负",
+"pronunciation": "rúshìzhòngfù"
+},
+"zh-TW": {
+"text": "如釋重負",
+"pronunciation": "rúshìzhòngfù"
+},
+"ru": {
+"text": "испытывающий облегчение",
+"pronunciation": "ɪspɨˈtɨvajʊɕːɪj ɐblʲɪɕˈtɕenʲɪje"
+}
+},
+"content": {
+"ja": {
+"text": "満足した",
+"pronunciation": "まんぞくした / manzoku shita"
+},
+"ko-kr": {
+"text": "만족한",
+"pronunciation": "manjokhan"
+},
+"ko-kp": {
+"text": "만족한",
+"pronunciation": "manjokhan"
+},
+"zh": {
+"text": "满足",
+"pronunciation": "mǎnzú"
+},
+"en": {
+"text": "content",
+"pronunciation": "kənˈtɛnt"
+},
+"zh-CN": {
+"text": "满足",
+"pronunciation": "mǎnzú"
+},
+"zh-TW": {
+"text": "滿足",
+"pronunciation": "mǎnzú"
+},
+"ru": {
+"text": "довольный",
+"pronunciation": "dɐˈvolʲnɨj"
+}
+}
+}
+}

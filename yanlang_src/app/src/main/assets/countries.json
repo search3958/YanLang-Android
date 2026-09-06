@@ -1,1 +1,684 @@
-{"entries":{"japan":{"ja":{"text":"日本","pronunciation":"にほん / nihon"},"ko-kr":{"text":"일본","pronunciation":"ilbon"},"ko-kp":{"text":"일본","pronunciation":"ilbon"},"zh":{"text":"日本","pronunciation":"Rìběn"},"en":{"text":"Japan","pronunciation":"dʒəˈpæn"},"zh-CN":{"text":"日本","pronunciation":"Rìběn"},"zh-TW":{"text":"日本","pronunciation":"Rìběn"},"ru":{"text":"Япония","pronunciation":""}},"korea":{"ja":{"text":"韓国","pronunciation":"かんこく / kankoku"},"ko-kr":{"text":"한국","pronunciation":"hanguk"},"ko-kp":{"text":"조선","pronunciation":"joseon"},"zh":{"text":"韩国","pronunciation":"Hánguó"},"en":{"text":"Korea","pronunciation":"kəˈriːə"},"zh-CN":{"text":"韩国","pronunciation":"Hánguó"},"zh-TW":{"text":"韩國","pronunciation":"Hánguó"},"ru":{"text":"Корея","pronunciation":""}},"china":{"ja":{"text":"中国","pronunciation":"ちゅうごく / chuugoku"},"ko-kr":{"text":"중국","pronunciation":"jungguk"},"ko-kp":{"text":"중국","pronunciation":"jungguk"},"zh":{"text":"中国","pronunciation":"Zhōngguó"},"en":{"text":"China","pronunciation":"ˈtʃaɪnə"},"zh-CN":{"text":"中国","pronunciation":"Zhōngguó"},"zh-TW":{"text":"中國","pronunciation":"Zhōngguó"},"ru":{"text":"Китай","pronunciation":""}},"usa":{"ja":{"text":"アメリカ","pronunciation":"アメリカ / amerika"},"ko-kr":{"text":"미국","pronunciation":"miguk"},"ko-kp":{"text":"미국","pronunciation":"miguk"},"zh":{"text":"美国","pronunciation":"Měiguó"},"en":{"text":"USA","pronunciation":"juːɛsˈeɪ"},"zh-CN":{"text":"美国","pronunciation":"Měiguó"},"zh-TW":{"text":"美國","pronunciation":"Měiguó"},"ru":{"text":"США","pronunciation":""}},"uk":{"ja":{"text":"イギリス","pronunciation":"イギリス / igirisu"},"ko-kr":{"text":"영국","pronunciation":"yeongguk"},"ko-kp":{"text":"영국","pronunciation":"yeongguk"},"zh":{"text":"英国","pronunciation":"Yīngguó"},"en":{"text":"UK","pronunciation":"juːˈkeɪ"},"zh-CN":{"text":"英国","pronunciation":"Yīngguó"},"zh-TW":{"text":"英國","pronunciation":"Yīngguó"},"ru":{"text":"Великобритания","pronunciation":""}},"france":{"ja":{"text":"フランス","pronunciation":"フランス / furansu"},"ko-kr":{"text":"프랑스","pronunciation":"peurangseu"},"ko-kp":{"text":"프랑스","pronunciation":"peurangseu"},"zh":{"text":"法国","pronunciation":"Fǎguó"},"en":{"text":"France","pronunciation":"fræns"},"zh-CN":{"text":"法国","pronunciation":"Fǎguó"},"zh-TW":{"text":"法國","pronunciation":"Fǎguó"},"ru":{"text":"Франция","pronunciation":""}},"germany":{"ja":{"text":"ドイツ","pronunciation":"ドイツ / doitsu"},"ko-kr":{"text":"독일","pronunciation":"dogil"},"ko-kp":{"text":"독일","pronunciation":"dogil"},"zh":{"text":"德国","pronunciation":"Déguó"},"en":{"text":"Germany","pronunciation":"ˈdʒɜːrməni"},"zh-CN":{"text":"德国","pronunciation":"Déguó"},"zh-TW":{"text":"德國","pronunciation":"Déguó"},"ru":{"text":"Германия","pronunciation":""}},"italy":{"ja":{"text":"イタリア","pronunciation":"イタリア / itaria"},"ko-kr":{"text":"이탈리아","pronunciation":"italria"},"ko-kp":{"text":"이탈리아","pronunciation":"italria"},"zh":{"text":"意大利","pronunciation":"Yìdàlì"},"en":{"text":"Italy","pronunciation":"ˈɪtəli"},"zh-CN":{"text":"意大利","pronunciation":"Yìdàlì"},"zh-TW":{"text":"意大利","pronunciation":"Yìdàlì"},"ru":{"text":"Италия","pronunciation":""}},"spain":{"ja":{"text":"スペイン","pronunciation":"スペイン / supein"},"ko-kr":{"text":"스페인","pronunciation":"seupein"},"ko-kp":{"text":"스페인","pronunciation":"seupein"},"zh":{"text":"西班牙","pronunciation":"Xībānyá"},"en":{"text":"Spain","pronunciation":"speɪn"},"zh-CN":{"text":"西班牙","pronunciation":"Xībānyá"},"zh-TW":{"text":"西班牙","pronunciation":"Xībānyá"},"ru":{"text":"Испания","pronunciation":""}},"russia":{"ja":{"text":"ロシア","pronunciation":"ロシア / roshia"},"ko-kr":{"text":"러시아","pronunciation":"reoshia"},"ko-kp":{"text":"러시아","pronunciation":"reoshia"},"zh":{"text":"俄罗斯","pronunciation":"Éluósī"},"en":{"text":"Russia","pronunciation":"ˈrʌʃə"},"zh-CN":{"text":"俄罗斯","pronunciation":"Éluósī"},"zh-TW":{"text":"俄罗斯","pronunciation":"Éluósī"},"ru":{"text":"Россия","pronunciation":""}},"brazil":{"ja":{"text":"ブラジル","pronunciation":"ブラジル / burajiru"},"ko-kr":{"text":"브라질","pronunciation":"beurajil"},"ko-kp":{"text":"브라질","pronunciation":"beurajil"},"zh":{"text":"巴西","pronunciation":"Bāxī"},"en":{"text":"Brazil","pronunciation":"brəˈzɪl"},"zh-CN":{"text":"巴西","pronunciation":"Bāxī"},"zh-TW":{"text":"巴西","pronunciation":"Bāxī"},"ru":{"text":"Бразилия","pronunciation":""}},"india":{"ja":{"text":"インド","pronunciation":"インド / indo"},"ko-kr":{"text":"인도","pronunciation":"indo"},"ko-kp":{"text":"인도","pronunciation":"indo"},"zh":{"text":"印度","pronunciation":"Yìndù"},"en":{"text":"India","pronunciation":"ˈɪndiə"},"zh-CN":{"text":"印度","pronunciation":"Yìndù"},"zh-TW":{"text":"印度","pronunciation":"Yìndù"},"ru":{"text":"Индия","pronunciation":""}},"australia":{"ja":{"text":"オーストラリア","pronunciation":"オーストラリア / oosutoraria"},"ko-kr":{"text":"호주","pronunciation":"hoju"},"ko-kp":{"text":"호주","pronunciation":"hoju"},"zh":{"text":"澳大利亚","pronunciation":"Àodàlìyà"},"en":{"text":"Australia","pronunciation":"ɒˈstreɪliə"},"zh-CN":{"text":"澳大利亚","pronunciation":"Àodàlìyà"},"zh-TW":{"text":"澳大利亚","pronunciation":"Àodàlìyà"},"ru":{"text":"Австралия","pronunciation":""}},"canada":{"ja":{"text":"カナダ","pronunciation":"カナダ / kanada"},"ko-kr":{"text":"캐나다","pronunciation":"kaenada"},"ko-kp":{"text":"캐나다","pronunciation":"kaenada"},"zh":{"text":"加拿大","pronunciation":"Jiānádà"},"en":{"text":"Canada","pronunciation":"ˈkænədə"},"zh-CN":{"text":"加拿大","pronunciation":"Jiānádà"},"zh-TW":{"text":"加拿大","pronunciation":"Jiānádà"},"ru":{"text":"Канада","pronunciation":""}},"mexico":{"ja":{"text":"メキシコ","pronunciation":"メキシコ / mekishiko"},"ko-kr":{"text":"멕시코","pronunciation":"mekshiko"},"ko-kp":{"text":"멕시코","pronunciation":"mekshiko"},"zh":{"text":"墨西哥","pronunciation":"Mòxīgē"},"en":{"text":"Mexico","pronunciation":"ˈmɛksɪkoʊ"},"zh-CN":{"text":"墨西哥","pronunciation":"Mòxīgē"},"zh-TW":{"text":"墨西哥","pronunciation":"Mòxīgē"},"ru":{"text":"Мексика","pronunciation":""}},"thailand":{"ja":{"text":"タイ","pronunciation":"タイ / tai"},"ko-kr":{"text":"태국","pronunciation":"taeguk"},"ko-kp":{"text":"태국","pronunciation":"taeguk"},"zh":{"text":"泰国","pronunciation":"Tàiguó"},"en":{"text":"Thailand","pronunciation":"ˈtaɪlænd"},"zh-CN":{"text":"泰国","pronunciation":"Tàiguó"},"zh-TW":{"text":"泰國","pronunciation":"Tàiguó"},"ru":{"text":"Таиланд","pronunciation":""}},"vietnam":{"ja":{"text":"ベトナム","pronunciation":"ベトナム / betonamu"},"ko-kr":{"text":"베트남","pronunciation":"beoteunam"},"ko-kp":{"text":"베트남","pronunciation":"beoteunam"},"zh":{"text":"越南","pronunciation":"Yuènán"},"en":{"text":"Vietnam","pronunciation":"ˌviːɛtˈnæm"},"zh-CN":{"text":"越南","pronunciation":"Yuènán"},"zh-TW":{"text":"越南","pronunciation":"Yuènán"},"ru":{"text":"Вьетнам","pronunciation":""}},"egypt":{"ja":{"text":"エジプト","pronunciation":"エジプト / ejiputo"},"ko-kr":{"text":"이집트","pronunciation":"ijiputeu"},"ko-kp":{"text":"이집트","pronunciation":"ijiputeu"},"zh":{"text":"埃及","pronunciation":"Āijí"},"en":{"text":"Egypt","pronunciation":"ˈiːdʒɪpt"},"zh-CN":{"text":"埃及","pronunciation":"Āijí"},"zh-TW":{"text":"埃及","pronunciation":"Āijí"},"ru":{"text":"Египет","pronunciation":""}},"south_africa":{"ja":{"text":"南アフリカ","pronunciation":"みなみアフリカ / minami afurika"},"ko-kr":{"text":"남아프리카","pronunciation":"namapeurika"},"ko-kp":{"text":"남아프리카","pronunciation":"namapeurika"},"zh":{"text":"南非","pronunciation":"Nánfēi"},"en":{"text":"South Africa","pronunciation":"saʊθ ˈæfrɪkə"},"zh-CN":{"text":"南非","pronunciation":"Nánfēi"},"zh-TW":{"text":"南非","pronunciation":"Nánfēi"},"ru":{"text":"Южная Африка","pronunciation":""}},"argentina":{"ja":{"text":"アルゼンチン","pronunciation":"アルゼンチン / aruzenchin"},"ko-kr":{"text":"아르헨티나","pronunciation":"areuhentina"},"ko-kp":{"text":"아르헨티나","pronunciation":"areuhentina"},"zh":{"text":"阿根廷","pronunciation":"Āgēntíng"},"en":{"text":"Argentina","pronunciation":"ˌɑːrdʒənˈtiːnə"},"zh-CN":{"text":"阿根廷","pronunciation":"Āgēntíng"},"zh-TW":{"text":"阿根廷","pronunciation":"Āgēntíng"},"ru":{"text":"Аргентина","pronunciation":""}}}}
+{
+"entries": {
+"japan": {
+"ja": {
+"text": "日本",
+"pronunciation": "にほん / nihon"
+},
+"ko-kr": {
+"text": "일본",
+"pronunciation": "ilbon"
+},
+"ko-kp": {
+"text": "일본",
+"pronunciation": "ilbon"
+},
+"zh": {
+"text": "日本",
+"pronunciation": "Rìběn"
+},
+"en": {
+"text": "Japan",
+"pronunciation": "dʒəˈpæn"
+},
+"zh-CN": {
+"text": "日本",
+"pronunciation": "Rìběn"
+},
+"zh-TW": {
+"text": "日本",
+"pronunciation": "Rìběn"
+},
+"ru": {
+"text": "Япония",
+"pronunciation": "jɐˈponʲɪjə"
+}
+},
+"korea": {
+"ja": {
+"text": "韓国",
+"pronunciation": "かんこく / kankoku"
+},
+"ko-kr": {
+"text": "한국",
+"pronunciation": "hanguk"
+},
+"ko-kp": {
+"text": "한국",
+"pronunciation": "hanguk"
+},
+"zh": {
+"text": "韩国",
+"pronunciation": "Hánguó"
+},
+"en": {
+"text": "South Korea",
+"pronunciation": "ˌsaʊθ kəˈriːə"
+},
+"zh-CN": {
+"text": "韩国",
+"pronunciation": "Hánguó"
+},
+"zh-TW": {
+"text": "韓國",
+"pronunciation": "Hánguó"
+},
+"ru": {
+"text": "Южная Корея",
+"pronunciation": "ˈjuʐnəjə kɐˈrʲejə"
+}
+},
+"china": {
+"ja": {
+"text": "中国",
+"pronunciation": "ちゅうごく / chūgoku"
+},
+"ko-kr": {
+"text": "중국",
+"pronunciation": "jungguk"
+},
+"ko-kp": {
+"text": "중국",
+"pronunciation": "jungguk"
+},
+"zh": {
+"text": "中国",
+"pronunciation": "Zhōngguó"
+},
+"en": {
+"text": "China",
+"pronunciation": "ˈtʃaɪnə"
+},
+"zh-CN": {
+"text": "中国",
+"pronunciation": "Zhōngguó"
+},
+"zh-TW": {
+"text": "中國",
+"pronunciation": "Zhōngguó"
+},
+"ru": {
+"text": "Китай",
+"pronunciation": "kɪˈtaj"
+}
+},
+"usa": {
+"ja": {
+"text": "アメリカ",
+"pronunciation": "アメリカ / amerika"
+},
+"ko-kr": {
+"text": "미국",
+"pronunciation": "miguk"
+},
+"ko-kp": {
+"text": "미국",
+"pronunciation": "miguk"
+},
+"zh": {
+"text": "美国",
+"pronunciation": "Měiguó"
+},
+"en": {
+"text": "United States",
+"pronunciation": "juːˈnaɪtɪd steɪts"
+},
+"zh-CN": {
+"text": "美国",
+"pronunciation": "Měiguó"
+},
+"zh-TW": {
+"text": "美國",
+"pronunciation": "Měiguó"
+},
+"ru": {
+"text": "США",
+"pronunciation": "sɛ ˌʂa"
+}
+},
+"uk": {
+"ja": {
+"text": "イギリス",
+"pronunciation": "イギリス / igirisu"
+},
+"ko-kr": {
+"text": "영국",
+"pronunciation": "yeongguk"
+},
+"ko-kp": {
+"text": "영국",
+"pronunciation": "yeongguk"
+},
+"zh": {
+"text": "英国",
+"pronunciation": "Yīngguó"
+},
+"en": {
+"text": "United Kingdom",
+"pronunciation": "juːˌnaɪtɪd ˈkɪŋdəm"
+},
+"zh-CN": {
+"text": "英国",
+"pronunciation": "Yīngguó"
+},
+"zh-TW": {
+"text": "英國",
+"pronunciation": "Yīngguó"
+},
+"ru": {
+"text": "Великобритания",
+"pronunciation": "vʲɪlʲɪkɐbrʲɪˈtanʲɪjə"
+}
+},
+"france": {
+"ja": {
+"text": "フランス",
+"pronunciation": "フランス / furansu"
+},
+"ko-kr": {
+"text": "프랑스",
+"pronunciation": "peurangseu"
+},
+"ko-kp": {
+"text": "프랑스",
+"pronunciation": "peurangseu"
+},
+"zh": {
+"text": "法国",
+"pronunciation": "Fǎguó"
+},
+"en": {
+"text": "France",
+"pronunciation": "fræns"
+},
+"zh-CN": {
+"text": "法国",
+"pronunciation": "Fǎguó"
+},
+"zh-TW": {
+"text": "法國",
+"pronunciation": "Fǎguó"
+},
+"ru": {
+"text": "Франция",
+"pronunciation": "ˈfrant͡sɨjə"
+}
+},
+"germany": {
+"ja": {
+"text": "ドイツ",
+"pronunciation": "ドイツ / doitsu"
+},
+"ko-kr": {
+"text": "독일",
+"pronunciation": "dogil"
+},
+"ko-kp": {
+"text": "독일",
+"pronunciation": "dogil"
+},
+"zh": {
+"text": "德国",
+"pronunciation": "Déguó"
+},
+"en": {
+"text": "Germany",
+"pronunciation": "ˈdʒɜːrməni"
+},
+"zh-CN": {
+"text": "德国",
+"pronunciation": "Déguó"
+},
+"zh-TW": {
+"text": "德國",
+"pronunciation": "Déguó"
+},
+"ru": {
+"text": "Германия",
+"pronunciation": "ɡʲɪrˈmanʲɪjə"
+}
+},
+"italy": {
+"ja": {
+"text": "イタリア",
+"pronunciation": "イタリア / itaria"
+},
+"ko-kr": {
+"text": "이탈리아",
+"pronunciation": "itallia"
+},
+"ko-kp": {
+"text": "이딸리아",
+"pronunciation": "ittallia"
+},
+"zh": {
+"text": "意大利",
+"pronunciation": "Yìdàlì"
+},
+"en": {
+"text": "Italy",
+"pronunciation": "ˈɪtəli"
+},
+"zh-CN": {
+"text": "意大利",
+"pronunciation": "Yìdàlì"
+},
+"zh-TW": {
+"text": "意大利",
+"pronunciation": "Yìdàlì"
+},
+"ru": {
+"text": "Италия",
+"pronunciation": "ɪˈtalʲɪjə"
+}
+},
+"spain": {
+"ja": {
+"text": "スペイン",
+"pronunciation": "スペイン / supein"
+},
+"ko-kr": {
+"text": "스페인",
+"pronunciation": "seupein"
+},
+"ko-kp": {
+"text": "에스빠냐",
+"pronunciation": "eosppanya"
+},
+"zh": {
+"text": "西班牙",
+"pronunciation": "Xībānyá"
+},
+"en": {
+"text": "Spain",
+"pronunciation": "speɪn"
+},
+"zh-CN": {
+"text": "西班牙",
+"pronunciation": "Xībānyá"
+},
+"zh-TW": {
+"text": "西班牙",
+"pronunciation": "Xībānyá"
+},
+"ru": {
+"text": "Испания",
+"pronunciation": "ɪˈspanʲɪjə"
+}
+},
+"russia": {
+"ja": {
+"text": "ロシア",
+"pronunciation": "ロシア / roshia"
+},
+"ko-kr": {
+"text": "러시아",
+"pronunciation": "reosia"
+},
+"ko-kp": {
+"text": "로씨야",
+"pronunciation": "rossiya"
+},
+"zh": {
+"text": "俄罗斯",
+"pronunciation": "Éluósī"
+},
+"en": {
+"text": "Russia",
+"pronunciation": "ˈrʌʃə"
+},
+"zh-CN": {
+"text": "俄罗斯",
+"pronunciation": "Éluósī"
+},
+"zh-TW": {
+"text": "俄羅斯",
+"pronunciation": "Éluósī"
+},
+"ru": {
+"text": "Россия",
+"pronunciation": "rɐˈsʲijə"
+}
+},
+"brazil": {
+"ja": {
+"text": "ブラジル",
+"pronunciation": "ブラジル / burajiru"
+},
+"ko-kr": {
+"text": "브라질",
+"pronunciation": "beurajil"
+},
+"ko-kp": {
+"text": "브라질",
+"pronunciation": "beurajil"
+},
+"zh": {
+"text": "巴西",
+"pronunciation": "Bāxī"
+},
+"en": {
+"text": "Brazil",
+"pronunciation": "brəˈzɪl"
+},
+"zh-CN": {
+"text": "巴西",
+"pronunciation": "Bāxī"
+},
+"zh-TW": {
+"text": "巴西",
+"pronunciation": "Bāxī"
+},
+"ru": {
+"text": "Бразилия",
+"pronunciation": "brəˈzʲilʲɪjə"
+}
+},
+"india": {
+"ja": {
+"text": "インド",
+"pronunciation": "インド / indo"
+},
+"ko-kr": {
+"text": "인도",
+"pronunciation": "indo"
+},
+"ko-kp": {
+"text": "인디아",
+"pronunciation": "india"
+},
+"zh": {
+"text": "印度",
+"pronunciation": "Yìndù"
+},
+"en": {
+"text": "India",
+"pronunciation": "ˈɪndiə"
+},
+"zh-CN": {
+"text": "印度",
+"pronunciation": "Yìndù"
+},
+"zh-TW": {
+"text": "印度",
+"pronunciation": "Yìndù"
+},
+"ru": {
+"text": "Индия",
+"pronunciation": "ˈindʲɪjə"
+}
+},
+"australia": {
+"ja": {
+"text": "オーストラリア",
+"pronunciation": "オーストラリア / ōsutoraria"
+},
+"ko-kr": {
+"text": "호주",
+"pronunciation": "hoju"
+},
+"ko-kp": {
+"text": "오스트랄리아",
+"pronunciation": "oseuteurallia"
+},
+"zh": {
+"text": "澳大利亚",
+"pronunciation": "Àodàlìyà"
+},
+"en": {
+"text": "Australia",
+"pronunciation": "ɒˈstreɪliə"
+},
+"zh-CN": {
+"text": "澳大利亚",
+"pronunciation": "Àodàlìyà"
+},
+"zh-TW": {
+"text": "澳洲",
+"pronunciation": "Àozhōu"
+},
+"ru": {
+"text": "Австралия",
+"pronunciation": "ɐˈfstralʲɪjə"
+}
+},
+"canada": {
+"ja": {
+"text": "カナダ",
+"pronunciation": "カナダ / kanada"
+},
+"ko-kr": {
+"text": "캐나다",
+"pronunciation": "kaenada"
+},
+"ko-kp": {
+"text": "카나다",
+"pronunciation": "kanada"
+},
+"zh": {
+"text": "加拿大",
+"pronunciation": "Jiānádà"
+},
+"en": {
+"text": "Canada",
+"pronunciation": "ˈkænədə"
+},
+"zh-CN": {
+"text": "加拿大",
+"pronunciation": "Jiānádà"
+},
+"zh-TW": {
+"text": "加拿大",
+"pronunciation": "Jiānádà"
+},
+"ru": {
+"text": "Канада",
+"pronunciation": "kɐˈnadə"
+}
+},
+"mexico": {
+"ja": {
+"text": "メキシコ",
+"pronunciation": "メキシコ / mekishiko"
+},
+"ko-kr": {
+"text": "멕시코",
+"pronunciation": "meksiko"
+},
+"ko-kp": {
+"text": "메히꼬",
+"pronunciation": "mehikko"
+},
+"zh": {
+"text": "墨西哥",
+"pronunciation": "Mòxīgē"
+},
+"en": {
+"text": "Mexico",
+"pronunciation": "ˈmɛksɪkoʊ"
+},
+"zh-CN": {
+"text": "墨西哥",
+"pronunciation": "Mòxīgē"
+},
+"zh-TW": {
+"text": "墨西哥",
+"pronunciation": "Mòxīgē"
+},
+"ru": {
+"text": "Мексика",
+"pronunciation": "ˈmʲeksʲɪkə"
+}
+},
+"thailand": {
+"ja": {
+"text": "タイ",
+"pronunciation": "タイ / tai"
+},
+"ko-kr": {
+"text": "태국",
+"pronunciation": "taeguk"
+},
+"ko-kp": {
+"text": "타이",
+"pronunciation": "thai"
+},
+"zh": {
+"text": "泰国",
+"pronunciation": "Tàiguó"
+},
+"en": {
+"text": "Thailand",
+"pronunciation": "ˈtaɪlænd"
+},
+"zh-CN": {
+"text": "泰国",
+"pronunciation": "Tàiguó"
+},
+"zh-TW": {
+"text": "泰國",
+"pronunciation": "Tàiguó"
+},
+"ru": {
+"text": "Таиланд",
+"pronunciation": "tɐɪˈland"
+}
+},
+"vietnam": {
+"ja": {
+"text": "ベトナム",
+"pronunciation": "ベトナム / betonamu"
+},
+"ko-kr": {
+"text": "베트남",
+"pronunciation": "beteunam"
+},
+"ko-kp": {
+"text": "베트남",
+"pronunciation": "beteunam"
+},
+"zh": {
+"text": "越南",
+"pronunciation": "Yuènán"
+},
+"en": {
+"text": "Vietnam",
+"pronunciation": "ˌviːətˈnɑːm"
+},
+"zh-CN": {
+"text": "越南",
+"pronunciation": "Yuènán"
+},
+"zh-TW": {
+"text": "越南",
+"pronunciation": "Yuènán"
+},
+"ru": {
+"text": "Вьетнам",
+"pronunciation": "vjɪtˈnam"
+}
+},
+"egypt": {
+"ja": {
+"text": "エジプト",
+"pronunciation": "エジプト / ejiputo"
+},
+"ko-kr": {
+"text": "이집트",
+"pronunciation": "ijipteu"
+},
+"ko-kp": {
+"text": "이집트",
+"pronunciation": "ijipteu"
+},
+"zh": {
+"text": "埃及",
+"pronunciation": "Āijí"
+},
+"en": {
+"text": "Egypt",
+"pronunciation": "ˈiːdʒɪpt"
+},
+"zh-CN": {
+"text": "埃及",
+"pronunciation": "Āijí"
+},
+"zh-TW": {
+"text": "埃及",
+"pronunciation": "Āijí"
+},
+"ru": {
+"text": "Египет",
+"pronunciation": "jɪˈɡʲipʲɪt"
+}
+},
+"south_africa": {
+"ja": {
+"text": "南アフリカ",
+"pronunciation": "みなみアフリカ / minami Afurika"
+},
+"ko-kr": {
+"text": "남아프리카",
+"pronunciation": "namapeurika"
+},
+"ko-kp": {
+"text": "남아프리카",
+"pronunciation": "namapeurika"
+},
+"zh": {
+"text": "南非",
+"pronunciation": "Nánfēi"
+},
+"en": {
+"text": "South Africa",
+"pronunciation": "saʊθ ˈæfrɪkə"
+},
+"zh-CN": {
+"text": "南非",
+"pronunciation": "Nánfēi"
+},
+"zh-TW": {
+"text": "南非",
+"pronunciation": "Nánfēi"
+},
+"ru": {
+"text": "Южная Африка",
+"pronunciation": "ˈjuʐnəjə ˈafrʲɪkə"
+}
+},
+"argentina": {
+"ja": {
+"text": "アルゼンチン",
+"pronunciation": "アルゼンチン / aruzenchin"
+},
+"ko-kr": {
+"text": "아르헨티나",
+"pronunciation": "areuhentina"
+},
+"ko-kp": {
+"text": "아르헨띠나",
+"pronunciation": "areuhenttina"
+},
+"zh": {
+"text": "阿根廷",
+"pronunciation": "Āgēntíng"
+},
+"en": {
+"text": "Argentina",
+"pronunciation": "ˌɑːrdʒənˈtiːnə"
+},
+"zh-CN": {
+"text": "阿根廷",
+"pronunciation": "Āgēntíng"
+},
+"zh-TW": {
+"text": "阿根廷",
+"pronunciation": "Āgēntíng"
+},
+"ru": {
+"text": "Аргентина",
+"pronunciation": "ɐrɡʲɪnˈtʲinə"
+}
+}
+}
+}

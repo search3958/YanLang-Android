@@ -1,6 +1,19 @@
 <resources>
-    <string name="analytics_consent_message">YanLangでは，不正利用防止のためアプリごとにIDを配布して管理しています。\nIDごとに利用日時，利用状況を紐づけて管理していますが，それ以外の不必要な情報が紐づけられたりすることはありません。\nまた，Google Analyticsを使用して個人を特定できない形式でアプリ開発に役立てるための情報を取得しています。\nGoogle Analyticsと個人のIDが紐づけられることは一切なく，独立して管理されています。\nこれは運営の上で必要なものです。同意しない場合はアプリを閉じて，使用しないでください。</string>
-    <string name="analytics_consent_accept">同意する</string>
+    <string name="analytics_consent_message">YanLangの解析、通信の傍受、API・サーバーへの不正なアクセス・利用、その他一切の不正利用を禁止します。
+これらの行為は絶対に行わないでください。
+不正利用等が確認された場合、YanLangを含むSentaroが運営するサービスにおいて、利用禁止等の措置を行う場合があります。
+これにはNidele系列も含まれます。
+YanLangでは、不正利用防止のため、アプリごとにIDを発行・管理し、利用日時、IPアドレスおよび利用状況を記録します。
+これら以外の不必要な情報をIDに紐づけることはありません。
+また、Google Analyticsを利用し、個人を特定できない形式で、アプリの改善・開発に必要な情報を取得しています。
+Google Analyticsで取得される情報とアプリのIDが紐づけられることはありません。
+これらの情報の取得・管理は、サービスの運営および不正利用防止のために必要なものです。
+本内容に同意いただけない場合は、アプリを閉じ、利用を中止してください。</string>
+    <string name="analytics_consent_accept">閉じる</string>
+    <string name="analytics_consent_skip">スキップ</string>
+    <string name="analytics_consent_confirm_title">同意の確認</string>
+    <string name="analytics_consent_confirm_message">上記のアナリティクスおよびアカウントの條項に同意しますか？</string>
+    <string name="analytics_consent_title">利用規約と個人情報処理政策</string>
     <string name="ui_000">はじめまして</string>
     <string name="ui_001">続行</string>
     <string name="ui_002">母国語を教えてください</string>
@@ -130,4 +143,16 @@
     <string name="ui_126">もう一度プレイ</string>
     <string name="ui_127">最終スコア</string>
     <string name="ui_128">毎日リセットされます</string>
+    <string name="ui_129">確認テスト</string>
+    <string name="ui_131">単語の意味を選びましょう</string>
+    <string name="credit_usage">%d%%使用済み</string>
+    <string name="credit_title">クレジット残量</string>
+    <string name="credit_message">クレジットはAI翻訳や質問機能の利用に使用されます。每日リセットされます。</string>
+    <string name="credit_refresh">更新</string>
+    <string name="ai_server_response">AIサーバーの応答</string>
+    <string name="close">閉じる</string>
+    <string name="boost">BOOST</string>
+    <string name="score">SCORE</string>
+    <string name="delete_confirmation">「%s」と登録した単語をすべて削除します。この操作は元に戻せません。</string>
+    <string name="show_latest">最新版を表示</string>
 </resources>

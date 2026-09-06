@@ -15,8 +15,8 @@ android {
         applicationId = "com.sentaro.yanlang"
         minSdk = 24
         targetSdk = 36
-        versionCode = 2
-        versionName = "2"
+        versionCode = 3
+        versionName = "3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "SUPABASE_URL", "\"https://bhwxeffktrxzfdmpfhpd.supabase.co\"")
@@ -61,6 +61,7 @@ dependencies {
     implementation(libs.firebase.analytics)
     implementation(libs.supabase.auth.kt)
     implementation(libs.ktor.client.android)
+    implementation(libs.coil.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

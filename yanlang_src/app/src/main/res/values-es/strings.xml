@@ -1,6 +1,15 @@
 <resources>
-    <string name="analytics_consent_message">YanLang asigna y administra un ID único por aplicación para prevenir el uso indebido.\nEl estado y tiempo de uso se vinculan con cada ID, pero no se asocia información innecesaria.\nTambién usamos Google Analytics para recopilar información no identificable para mejorar la aplicación.\nGoogle Analytics y los personales nunca se vinculan y se administran de forma independiente.\nEsto es necesario para la operación. Si no estás de acuerdo, cierra y no uses la aplicación.</string>
-    <string name="analytics_consent_accept">Aceptar</string>
+    <string name="analytics_consent_message">YanLang prohíbe el análisis, la interceptación de comunicaciones, el acceso o uso no autorizado de APIs/servidores, y cualquier otro uso no autorizado. Absolutamente no realice tales acciones.
+Si se detecta uso no autorizado, se pueden tomar medidas como la prohibición del servicio en los servicios operados por Sentaro, incluido YanLang. Esto incluye la serie Nidele.
+YanLang emite y gestiona un ID por aplicación para prevenir el uso no autorizado, y registra la fecha/hora de uso, la dirección IP y el estado de uso. No se asociará ninguna información innecesaria adicional al ID.
+Además, se utiliza Google Analytics para recopilar información necesaria para la mejora y el desarrollo de la aplicación en un formato no identificable personalmente. La información obtenida a través de Google Analytics nunca se asocia con el ID de la aplicación.
+Esta recopilación y gestión de información es necesaria para el funcionamiento del servicio y la prevención del uso no autorizado.
+Si no puede estar de acuerdo con esto, por favor cierre la aplicación y deje de usarla.</string>
+    <string name="analytics_consent_accept">Cerrar</string>
+    <string name="analytics_consent_skip">Omitir</string>
+    <string name="analytics_consent_confirm_title">Confirmar consentimiento</string>
+    <string name="analytics_consent_confirm_message">¿Acepta los términos de análisis y cuenta anteriores?</string>
+    <string name="analytics_consent_title">Términos de uso y política de privacidad</string>
     <string name="ui_000">Encantado de conocerte</string>
     <string name="ui_001">Continuar</string>
     <string name="ui_002">¿Cuál es tu lengua materna?</string>
@@ -123,4 +132,16 @@
     <string name="ui_119">Jugar de nuevo</string>
     <string name="ui_120">Puntuación final</string>
     <string name="ui_128">Se reinicia a diario</string>
+    <string name="ui_129">Prueba de vocabulario</string>
+    <string name="ui_131">Elige el significado de la palabra</string>
+    <string name="credit_usage">%d%%usado</string>
+    <string name="credit_title">Saldo de créditos</string>
+    <string name="credit_message">Los créditos se usan para traducción y preguntas con IA. Se reinician diariamente.</string>
+    <string name="credit_refresh">Actualizar</string>
+    <string name="ai_server_response">Respuesta del servidor IA</string>
+    <string name="close">Cerrar</string>
+    <string name="boost">BOOST</string>
+    <string name="score">SCORE</string>
+    <string name="delete_confirmation">¿Seguro que quieres eliminar todas las palabras registradas en "%s"? Esta acción no se puede deshacer.</string>
+    <string name="show_latest">Mostrar versión más reciente</string>
 </resources>

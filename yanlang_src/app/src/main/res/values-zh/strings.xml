@@ -1,7 +1,20 @@
 <resources>
     <string name="app_name">言然</string>
-    <string name="analytics_consent_message">YanLang 为了防止不正当使用，为每个应用分配并管理 ID。\n我们会将使用时间与使用情况与每个 ID 关联管理，但不会关联其他不必要的信息。\n此外，我们使用 Google Analytics 以无法识别个人的形式收集有助于改进应用的信息。\nGoogle Analytics 与个人 ID 绝不会关联，独立管理。\n这是运营所必需的。如果您不同意，请关闭应用并不要使用。</string>
-    <string name="analytics_consent_accept">同意</string>
+    <string name="analytics_consent_message">YanLang禁止分析、通信拦截、对API/服务器的不正当访问或使用，以及任何其他不正当使用。
+绝对不要从事任何此类行为。
+如果发现不正当使用，可能会对包括YanLang在内的Sentaro运营的服务采取使用禁止等措施。
+这包括Nidele系列。
+YanLang为防止不正当使用，为每个应用发放并管理ID，记录使用时间、IP地址及使用状况。
+不会将这些以外的不必要信息与ID关联。
+此外，使用Google Analytics以无法识别个人的形式收集应用改进和开发所需的信息。
+Google Analytics获取的信息不会与应用ID关联。
+这些信息的获取和管理是服务运营和防止不正当使用所必需的。
+如果您无法同意本内容，请关闭应用并停止使用。</string>
+    <string name="analytics_consent_accept">关闭</string>
+    <string name="analytics_consent_skip">跳过</string>
+    <string name="analytics_consent_confirm_title">确认同意</string>
+    <string name="analytics_consent_confirm_message">您是否同意上述分析与账户条款？</string>
+    <string name="analytics_consent_title">服务条款与个人信息处理政策</string>
     <string name="ui_000">初次见面</string>
     <string name="ui_001">继续</string>
     <string name="ui_002">请告诉我们您的母语</string>
@@ -124,4 +137,16 @@
     <string name="ui_119">再玩一次</string>
     <string name="ui_120">最终得分</string>
     <string name="ui_128">每天重置</string>
+    <string name="ui_129">确认测试</string>
+    <string name="ui_131">请选择单词的含义</string>
+    <string name="credit_usage">%d%%已使用</string>
+    <string name="credit_title">积分余额</string>
+    <string name="credit_message">积分用于AI翻译和提问功能。每日重置。</string>
+    <string name="credit_refresh">刷新</string>
+    <string name="ai_server_response">AI服务器响应</string>
+    <string name="close">关闭</string>
+    <string name="boost">BOOST</string>
+    <string name="score">SCORE</string>
+    <string name="delete_confirmation">确定要删除"%s"中注册的所有单词吗？此操作无法撤销。</string>
+    <string name="show_latest">显示最新版本</string>
 </resources>

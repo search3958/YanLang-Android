@@ -1,15 +1,28 @@
 <resources>
     <string name="app_name">얀랑</string>
-    <string name="analytics_consent_message">YanLang에서는 부정 사용 방지를 위해 앱마다 ID를 배포하여 관리하고 있습니다.\nID별로 사용 시각, 사용 상황을 연동하여 관리하지만 그 외 불필요한 정보가 연동되지는 않습니다.\n또한 Google Analytics를 사용하여 개인을 식별할 수 없는 형태로 앱 개발에 도움이 되는 정보를 수집하고 있습니다.\nGoogle Analytics와 개인 ID는 절대 연동되지 않으며 독립적으로 관리됩니다.\n이는 운영에 필요한 것입니다. 동의하지 않는 경우 앱을 종료해 주세요.</string>
-    <string name="analytics_consent_accept">동의하기</string>
-    <string name="ui_000">처음 뵙겠습니다</string>
+    <string name="analytics_consent_message">YanLang은 분석, 통신가로채기, API/서버에 대한 부정한 접근및 사용, 기타 모든 부정한 사용을 금지합니다.
+이러한 행위는 절대 하지 마십시오.
+부정한 사용이 확인된 경우, YanLang을 포함한 Sentaro가 운영하는 서비스에서 사용금지등의 조치를 취할수 있습니다.
+여기에는 Nidele 시리즈도 포함됩니다.
+YanLang은 부정한 사용을 방지하기위해 앱별로 ID를 발급·관리하고, 사용일시, IP주소및 사용현황을 기록합니다.
+이 외의 불필요한 정보가 ID에 연결되지 않습니다.
+또한 Google Analytics를 사용하여 개인을 식별할수 없는 형태로 앱 개선·개발에 필요한 정보를 수집합니다.
+Google Analytics에서 수집된 정보와 앱의 ID가 연결되지 않습니다.
+이러한 정보 수집·관리는 서비스운영및 부정한 사용방지에 필요한 것입니다.
+이 내용에 동의할수 없는 경우 앱을 닫고 사용을 중단하십시오.</string>
+    <string name="analytics_consent_accept">닫기</string>
+    <string name="analytics_consent_skip">건너뛰기</string>
+    <string name="analytics_consent_confirm_title">동의 확인</string>
+    <string name="analytics_consent_confirm_message">위의 분석및 계정 약관에 동의하시겠습니까?</string>
+    <string name="analytics_consent_title">이용 약관및 개인정보 처리방침</string>
+    <string name="ui_000">환영합니다</string>
     <string name="ui_001">계속</string>
-    <string name="ui_002">모국어를 알려 주세요</string>
+    <string name="ui_002">모국어를 알려주십시오</string>
     <string name="ui_003">당신에게 맞는 번역과 문제를 보여 드립니다</string>
     <string name="ui_004">장문</string>
     <string name="ui_005">단어</string>
     <string name="ui_006">새로 만들기</string>
-    <string name="ui_007">학습 자료</string>
+    <string name="ui_007">학습자료</string>
     <string name="ui_008">꾸준함의 힘</string>
     <string name="ui_009">설정</string>
     <string name="ui_010">모국어</string>
@@ -24,14 +37,14 @@
     <string name="ui_019">내 단어장</string>
     <string name="ui_020">주제로 선택</string>
     <string name="ui_021">언어 선택</string>
-    <string name="ui_022">학습할 주제를 선택하세요</string>
+    <string name="ui_022">학습할 주제를 선택하십시오</string>
     <string name="ui_023">문장 입력</string>
     <string name="ui_024">분석 중…</string>
     <string name="ui_025">계속</string>
     <string name="ui_026">학습할 언어</string>
     <string name="ui_027">제목</string>
     <string name="ui_028">학습할 글을 여기에 붙여 넣으세요 (%d자 이내)</string>
-    <string name="ui_029">언어, 제목, 본문을 입력하면 계속할 수 있습니다</string>
+    <string name="ui_029">언어, 제목, 본문을 입력하면 계속할수 있습니다</string>
     <string name="ui_030">단어장</string>
     <string name="ui_031">단어 확인</string>
     <string name="ui_032">연결 표현 확인</string>
@@ -39,7 +52,7 @@
     <string name="ui_034">이해도 확인</string>
     <string name="ui_035">완료</string>
     <string name="ui_036">번역 입력</string>
-    <string name="ui_037">전체 문장의 의미를 입력하세요</string>
+    <string name="ui_037">전체 문장의 의미를 입력하십시오</string>
     <string name="ui_038">답변 입력</string>
     <string name="ui_039">이 번역 다시 하기</string>
     <string name="ui_040">저장</string>
@@ -78,9 +91,9 @@
     <string name="ui_073">방향</string>
     <string name="ui_074">향기와 시각 감정</string>
     <string name="ui_075">감정</string>
-    <string name="ui_076">이 학습 자료를 삭제할까요?</string>
+    <string name="ui_076">이 학습자료를 삭제할까요?</string>
     <string name="ui_077">단어장을 삭제할까요?</string>
-    <string name="ui_078">단어가 없습니다. 편집에서 추가하세요.</string>
+    <string name="ui_078">단어가 없습니다. 편집에서 추가하십시오.</string>
     <string name="ui_079">이어서</string>
     <string name="ui_080">학습 항목 선택</string>
     <string name="ui_081">학습 카드 생성 중</string>
@@ -88,17 +101,17 @@
     <string name="ui_083">답변 확인 중</string>
     <string name="ui_084">원문과 답변의 의미를 비교하고 있습니다.</string>
     <string name="ui_085">이어서 학습할까요?</string>
-    <string name="ui_086">제목 없는 학습 자료</string>
-    <string name="ui_087">본문을 입력하세요</string>
-    <string name="ui_088">첫 학습 자료를 만들어 보세요</string>
-    <string name="ui_089">짧은 글을 붙여 넣고 단어부터 전체 글까지 순서대로 학습하세요.</string>
+    <string name="ui_086">제목 없는 학습자료</string>
+    <string name="ui_087">본문을 입력하십시오</string>
+    <string name="ui_088">첫 학습자료를 만들어 보세요</string>
+    <string name="ui_089">짧은 글을 붙여 넣고 단어부터 전체 글까지 순서대로 학습하십시오.</string>
     <string name="ui_090">새 단어장</string>
     <string name="ui_091">단어장 편집</string>
-    <string name="ui_092">単語帳の名前を入力...</string>
+    <string name="ui_092">이름을 입력하여주십시오...</string>
     <string name="ui_093">발음(선택)</string>
     <string name="ui_094">뜻</string>
     <string name="ui_095">제목 없는 단어장</string>
-    <string name="ui_096">새로 만들기에서 나만의 단어장을 만들 수 있습니다</string>
+    <string name="ui_096">새로 만들기에서 나만의 단어장을 만들수 있습니다</string>
     <string name="ui_097">일치하는 단어장이 없습니다</string>
     <string name="ui_098">탭하여 표시 · 스와이프하여 다음</string>
     <string name="ui_099">단어를 번역해 보세요</string>
@@ -124,4 +137,16 @@
     <string name="ui_119">다시 플레이</string>
     <string name="ui_120">최종 점수</string>
     <string name="ui_128">매일 리셋됩니다</string>
+    <string name="ui_129">확인 테스트</string>
+    <string name="ui_131">단어의 의미를 선택하세요</string>
+    <string name="credit_usage">%d%%사용됨</string>
+    <string name="credit_title">크레딧 잔량</string>
+    <string name="credit_message">크레딧은 AI 번역및 질문 기능에 사용됩니다. 매일 초기화됩니다.</string>
+    <string name="credit_refresh">새로고침</string>
+    <string name="ai_server_response">AI 서버 응답</string>
+    <string name="close">닫기</string>
+    <string name="boost">BOOST</string>
+    <string name="score">SCORE</string>
+    <string name="delete_confirmation">"%s"와 등록된 모든 단어를 삭제하시겠습니까? 이 작업은 되돌릴수 없습니다.</string>
+    <string name="show_latest">최신 내용 표시</string>
 </resources>
