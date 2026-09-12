@@ -84,6 +84,7 @@ internal fun WordCheckScreen(
      RunnerCheckScreen(
          title = stringResource(R.string.ui_031),
          instruction = stringResource(R.string.ui_099),
+         stageProgress = learningStageProgress(document),
          tokens = words,
          singlePageMode = singlePageMode,
          choicesFor = { token ->
@@ -122,6 +123,7 @@ private fun buildRunnerChoices(
 private fun RunnerCheckScreen(
     title: String,
     instruction: String,
+    stageProgress: LearningStageProgress?,
     tokens: List<LearningToken>,
     singlePageMode: Boolean,
     choicesFor: (LearningToken) -> List<String>,
@@ -158,6 +160,10 @@ private fun RunnerCheckScreen(
                 Spacer(Modifier.width(12.dp))
                 Text(title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.weight(1f))
+                if (stageProgress != null) {
+                    LearningStageProgressIndicator(stageProgress)
+                    Spacer(Modifier.width(6.dp))
+                }
             }
         },
         bottomBar = {

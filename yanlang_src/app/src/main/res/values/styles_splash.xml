@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.YanLang.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/yanlang_splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/yanlang_splash_center</item>
+        <item name="postSplashScreenTheme">@style/Theme.YanLang</item>
+    </style>
+</resources>

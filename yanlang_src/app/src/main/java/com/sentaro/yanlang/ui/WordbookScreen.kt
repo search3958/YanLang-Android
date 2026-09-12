@@ -213,6 +213,7 @@ internal fun WordbookScreen(
          completeEnabled = tokens.isNotEmpty(),
          playCompleteButtonAnimation = tokens.isNotEmpty() && index == tokens.lastIndex,
          onComplete = onComplete,
+         stageProgress = learningStageProgress(document),
          topBarActions = if (showTestButton) {
              { Text(
                  "確認",

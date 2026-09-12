@@ -88,7 +88,8 @@ internal fun RunnerConnectorCheckScreen(
     RunnerCheckScreen(
         title = stringResource(R.string.ui_032),
         instruction = stringResource(R.string.ui_101),
-        tokens = document.connectorTokens,
+        stage = com.sentaro.yanlang.data.LearningStep.CONNECTOR_CHECK,
+        document = document,
         singlePageMode = singlePageMode,
         choicesFor = { token ->
             buildRunnerChoices(
@@ -126,7 +127,8 @@ private fun buildRunnerChoices(
 private fun RunnerCheckScreen(
     title: String,
     instruction: String,
-    tokens: List<LearningToken>,
+    stage: com.sentaro.yanlang.data.LearningStep,
+    document: LearningDocument,
     singlePageMode: Boolean,
     choicesFor: (LearningToken) -> List<String>,
     answerIsCorrect: (LearningToken, String) -> Boolean,
@@ -136,6 +138,8 @@ private fun RunnerCheckScreen(
     onReset: () -> Unit,
     onComplete: () -> Unit,
 ) {
+    val tokens = if (stage == com.sentaro.yanlang.data.LearningStep.WORD_CHECK) document.wordTokens else document.connectorTokens
+    val stageProgress = learningStageProgress(document.copy(step = stage))
     var completedThisRun by remember(tokens.map { it.id }) { mutableStateOf(false) }
     val haptic = LocalHapticFeedback.current
 
@@ -161,6 +165,10 @@ private fun RunnerCheckScreen(
                 Spacer(Modifier.width(12.dp))
                 Text(title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.weight(1f))
+                if (stageProgress != null) {
+                    LearningStageProgressIndicator(stageProgress)
+                    Spacer(Modifier.width(6.dp))
+                }
             }
         },
         bottomBar = {

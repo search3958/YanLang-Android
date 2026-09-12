@@ -42,6 +42,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -187,9 +188,10 @@ internal fun LibraryBottomItem(
 ) {
     Column(
         modifier = Modifier
+            .widthIn(min = 58.dp)
             .clip(SmoothCornerShape(18.dp))
             .clickable(onClick = hapticAction(onClick))
-            .padding(horizontal = 14.dp, vertical = 4.dp),
+            .padding(horizontal = 8.dp, vertical = 4.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Icon(
@@ -201,9 +203,13 @@ internal fun LibraryBottomItem(
         Spacer(Modifier.height(3.dp))
         Text(
             label,
+            modifier = Modifier.wrapContentWidth(unbounded = true),
             style = MaterialTheme.typography.labelSmall,
             fontWeight = if (selected) FontWeight.Bold else FontWeight.Medium,
             color = if (selected) AccentGreen else Color.Black.copy(alpha = 0.68f),
+            maxLines = 1,
+            softWrap = false,
+            overflow = TextOverflow.Clip,
         )
     }
 }

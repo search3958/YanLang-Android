@@ -1,5 +1,7 @@
 package com.sentaro.yanlang.ui
 
+import android.util.Log
+
 import com.sentaro.yanlang.R
 
 import androidx.activity.compose.BackHandler
@@ -202,7 +204,8 @@ internal fun LibraryScreen(
     onNativeLanguageChange: (String, String) -> Unit = { _, _ -> },
     activityDates: Set<String> = emptySet(),
     creditInfo: CreditInfo? = null,
-     onRefreshCredits: () -> Unit = {},
+    onRefreshCredits: () -> Unit = {},
+    onWatchRewardedAd: () -> Unit = {},
 ) {
     var pendingDelete by remember { mutableStateOf<LearningDocument?>(null) }
     var documentQuery by rememberSaveable { mutableStateOf("") }
@@ -340,18 +343,28 @@ internal fun LibraryScreen(
                     Spacer(Modifier.width(8.dp))
                     Text(stringResource(if (isRootNavigationAction) R.string.ui_007 else R.string.ui_006), fontWeight = FontWeight.Bold)
                 }
-                LibraryBottomItem(
-                    selected = rootTab == 1,
-                    icon = Icons.Default.CalendarMonth,
-                    label = stringResource(R.string.ui_008),
-                    onClick = { onRootTabChange(1) },
-                )
-                LibraryBottomItem(
-                    selected = rootTab == 2,
-                    icon = Icons.Default.Settings,
-                    label = stringResource(R.string.ui_009),
-                    onClick = { onRootTabChange(2) },
-                )
+                Box(
+                    modifier = Modifier.weight(1f),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    LibraryBottomItem(
+                        selected = rootTab == 1,
+                        icon = Icons.Default.CalendarMonth,
+                        label = stringResource(R.string.ui_008),
+                        onClick = { onRootTabChange(1) },
+                    )
+                }
+                Box(
+                    modifier = Modifier.weight(1f),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    LibraryBottomItem(
+                        selected = rootTab == 2,
+                        icon = Icons.Default.Settings,
+                        label = stringResource(R.string.ui_009),
+                        onClick = { onRootTabChange(2) },
+                    )
+                }
             }
         },
     ) { padding ->
@@ -400,7 +413,10 @@ internal fun LibraryScreen(
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 item {
-                    CreditCard(info = creditInfo, onRefresh = onRefreshCredits)
+                    CreditCard(creditInfo = creditInfo, onRefresh = onRefreshCredits, onWatchRewardedAd = {
+                        Log.i("YanLangReward", "HOME_CREDIT_CARD_REWARD_CLICKED")
+                        onWatchRewardedAd.invoke()
+                    })
                 }
                 if (resumeDocument != null) {
                     item {

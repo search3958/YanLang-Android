@@ -232,6 +232,53 @@ internal fun AnimatedPrimaryButton(
     }
 }
 
+internal data class LearningStageProgress(
+    val current: Int,
+    val total: Int,
+) {
+    val fraction: Float
+        get() = (current.toFloat() / total.coerceAtLeast(1)).coerceIn(0f, 1f)
+}
+
+internal fun learningStageProgress(document: LearningDocument): LearningStageProgress? {
+    val stages = buildList {
+        add(com.sentaro.yanlang.data.LearningStep.WORDBOOK)
+        add(com.sentaro.yanlang.data.LearningStep.WORD_CHECK)
+        if (document.connectorTokens.isNotEmpty()) {
+            add(com.sentaro.yanlang.data.LearningStep.CONNECTOR_CHECK)
+        }
+        add(com.sentaro.yanlang.data.LearningStep.FINAL_TRANSLATION)
+    }
+    val index = stages.indexOf(document.step)
+    if (index < 0) return null
+    return LearningStageProgress(current = index + 1, total = stages.size)
+}
+
+@Composable
+internal fun LearningStageProgressIndicator(
+    progress: LearningStageProgress,
+) {
+    Box(
+        modifier = Modifier.size(38.dp),
+        contentAlignment = Alignment.Center,
+    ) {
+        CircularProgressIndicator(
+            progress = { progress.fraction },
+            modifier = Modifier.fillMaxSize(),
+            strokeWidth = 3.dp,
+            color = Color(0xFF0900FF),
+            trackColor = Color(0xFFD9D9D9),
+        )
+        Text(
+            text = "${progress.current}/${progress.total}",
+            fontSize = 9.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.Black,
+            maxLines = 1,
+        )
+    }
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun LearningScaffold(
@@ -244,6 +291,7 @@ internal fun LearningScaffold(
     onComplete: () -> Unit,
     showBottomBack: Boolean = true,
     showTopBar: Boolean = true,
+    stageProgress: LearningStageProgress? = null,
     topBarActions: @Composable (androidx.compose.foundation.layout.RowScope.() -> Unit)? = null,
     content: @Composable ColumnScope.(androidx.compose.foundation.layout.PaddingValues) -> Unit,
 ) {
@@ -275,7 +323,13 @@ internal fun LearningScaffold(
                                 )
                             }
                         },
-                        actions = topBarActions ?: {},
+                        actions = {
+                            topBarActions?.invoke(this)
+                            if (stageProgress != null) {
+                                LearningStageProgressIndicator(stageProgress)
+                                Spacer(Modifier.width(10.dp))
+                            }
+                        },
                         colors = TopAppBarDefaults.topAppBarColors(
                             containerColor = HeaderBackground,
                         ),

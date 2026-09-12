@@ -139,7 +139,9 @@ Google Analytics获取的信息不会与应用ID关联。
     <string name="ui_128">每天重置</string>
     <string name="ui_129">确认测试</string>
     <string name="ui_131">请选择单词的含义</string>
-    <string name="credit_usage">%d%%已使用</string>
+    <string name="credit_usage_percent">已使用 %1$d%%</string>
+    <string name="credit_usage_reset_hint">点击以重置用量</string>
+    <string name="credit_usage">-%</string>
     <string name="credit_title">积分余额</string>
     <string name="credit_message">积分用于AI翻译和提问功能。每日重置。</string>
     <string name="credit_refresh">刷新</string>
@@ -149,4 +151,14 @@ Google Analytics获取的信息不会与应用ID关联。
     <string name="score">SCORE</string>
     <string name="delete_confirmation">确定要删除"%s"中注册的所有单词吗？此操作无法撤销。</string>
     <string name="show_latest">显示最新版本</string>
+<string name="example_sentence_button">例句</string><string name="example_sentence_title">例句</string><string name="example_sentence_select">请选择要使用的例句。</string><string name="example_sentence_close">关闭</string><string name="credit_empty_title">没有 AI 积分</string><string name="credit_empty_message">目前没有可用的 AI 积分。观看广告即可重置积分。</string><string name="credit_empty_close">关闭</string>
+    <string name="credit_reward_ad">通过广告重置用量 (Beta)</string>
+    <string name="credit_reward_ad_loading">正在加载广告…</string>
+    <string name="credit_reward_success_title">重置完成</string>
+    <string name="credit_reward_error_title">重置失败</string>
+    <string name="credit_reward_ad_loading_title">正在加载广告</string>
+        <string name="credit_reward_reset_loading">正在验证广告并重置您的积分…</string>
+        <string name="credit_reward_reset_loading_title">正在重置积分</string>
+    <string name="credit_reward_ad_unavailable">广告不可用</string>
+    <string name="credit_reward_success_message">已为您重置积分。您可以继续使用 YanLang。</string>
 </resources>

@@ -1,5 +1,7 @@
 package com.sentaro.yanlang.ui
 
+import android.util.Log
+
 import com.sentaro.yanlang.R
 
 import androidx.activity.compose.BackHandler

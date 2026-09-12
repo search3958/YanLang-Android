@@ -145,9 +145,11 @@ Google Analyticsで取得される情報とアプリのIDが紐づけられる�
     <string name="ui_128">毎日リセットされます</string>
     <string name="ui_129">確認テスト</string>
     <string name="ui_131">単語の意味を選びましょう</string>
-    <string name="credit_usage">%d%%使用済み</string>
+    <string name="credit_usage_percent">%1$d%%使用済み</string>
+    <string name="credit_usage_reset_hint">タップして利用量リセット</string>
+    <string name="credit_usage">-%</string>
     <string name="credit_title">クレジット残量</string>
-    <string name="credit_message">クレジットはAI翻訳や質問機能の利用に使用されます。每日リセットされます。</string>
+    <string name="credit_message">クレジットはAI翻訳や質問機能の利用に使用されます。毎日リセットされます。</string>
     <string name="credit_refresh">更新</string>
     <string name="ai_server_response">AIサーバーの応答</string>
     <string name="close">閉じる</string>
@@ -155,4 +157,14 @@ Google Analyticsで取得される情報とアプリのIDが紐づけられる�
     <string name="score">SCORE</string>
     <string name="delete_confirmation">「%s」と登録した単語をすべて削除します。この操作は元に戻せません。</string>
     <string name="show_latest">最新版を表示</string>
+<string name="example_sentence_button">例文</string><string name="example_sentence_title">例文</string><string name="example_sentence_select">使用する例文を選択してください。</string><string name="example_sentence_close">閉じる</string><string name="credit_empty_title">AIクレジットがありません</string><string name="credit_empty_message">現在利用できるAIクレジットがありません。広告を視聴するとクレジットをリセットできます。</string><string name="credit_empty_close">閉じる</string>
+    <string name="credit_reward_ad">広告で使用量をリセット (Beta)</string>
+    <string name="credit_reward_ad_loading">広告を読み込んでいます…</string>
+    <string name="credit_reward_success_title">リセット完了</string>
+    <string name="credit_reward_error_title">リセットに失敗しました</string>
+    <string name="credit_reward_ad_loading_title">広告を読み込んでいます</string>
+        <string name="credit_reward_reset_loading">広告を確認してクレジットをリセットしています…</string>
+        <string name="credit_reward_reset_loading_title">クレジットをリセットしています</string>
+    <string name="credit_reward_ad_unavailable">広告を利用できません</string>
+    <string name="credit_reward_success_message">お客様のクレジットをリセットしました。引き続きYanLangをご利用いただけます。</string>
 </resources>

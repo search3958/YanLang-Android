@@ -15,8 +15,8 @@ android {
         applicationId = "com.sentaro.yanlang"
         minSdk = 24
         targetSdk = 36
-        versionCode = 3
-        versionName = "3"
+        versionCode = 5
+        versionName = "4"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "SUPABASE_URL", "\"https://bhwxeffktrxzfdmpfhpd.supabase.co\"")
@@ -36,8 +36,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        compilerOptions.jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
     }
     buildFeatures {
         compose = true
@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.core.splashscreen)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
@@ -62,6 +63,7 @@ dependencies {
     implementation(libs.supabase.auth.kt)
     implementation(libs.ktor.client.android)
     implementation(libs.coil.compose)
+    implementation(libs.ads.mobile.sdk)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -35,7 +35,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.PaddingValues
@@ -221,6 +220,7 @@ internal fun FinalTranslationScreen(
         completeEnabled = document.finalTranslation.isNotBlank() && !isProcessing,
         playCompleteButtonAnimation = document.finalScore != null,
         showBottomBack = !singlePageMode,
+        stageProgress = learningStageProgress(document),
         onComplete = {
             focusManager.clearFocus()
             if (document.finalScore == null) onCheck() else onFinish()
@@ -230,7 +230,6 @@ internal fun FinalTranslationScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .imePadding()
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 20.dp, vertical = 18.dp),
         ) {

@@ -1,5 +1,7 @@
 package com.sentaro.yanlang.ui
 
+import android.util.Log
+
 import com.sentaro.yanlang.R
 
 import androidx.activity.compose.BackHandler
@@ -136,8 +138,8 @@ import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.sentaro.yanlang.data.AppState
-import com.sentaro.yanlang.data.AuthRepository
 import com.sentaro.yanlang.data.CreditInfo
+import com.sentaro.yanlang.data.AuthRepository
 import com.sentaro.yanlang.data.ComprehensionQuestion
 import com.sentaro.yanlang.data.ComprehensionQuestionType
 import com.sentaro.yanlang.data.LearningDocument
@@ -199,7 +201,11 @@ internal fun SettingsExternalLink(
 }
 
 @Composable
-internal fun CreditCard(info: CreditInfo?, onRefresh: () -> Unit) {
+internal fun CreditCard(
+    creditInfo: CreditInfo? = null,
+    onRefresh: () -> Unit,
+    onWatchRewardedAd: () -> Unit = {},
+) {
     var showDialog by remember { mutableStateOf(false) }
     val painter = rememberAsyncImagePainter(model = "https://search3958.github.io/imgs/app/yanlang-credits-bg.png")
 
@@ -245,17 +251,22 @@ internal fun CreditCard(info: CreditInfo?, onRefresh: () -> Unit) {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(12.dp),
             ) {
+                val usagePercent = creditInfo?.usagePercent
+                val usageLabel = if (usagePercent != null && usagePercent > 100.0) {
+                    stringResource(R.string.credit_usage_reset_hint)
+                } else if (usagePercent != null && usagePercent.isFinite()) {
+                    stringResource(
+                        R.string.credit_usage_percent,
+                        usagePercent.toInt().coerceAtLeast(0),
+                    )
+                } else {
+                    stringResource(R.string.credit_usage)
+                }
                 Text(
-                    stringResource(R.string.credit_usage, info?.usagePercent?.toInt() ?: 0),
+                    usageLabel,
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = FontWeight.Bold,
                     color = Color.White,
-                )
-                LinearProgressIndicator(
-                    progress = { ((info?.usagePercent ?: 0.0) / 100.0).toFloat() },
-                    modifier = Modifier.weight(1f).height(4.dp),
-                    color = Color.White,
-                    trackColor = Color.White.copy(alpha = 0.3f),
                 )
             }
         }
@@ -268,15 +279,31 @@ internal fun CreditCard(info: CreditInfo?, onRefresh: () -> Unit) {
             text = { Text(stringResource(R.string.credit_message)) },
             confirmButton = {
                 TextButton(onClick = {
-                    onRefresh()
+                    Log.i("YanLangReward", "HOME_CREDIT_CARD_DIALOG_REWARD_CLICKED")
+                    try {
+                        onWatchRewardedAd.invoke()
+                        Log.i("YanLangReward", "HOME_CREDIT_CARD_DIALOG_CALLBACK_INVOKED")
+                    } catch (error: Throwable) {
+                        Log.e("YanLangReward", "HOME_CREDIT_CARD_DIALOG_CALLBACK_FAILED", error)
+                    }
                     showDialog = false
                 }) {
-                    Text(stringResource(R.string.credit_refresh))
+                    Text(stringResource(R.string.credit_reward_ad), maxLines = 1, softWrap = false)
                 }
             },
             dismissButton = {
-                TextButton(onClick = { showDialog = false }) {
-                    Text(stringResource(R.string.ui_043))
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(2.dp),
+                ) {
+                    TextButton(onClick = {
+                        onRefresh()
+                        showDialog = false
+                    }) {
+                        Text(stringResource(R.string.credit_refresh), maxLines = 1, softWrap = false)
+                    }
+                    TextButton(onClick = { showDialog = false }) {
+                        Text(stringResource(R.string.ui_043), maxLines = 1, softWrap = false)
+                    }
                 }
             },
         )

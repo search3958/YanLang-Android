@@ -35,7 +35,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.PaddingValues
@@ -104,7 +103,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Alignment
@@ -188,6 +186,7 @@ internal fun EditorScreen(
     errorMessage: String?,
     errorDetails: String?,
     onChange: (String, String, String) -> Unit,
+    onOpenExamples: () -> Unit,
     onComplete: () -> Unit,
 ) {
     if (isProcessing) {
@@ -207,12 +206,26 @@ internal fun EditorScreen(
             !isProcessing,
         onComplete = onComplete,
         showBottomBack = false,
+        topBarActions = {
+            androidx.compose.material3.FilledTonalButton(
+                onClick = hapticAction(onOpenExamples),
+                enabled = !isProcessing,
+                modifier = Modifier.padding(end = 10.dp),
+                contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 14.dp),
+                shape = SmoothCornerShape(999.dp),
+            ) {
+                Text(
+                    text = stringResource(R.string.example_sentence_button),
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFF1976D2),
+                )
+            }
+        },
     ) { padding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .imePadding()
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 18.dp, vertical = 20.dp),
         ) {
@@ -272,4 +285,5 @@ internal fun EditorScreen(
             Spacer(Modifier.height(16.dp))
         }
     }
+
 }

@@ -103,7 +103,9 @@ YanLang выпускает и управляет ID для каждого при
     <string name="ui_128">Сбрасывается ежедневно</string>
     <string name="ui_129">Проверка словаря</string>
     <string name="ui_131">Выберите значение слова</string>
-    <string name="credit_usage">%d%%использовано</string>
+    <string name="credit_usage_percent">Использовано: %1$d%%</string>
+    <string name="credit_usage_reset_hint">Нажмите, чтобы сбросить использование</string>
+    <string name="credit_usage">-%</string>
     <string name="credit_title">Баланс кредитов</string>
     <string name="credit_message">Кредиты используются для ИИ-перевода и вопросов. Сбрасываются ежедневно.</string>
     <string name="credit_refresh">Обновить</string>
@@ -113,4 +115,14 @@ YanLang выпускает и управляет ID для каждого при
     <string name="score">SCORE</string>
     <string name="delete_confirmation">Удалить все слова, зарегистрированные в "%s"? Это действие нельзя отменить.</string>
     <string name="show_latest">Показать последнюю версию</string>
+<string name="example_sentence_button">Примеры</string><string name="example_sentence_title">Примеры предложений</string><string name="example_sentence_select">Выберите пример для урока.</string><string name="example_sentence_close">Закрыть</string><string name="credit_empty_title">Нет кредитов ИИ</string><string name="credit_empty_message">Сейчас нет доступных кредитов ИИ. Вы можете сбросить кредиты, посмотрев рекламу.</string><string name="credit_empty_close">Закрыть</string>
+    <string name="credit_reward_ad">Сбросить расход рекламой (Beta)</string>
+    <string name="credit_reward_ad_loading">Загрузка рекламы…</string>
+    <string name="credit_reward_success_title">Сброс выполнен</string>
+    <string name="credit_reward_error_title">Не удалось сбросить</string>
+    <string name="credit_reward_ad_loading_title">Загрузка рекламы</string>
+        <string name="credit_reward_reset_loading">Проверка рекламы и сброс ваших кредитов…</string>
+        <string name="credit_reward_reset_loading_title">Сброс кредитов</string>
+    <string name="credit_reward_ad_unavailable">Реклама недоступна</string>
+    <string name="credit_reward_success_message">Ваши кредиты сброшены. Вы можете продолжить пользоваться YanLang.</string>
 </resources>

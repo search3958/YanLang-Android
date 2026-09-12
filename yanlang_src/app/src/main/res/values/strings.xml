@@ -143,7 +143,9 @@ If you cannot agree to this, please close the app and discontinue use.</string>
     <string name="ui_129">Vocabulary test</string>
     <string name="ui_131">Choose the meaning of the word</string>
     <string name="ui_130">一部の単語が標準語と同様になっているか、正しくない場合があります</string>
-    <string name="credit_usage">%d%%使用済み</string>
+    <string name="credit_usage_percent">%1$d%% used</string>
+    <string name="credit_usage_reset_hint">Tap to reset usage</string>
+    <string name="credit_usage">-%</string>
     <string name="credit_title">Credit Balance</string>
     <string name="credit_message">Credits are used for AI translation and question features. They reset daily.</string>
     <string name="credit_refresh">Refresh</string>
@@ -153,4 +155,14 @@ If you cannot agree to this, please close the app and discontinue use.</string>
     <string name="score">SCORE</string>
     <string name="delete_confirmation">Are you sure you want to delete all words registered in "%s"? This action cannot be undone.</string>
     <string name="show_latest">Show latest version</string>
+<string name="example_sentence_button">Example sentences</string><string name="example_sentence_title">Example sentences</string><string name="example_sentence_select">Choose an example to use in your lesson.</string><string name="example_sentence_close">Close</string><string name="credit_empty_title">No AI credits</string><string name="credit_empty_message">There are no AI credits available right now. You can reset your credits by watching an ad.</string><string name="credit_empty_close">Close</string>
+    <string name="credit_reward_ad">Reset usage with an ad (Beta)</string>
+    <string name="credit_reward_ad_loading">Loading ad…</string>
+    <string name="credit_reward_success_title">Reset complete</string>
+    <string name="credit_reward_error_title">Reset failed</string>
+    <string name="credit_reward_ad_loading_title">Loading ad</string>
+        <string name="credit_reward_reset_loading">Verifying the ad and resetting your credits…</string>
+        <string name="credit_reward_reset_loading_title">Resetting credits</string>
+    <string name="credit_reward_ad_unavailable">Ads unavailable</string>
+    <string name="credit_reward_success_message">Your credits have been reset. You can continue using YanLang.</string>
 </resources>
