@@ -55,10 +55,7 @@ object VocabularyRepository {
             }
             entries += VocabularyEntry(id, translations)
         }
-        // Russian is a supported wordbook language even for older bundled files
-        // that predate the Russian translations. Known common entries are filled
-        // from the built-in glossary below; other entries remain available with
-        // their source-language translation.
+        // 古いバンドルファイルでもロシア語は対応語彙言語。一般的な語彙は組み込みの用語集から埋める。他の語彙は元の言語の翻訳のまま利用可能。
         languageCodes += "ru"
         return languageCodes.map(::VocabularyLanguage) to entries
     }

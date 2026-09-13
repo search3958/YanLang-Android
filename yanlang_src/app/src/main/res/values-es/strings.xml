@@ -156,4 +156,16 @@ Si no puede estar de acuerdo con esto, por favor cierre la aplicación y deje de
         <string name="credit_reward_reset_loading_title">Restableciendo créditos</string>
     <string name="credit_reward_ad_unavailable">Anuncios no disponibles</string>
     <string name="credit_reward_success_message">Tus créditos se han restablecido. Puedes seguir usando YanLang.</string>
+    <string name="tts_volume_low_warning">El volumen es bajo, por lo que puede ser difícil oír la voz.</string>
+    <string name="tts_word_pronunciation_title">Pronunciación de palabras</string>
+    <string name="tts_word_pronunciation_description">Lee automáticamente la palabra que estudias cuando se muestra su significado en tu idioma nativo.</string>
+    <string name="tts_word_pronunciation_enabled">Activada</string>
+    <string name="tts_word_pronunciation_disabled">Desactivada</string>
+    <string name="ui_132">Registro total</string>
+    <string name="credit_reward_missing_user">No se pudo verificar al usuario autenticado, por lo que no se pudo confirmar la recompensa del anuncio.</string>
+    <string name="credit_reward_ad_unavailable_message">No se pudo utilizar el anuncio, por lo que no se pudieron restablecer tus créditos. Inténtalo de nuevo más tarde.</string>
+    <string name="credit_reward_verification_failed">El servidor no pudo verificar la recompensa del anuncio.</string>
+    <string name="credit_reward_verification_pending">Aún no se pudo confirmar la recompensa del anuncio. Inténtalo de nuevo más tarde.</string>
+    <string name="credit_reward_expired_message">La verificación de la recompensa del anuncio ha expirado. Inténtalo de nuevo.</string>
+    <string name="credit_reward_generic_error">Se produjo un error al procesar la recompensa del anuncio. Inténtalo de nuevo más tarde.</string>
 </resources>

@@ -26,6 +26,7 @@ class LearningRepository(context: Context) {
         put("currentStep", normalizedState.currentStep.name)
         put("nativeLanguageCode", normalizedState.nativeLanguageCode)
         put("customNativeLanguage", normalizedState.customNativeLanguage)
+        put("wordPronunciationEnabled", normalizedState.wordPronunciationEnabled)
         put("activityDates", JSONArray(normalizedState.activityDates.toList()))
         put("documents", JSONArray().apply {
             normalizedState.documents.forEach { document ->
@@ -200,6 +201,7 @@ class LearningRepository(context: Context) {
                 "es" -> json.optString("customNativeLanguage").ifBlank { "Español" }
                 else -> json.optString("customNativeLanguage")
             },
+            wordPronunciationEnabled = json.optBoolean("wordPronunciationEnabled", true),
             activityDates = json.optJSONArray("activityDates").toStringList().toSet(),
         )
     }

@@ -103,6 +103,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -202,6 +203,8 @@ internal fun LibraryScreen(
     nativeLanguageCode: String = "ja",
     customNativeLanguage: String = "",
     onNativeLanguageChange: (String, String) -> Unit = { _, _ -> },
+    wordPronunciationEnabledState: State<Boolean>,
+    onWordPronunciationEnabledChange: (Boolean) -> Unit = {},
     activityDates: Set<String> = emptySet(),
     creditInfo: CreditInfo? = null,
     onRefreshCredits: () -> Unit = {},
@@ -378,6 +381,8 @@ internal fun LibraryScreen(
                 nativeLanguageCode = nativeLanguageCode,
                 customNativeLanguage = customNativeLanguage,
                 onLanguageChange = onNativeLanguageChange,
+                wordPronunciationEnabled = wordPronunciationEnabledState.value,
+                onWordPronunciationEnabledChange = onWordPronunciationEnabledChange,
                 modifier = Modifier.fillMaxSize().padding(padding),
             )
         } else if (librarySection == 1) {

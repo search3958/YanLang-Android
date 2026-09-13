@@ -204,6 +204,7 @@ internal fun StreakScreen(
         stringResource(R.string.ui_018),
     )
     val streak = remember(activityDates) { currentStreak(activityDates) }
+    val totalRecord = remember(activityDates) { activityDates.size }
 
     LazyColumn(
         modifier = modifier,
@@ -211,24 +212,24 @@ internal fun StreakScreen(
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         item {
-            Card(
+            Row(
                 modifier = Modifier.fillMaxWidth(),
-                shape = SmoothCornerShape(28.dp),
-                colors = CardDefaults.cardColors(containerColor = AccentGreen),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                Row(
-                    modifier = Modifier.padding(horizontal = 22.dp, vertical = 20.dp),
-                    verticalAlignment = Alignment.CenterVertically,
+                Card(
+                    modifier = Modifier.weight(1f),
+                    shape = SmoothCornerShape(28.dp),
+                    colors = CardDefaults.cardColors(containerColor = AccentGreen),
                 ) {
-                    Icon(
-                        Icons.Default.Whatshot,
-                        contentDescription = null,
-                        tint = Color.White,
-                        modifier = Modifier.size(38.dp),
-                    )
-                    Spacer(Modifier.width(14.dp))
-                    Column {
-                        Text(stringResource(R.string.ui_011), color = Color.White.copy(alpha = 0.78f))
+                    Column(
+                        modifier = Modifier.padding(horizontal = 18.dp, vertical = 18.dp),
+                    ) {
+                        Text(
+                            stringResource(R.string.ui_011),
+                            color = Color.White.copy(alpha = 0.78f),
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                        )
                         Text(
                             when (uiLanguageCode) {
                                 "en" -> "$streak days"
@@ -237,16 +238,45 @@ internal fun StreakScreen(
                                 "es" -> "$streak días"
                                 else -> "${streak}日"
                             },
-                            style = MaterialTheme.typography.headlineLarge,
+                            style = MaterialTheme.typography.headlineSmall,
                             fontWeight = FontWeight.Bold,
                             color = Color.White,
+                            maxLines = 1,
+                        )
+                    }
+                }
+                Card(
+                    modifier = Modifier.weight(1f),
+                    shape = SmoothCornerShape(28.dp),
+                    colors = CardDefaults.cardColors(containerColor = AccentGreen),
+                ) {
+                    Column(
+                        modifier = Modifier.padding(horizontal = 18.dp, vertical = 18.dp),
+                    ) {
+                        Text(
+                            stringResource(R.string.ui_132),
+                            color = Color.White.copy(alpha = 0.78f),
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                        Text(
+                            when (uiLanguageCode) {
+                                "en" -> "$totalRecord days"
+                                "ko" -> "${totalRecord}일"
+                                "zh" -> "$totalRecord 天"
+                                "es" -> "$totalRecord días"
+                                else -> "${totalRecord}日"
+                            },
+                            style = MaterialTheme.typography.headlineSmall,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White,
+                            maxLines = 1,
                         )
                     }
                 }
             }
         }
-        // The header occupies one LazyColumn item, so reserve one slot to avoid
-        // overflowing Compose's total item count.
+        // ヘッダーが1つのLazyColumnアイテムを占有するため、Composeの合計アイテム数をオーバーフローさせないために1つのスロットを確保する。
         items(count = Int.MAX_VALUE - 1, key = { it }) { monthOffset ->
             val month = remember(monthOffset) {
                 (currentMonth.clone() as Calendar).apply {

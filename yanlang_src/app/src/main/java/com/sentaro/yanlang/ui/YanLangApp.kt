@@ -1,4 +1,5 @@
 package com.sentaro.yanlang.ui
+import android.widget.Toast
 
 import android.util.Log
 
@@ -108,6 +109,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -157,6 +159,8 @@ import com.sentaro.yanlang.data.VocabularyEntry
 import com.sentaro.yanlang.data.VocabularyLanguage
 import com.sentaro.yanlang.data.VocabularyTranslation
 import com.sentaro.yanlang.data.RewardedCreditAdManager
+import com.sentaro.yanlang.domain.reward.RewardCreditCoordinator
+import com.sentaro.yanlang.domain.reward.VerificationPendingException
 import com.sentaro.yanlang.data.CustomVocabularyBook
 import com.sentaro.yanlang.data.CustomVocabularyEntry
 import com.sentaro.yanlang.data.CustomVocabularyRepository
@@ -215,7 +219,7 @@ private fun responseIndicatesCreditExhaustion(responseText: String?): Boolean {
     return matched
 }
 
-private enum class CreditRewardPhase {
+internal enum class CreditRewardPhase {
     LOADING_AD,
     RESETTING_CREDITS,
 }
@@ -244,6 +248,8 @@ fun YanLangApp(
         },
     )
     val appState = stateViewModel.appState
+    // AnimatedContentによって保持される画面が、ナビゲーションターゲットを変更せずに設定変更を観測できるように、安定したState参照を保持する。
+    val wordPronunciationEnabledState = rememberUpdatedState(appState.wordPronunciationEnabled)
     var navigationHistory by remember {
         mutableStateOf(listOf(LearningStep.LIBRARY))
     }
@@ -267,6 +273,7 @@ fun YanLangApp(
     var creditRewardResult by remember { mutableStateOf<String?>(null) }
     var creditRewardSuccess by remember { mutableStateOf(false) }
     val rewardedCreditAdManager = RewardedCreditAdManager.shared
+    val rewardCreditCoordinator = remember(authRepository) { RewardCreditCoordinator(authRepository, rewardedCreditAdManager) }
     val context = LocalContext.current
     val activity = context as? android.app.Activity
     var showExampleSentences by rememberSaveable { mutableStateOf(false) }
@@ -292,10 +299,10 @@ fun YanLangApp(
         }
 
         val userId = authRepository.currentUserId?.trim()
-        println("[YanLangApp] Reward user UUID available=${!userId.isNullOrBlank()} value=${userId ?: "<missing>"}")
+        println("[YanLangApp] Reward user UUID available=${!userId.isNullOrBlank()}")
         if (userId.isNullOrBlank()) {
             creditRewardSuccess = false
-            creditRewardResult = "認証ユーザーを取得できないため、広告報酬を確認できませんでした。"
+            creditRewardResult = context.getString(R.string.credit_reward_missing_user)
             println("[YanLangApp] Rewarded credit reset failed: authenticated user is missing")
             return
         }
@@ -307,96 +314,60 @@ fun YanLangApp(
 
         appScope.launch {
             try {
-                println("[YanLangApp] Preparing reward claim for user UUID=$userId")
-                val preparation = authRepository.prepareRewardClaim().getOrElse { throw it }
-                println("[YanLangApp] Reward claim prepared: claimId=${preparation.claimId} customData=${preparation.customData}")
-
-                // SSV must carry enough information to identify the exact user UUID.
-                // The server additionally validates that the UUID belongs to the pending claim.
-                if (!preparation.customData.contains(userId)) {
-                    throw IllegalStateException("広告認証情報にユーザーUUIDが含まれていません")
-                }
-
-                if (!rewardedCreditAdManager.isAdAvailable()) {
-                    creditRewardPhase = CreditRewardPhase.LOADING_AD
-                    println("[YanLangApp] Rewarded ad is not cached; showing ad-loading dialog")
-                    rewardedCreditAdManager.ensurePreloaded()
-                }
-
-                val adResult = rewardedCreditAdManager.show(
+                val result = rewardCreditCoordinator.run(
                     context = activity ?: context,
-                    customData = preparation.customData,
                     userId = userId,
+                    onLoadingAd = {
+                        creditRewardPhase = CreditRewardPhase.LOADING_AD
+                        println("[YanLangApp] Rewarded ad is not cached; showing ad-loading dialog")
+                    },
+                    onVerifying = {
+                        creditRewardPhase = CreditRewardPhase.RESETTING_CREDITS
+                        println("[YanLangApp] Credit reset request/polling dialog shown")
+                    },
                 )
-                adResult.getOrElse { throw it }
-                println("[YanLangApp] Rewarded ad finished; starting server verification for user UUID=$userId")
 
-                creditRewardPhase = CreditRewardPhase.RESETTING_CREDITS
-                println("[YanLangApp] Credit reset request/polling dialog shown")
-
-                var finalStatus: com.sentaro.yanlang.data.RewardClaimStatus? = null
-                var attempt = 0
-                var pollingFinished = false
-
-                // Do not hit Supabase immediately after AdMob closes.
-                // Keep at least a 1-second interval before the first status request.
-                println("[YanLangApp] Waiting 1 second before first reward-status request")
-                delay(1_000L)
-
-                while (attempt < 60 && !pollingFinished) {
-                    val statusResult = authRepository.getRewardClaimStatus(preparation.claimId)
-                    if (statusResult.isSuccess) {
-                        val status = statusResult.getOrNull()
-                        if (status == null) {
-                            println("[YanLangApp] Reward status response was empty")
-                            if (attempt >= 59) break
-                            attempt += 1
-                            delay(1_000L)
-                        } else {
-                            finalStatus = status
-                            println("[YanLangApp] Reward verification poll ${attempt + 1}: status=${status.status} remaining=${status.remainingTokens}")
-                            pollingFinished = status.status == "verified" ||
-                                status.status == "failed" ||
-                                status.status == "expired"
-                            if (!pollingFinished) {
-                                attempt += 1
-                                delay(1_000L)
-                            }
-                        }
-                    } else {
-                        val statusError = statusResult.exceptionOrNull()
-                        println("[YanLangApp] Reward status request failed; retrying: ${statusError?.message}")
-                        if (attempt >= 59) {
-                            println("[YanLangApp] Reward status polling exhausted")
-                            break
-                        }
-                        attempt += 1
+                result.onSuccess { status ->
+                    if (status.status == RewardCreditCoordinator.VERIFIED_STATUS) {
+                        creditRewardSuccess = true
+                        creditRewardResult = context.getString(R.string.credit_reward_success_message)
+                        println("[YanLangApp] Waiting 1 second before refreshing credit display")
                         delay(1_000L)
+                        refreshCredits()
+                        println("[YanLangApp] Rewarded credit reset completed by server remaining=${status.remainingTokens}")
+                    } else {
+                        creditRewardSuccess = false
+                        creditRewardResult = when (status.status) {
+                            RewardCreditCoordinator.EXPIRED_STATUS -> context.getString(R.string.credit_reward_expired_message)
+                            RewardCreditCoordinator.FAILED_STATUS -> context.getString(R.string.credit_reward_verification_failed)
+                            else -> context.getString(R.string.credit_reward_verification_pending)
+                        }
+                        println("[YanLangApp] Rewarded credit reset was not verified: status=${status.status}")
                     }
-                }
-
-                val status = finalStatus
-                if (status?.status == "verified") {
-                    creditRewardSuccess = true
-                    creditRewardResult = context.getString(R.string.credit_reward_success_message)
-                    // Keep the next Supabase request at least 1 second after the final poll.
-                    println("[YanLangApp] Waiting 1 second before refreshing credit display")
-                    delay(1_000L)
-                    refreshCredits()
-                    println("[YanLangApp] Rewarded credit reset completed by server for user UUID=$userId remaining=${status.remainingTokens}")
-                } else {
-                    creditRewardSuccess = false
-                    creditRewardResult = status?.message
-                        ?.takeIf { it.isNotBlank() && it != "広告の確認を待っています" }
-                        ?: "広告の証明をサーバーで確認できませんでした。広告の確認には時間がかかる場合があります。もう一度お試しください。"
-                    println("[YanLangApp] Rewarded credit reset was not verified: status=${status?.status} user UUID=$userId")
+                }.onFailure { error ->
+                    throw error
                 }
             } catch (error: Throwable) {
                 creditRewardSuccess = false
-                creditRewardResult = error.message
-                    ?.takeIf { it.isNotBlank() }
-                    ?: "広告の処理中にエラーが発生しました。"
-                println("[YanLangApp] Rewarded credit reset failed: ${error.message}")
+                when (error) {
+                    is com.sentaro.yanlang.data.AdUnavailableException -> {
+                        Toast.makeText(
+                            context.applicationContext,
+                            context.getString(R.string.credit_reward_ad_unavailable),
+                            Toast.LENGTH_SHORT,
+                        ).show()
+                        creditRewardResult = context.getString(R.string.credit_reward_ad_unavailable_message)
+                        println("[YanLangApp] Rewarded credit reset failed: ad unavailable")
+                    }
+                    is VerificationPendingException -> {
+                        creditRewardResult = context.getString(R.string.credit_reward_verification_pending)
+                        println("[YanLangApp] Rewarded credit reset failed: verification polling exhausted")
+                    }
+                    else -> {
+                        creditRewardResult = context.getString(R.string.credit_reward_generic_error)
+                        println("[YanLangApp] Rewarded credit reset failed: ${error.message}")
+                    }
+                }
             } finally {
                 creditRewardBusy = false
                 creditRewardPhase = null
@@ -575,105 +546,32 @@ fun YanLangApp(
     }
 
     Surface(modifier = Modifier.fillMaxSize()) {
-        if (showCreditEmptyDialog) {
-            AlertDialog(
-                onDismissRequest = {
-                    if (!creditRewardBusy) {
-                        showCreditEmptyDialog = false
-                        println("[YanLangApp] Empty credit dialog dismissed")
-                    }
-                },
-                title = { Text(stringResource(R.string.credit_empty_title)) },
-                text = { Text(stringResource(R.string.credit_empty_message)) },
-                confirmButton = {
-                    TextButton(
-                        enabled = !creditRewardBusy,
-                        onClick = {
-                            showCreditEmptyDialog = false
-                            startRewardedCreditReset()
-                            println("[YanLangApp] Rewarded ad reset requested from empty credit dialog")
-                        },
-                    ) {
-                        Text(
-                            stringResource(R.string.credit_reward_ad),
-                            maxLines = 1,
-                            softWrap = false,
-                        )
-                    }
-                },
-                dismissButton = {
-                    TextButton(
-                        enabled = !creditRewardBusy,
-                        onClick = {
-                            showCreditEmptyDialog = false
-                            println("[YanLangApp] Empty credit dialog closed")
-                        },
-                    ) {
-                        Text(stringResource(R.string.credit_empty_close))
-                    }
-                },
-            )
-        }
-
-        when (creditRewardPhase) {
-            CreditRewardPhase.LOADING_AD -> {
-                AlertDialog(
-                    onDismissRequest = { println("[YanLangApp] Ad-loading dialog dismissal ignored while reward flow is active") },
-                    title = { Text(stringResource(R.string.credit_reward_ad_loading_title)) },
-                    text = {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.spacedBy(16.dp),
-                        ) {
-                            CircularProgressIndicator(modifier = Modifier.size(28.dp), strokeWidth = 3.dp)
-                            Text(stringResource(R.string.credit_reward_ad_loading))
-                        }
-                    },
-                    confirmButton = {},
-                )
-            }
-            CreditRewardPhase.RESETTING_CREDITS -> {
-                AlertDialog(
-                    onDismissRequest = { println("[YanLangApp] Credit-reset dialog dismissal ignored while server verification is active") },
-                    title = { Text(stringResource(R.string.credit_reward_reset_loading_title)) },
-                    text = {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.spacedBy(16.dp),
-                        ) {
-                            CircularProgressIndicator(modifier = Modifier.size(28.dp), strokeWidth = 3.dp)
-                            Text(stringResource(R.string.credit_reward_reset_loading))
-                        }
-                    },
-                    confirmButton = {},
-                )
-            }
-            null -> Unit
-        }
-
-        creditRewardResult?.let { message ->
-            AlertDialog(
-                onDismissRequest = {
-                    creditRewardResult = null
-                    println("[YanLangApp] Reward result dialog dismissed")
-                },
-                title = {
-                    Text(
-                        if (creditRewardSuccess) stringResource(R.string.credit_reward_success_title)
-                        else stringResource(R.string.credit_reward_error_title)
-                    )
-                },
-                text = { Text(message) },
-                confirmButton = {
-                    TextButton(onClick = {
-                        creditRewardResult = null
-                        println("[YanLangApp] Reward result dialog closed")
-                    }) {
-                        Text(stringResource(R.string.credit_empty_close))
-                    }
-                },
-            )
-        }
+        CreditRewardDialogs(
+            showCreditEmptyDialog = showCreditEmptyDialog,
+            rewardBusy = creditRewardBusy,
+            rewardPhase = creditRewardPhase,
+            rewardResult = creditRewardResult,
+            rewardSuccess = creditRewardSuccess,
+            onDismissEmpty = {
+                if (!creditRewardBusy) {
+                    showCreditEmptyDialog = false
+                    println("[YanLangApp] Empty credit dialog dismissed")
+                }
+            },
+            onStartReward = {
+                showCreditEmptyDialog = false
+                startRewardedCreditReset()
+                println("[YanLangApp] Rewarded ad reset requested from empty credit dialog")
+            },
+            onCloseEmpty = {
+                showCreditEmptyDialog = false
+                println("[YanLangApp] Empty credit dialog closed")
+            },
+            onDismissResult = {
+                creditRewardResult = null
+                println("[YanLangApp] Reward result dialog dismissed")
+            },
+        )
 
         if (!onboardingCompleted) {
             OnboardingFlow(
@@ -777,8 +675,7 @@ fun YanLangApp(
             label = "screen",
         ) { contentState ->
             val (step, documentId, targetVocabularyRoute) = contentState
-            // Use the transition target instead of the latest outer state so the
-            // outgoing content remains the screen that is actually leaving.
+            // 遷移ターゲットを最新の外部状態の代わりに使用し、出力コンテンツが実際に離れている画面のままにする。
             val activeDocument = appState.documents.firstOrNull { it.id == documentId }
             val outgoingScrimAlpha by animateFloatAsState(
                 targetValue = if (contentState == screenTargetState) 0f else 0.5f,
@@ -811,6 +708,7 @@ fun YanLangApp(
                         initialIndex = 0,
                         languageCode = vocabularyLanguageCode,
                         nativeLanguageCode = appState.nativeLanguageCode,
+                        wordPronunciationEnabled = appState.wordPronunciationEnabled,
                         onBack = { vocabularyEntryIndex = null; vocabularyTestFile = null; vocabularyFile = null; vocabularyExitTick++ },
                         onStartTest = {
                             val file = vocabularyFile
@@ -950,12 +848,20 @@ fun YanLangApp(
                         onRootTabChange = { rootTab = it },
                         nativeLanguageCode = appState.nativeLanguageCode,
                         customNativeLanguage = appState.customNativeLanguage,
+                        wordPronunciationEnabledState = wordPronunciationEnabledState,
                         onNativeLanguageChange = { code, custom ->
                             commit(
                                 appState.copy(
                                     nativeLanguageCode = code,
                                     customNativeLanguage = custom,
                                 ),
+                                recordNavigation = false,
+                            )
+                        },
+                        onWordPronunciationEnabledChange = { enabled ->
+                            Log.d("YanLangSettings", "Word pronunciation setting changed: enabled=$enabled")
+                            commit(
+                                appState.copy(wordPronunciationEnabled = enabled),
                                 recordNavigation = false,
                             )
                         },
@@ -1077,7 +983,7 @@ fun YanLangApp(
                              if (singlePageMode) navigateToLibrary()
                              else navigate(LearningStep.WORD_CHECK)
                          },
-                         showTestButton = activeDocument.connectorTokens.isEmpty(),
+                         wordPronunciationEnabled = appState.wordPronunciationEnabled,
                      )
                 }
 

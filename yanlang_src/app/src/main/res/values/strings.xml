@@ -165,4 +165,16 @@ If you cannot agree to this, please close the app and discontinue use.</string>
         <string name="credit_reward_reset_loading_title">Resetting credits</string>
     <string name="credit_reward_ad_unavailable">Ads unavailable</string>
     <string name="credit_reward_success_message">Your credits have been reset. You can continue using YanLang.</string>
+    <string name="tts_volume_low_warning">Wordbook volume is low, so the voice may be hard to hear.</string>
+    <string name="tts_word_pronunciation_title">Word pronunciation</string>
+    <string name="tts_word_pronunciation_description">Automatically reads the target-language word when its native-language meaning is shown.</string>
+    <string name="tts_word_pronunciation_enabled">Enabled</string>
+    <string name="tts_word_pronunciation_disabled">Disabled</string>
+    <string name="ui_132">Total record</string>
+    <string name="credit_reward_missing_user">We could not verify the signed-in user, so the ad reward could not be confirmed.</string>
+    <string name="credit_reward_ad_unavailable_message">The ad could not be used, so your credits could not be reset. Please try again later.</string>
+    <string name="credit_reward_verification_failed">The ad reward could not be verified by the server.</string>
+    <string name="credit_reward_verification_pending">The ad reward could not be confirmed yet. Please try again later.</string>
+    <string name="credit_reward_expired_message">The ad reward confirmation expired. Please try again.</string>
+    <string name="credit_reward_generic_error">An error occurred while processing the ad reward. Please try again later.</string>
 </resources>

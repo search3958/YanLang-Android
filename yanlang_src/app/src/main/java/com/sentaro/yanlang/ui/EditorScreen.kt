@@ -217,7 +217,7 @@ internal fun EditorScreen(
                 Text(
                     text = stringResource(R.string.example_sentence_button),
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFF1976D2),
+                    color = MaterialTheme.colorScheme.primary,
                 )
             }
         },

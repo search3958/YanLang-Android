@@ -185,6 +185,8 @@ internal fun SettingsScreen(
     nativeLanguageCode: String,
     customNativeLanguage: String,
     onLanguageChange: (String, String) -> Unit,
+    wordPronunciationEnabled: Boolean,
+    onWordPronunciationEnabledChange: (Boolean) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     var showAnalyticsDialog by remember { mutableStateOf(false) }
@@ -204,6 +206,48 @@ internal fun SettingsScreen(
             .verticalScroll(rememberScrollState())
             .padding(horizontal = 20.dp, vertical = 18.dp),
     ) {
+        Text(
+            stringResource(R.string.tts_word_pronunciation_title),
+            style = MaterialTheme.typography.titleLarge,
+            fontWeight = FontWeight.Bold,
+        )
+        Spacer(Modifier.height(16.dp))
+        listOf(
+            true to stringResource(R.string.tts_word_pronunciation_enabled),
+            false to stringResource(R.string.tts_word_pronunciation_disabled),
+        ).forEach { (enabled, label) ->
+            val selected = wordPronunciationEnabled == enabled
+            Card(
+                onClick = hapticAction {
+                    Log.d("YanLangSettings", "Word pronunciation setting selected: enabled=$enabled previous=$wordPronunciationEnabled")
+                    onWordPronunciationEnabledChange(enabled)
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 10.dp),
+                shape = SmoothCornerShape(20.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = if (selected) AccentGreen.copy(alpha = 0.10f) else Color.White,
+                ),
+                elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(
+                        label,
+                        fontWeight = if (selected) FontWeight.Bold else FontWeight.Medium,
+                    )
+                    Spacer(Modifier.weight(1f))
+                    if (selected) {
+                        Icon(Icons.Default.CheckCircle, contentDescription = null, tint = AccentGreen)
+                    }
+                }
+            }
+        }
+
+        Spacer(Modifier.height(22.dp))
         Text(
             stringResource(R.string.ui_010),
             style = MaterialTheme.typography.titleLarge,
@@ -253,6 +297,7 @@ internal fun SettingsScreen(
                 colors = yanLangTextFieldColors(),
             )
         }
+
         Spacer(Modifier.height(28.dp))
         Text(
             "${stringResource(R.string.ui_049)} ${BuildConfig.VERSION_NAME}",

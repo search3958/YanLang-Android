@@ -125,4 +125,16 @@ YanLang выпускает и управляет ID для каждого при
         <string name="credit_reward_reset_loading_title">Сброс кредитов</string>
     <string name="credit_reward_ad_unavailable">Реклама недоступна</string>
     <string name="credit_reward_success_message">Ваши кредиты сброшены. Вы можете продолжить пользоваться YanLang.</string>
+    <string name="tts_volume_low_warning">Громкость низкая, поэтому речь может быть плохо слышна.</string>
+    <string name="tts_word_pronunciation_title">Озвучивание слов</string>
+    <string name="tts_word_pronunciation_description">Автоматически озвучивать изучаемое слово при показе перевода на родном языке.</string>
+    <string name="tts_word_pronunciation_enabled">Включено</string>
+    <string name="tts_word_pronunciation_disabled">Выключено</string>
+    <string name="ui_132">Общий результат</string>
+    <string name="credit_reward_missing_user">Не удалось подтвердить вошедшего пользователя, поэтому награду за рекламу подтвердить не удалось.</string>
+    <string name="credit_reward_ad_unavailable_message">Рекламу не удалось использовать, поэтому кредиты не были сброшены. Повторите попытку позже.</string>
+    <string name="credit_reward_verification_failed">Не удалось подтвердить награду за рекламу на сервере.</string>
+    <string name="credit_reward_verification_pending">Пока не удалось подтвердить награду за рекламу. Повторите попытку позже.</string>
+    <string name="credit_reward_expired_message">Срок подтверждения награды за рекламу истёк. Повторите попытку.</string>
+    <string name="credit_reward_generic_error">При обработке награды за рекламу произошла ошибка. Повторите попытку позже.</string>
 </resources>

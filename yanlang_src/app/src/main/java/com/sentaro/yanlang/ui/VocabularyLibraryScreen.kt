@@ -189,9 +189,18 @@ internal fun VocabularyLibraryScreen(
     onBack: () -> Unit,
     onStartTest: () -> Unit,
     modifier: Modifier = Modifier,
+    wordPronunciationEnabled: Boolean = true,
 ) {
     var revealed by rememberSaveable { mutableStateOf(setOf<String>()) }
+    val tts = rememberYanLangTts(
+        languageCode = languageCode,
+        lowVolumeMessage = stringResource(R.string.tts_volume_low_warning),
+    )
     val pagerState = rememberPagerState(initialPage = initialIndex.coerceIn(0, (entries.size - 1).coerceAtLeast(0)), pageCount = { entries.size })
+    YanLangTtsPreload(
+        tts = tts,
+        texts = entries.mapNotNull { it.translations[languageCode]?.text },
+    )
 
     Column(modifier.background(Color(0xFFF6F6F6)).windowInsetsPadding(WindowInsets.statusBars).padding(horizontal = 20.dp, vertical = 18.dp)) {
         Row(
@@ -228,12 +237,36 @@ internal fun VocabularyLibraryScreen(
                 val verticalPadding = ((maxHeight - 198.dp) / 2).coerceAtLeast(0.dp)
                 VerticalPager(state = pagerState, modifier = Modifier.fillMaxSize(), contentPadding = PaddingValues(vertical = verticalPadding), pageSize = PageSize.Fixed(198.dp), pageSpacing = 18.dp) { index ->
                     val entry = entries[index]
+                    val isRevealed = entry.id in revealed
+                    val translation = entry.translations[languageCode]
+                        ?: entry.translations.values.firstOrNull()
+                        ?: VocabularyTranslation("")
+                    var hasBeenRevealedInThisScreen by remember(entry.id) { mutableStateOf(isRevealed) }
+                    androidx.compose.runtime.LaunchedEffect(entry.id, isRevealed) {
+                        if (isRevealed && !hasBeenRevealedInThisScreen) {
+                            hasBeenRevealedInThisScreen = true
+                            if (wordPronunciationEnabled) {
+                                android.util.Log.d("YanLangTts", "Meaning reveal event; speaking target word: ${translation.text}")
+                                tts.speak(translation.text)
+                            } else {
+                                android.util.Log.d("YanLangTts", "Meaning reveal event ignored because word pronunciation is disabled")
+                            }
+                        } else if (!isRevealed) {
+                            hasBeenRevealedInThisScreen = false
+                        }
+                    }
                     Card(
-                        onClick = hapticAction { revealed = if (entry.id in revealed) revealed - entry.id else revealed + entry.id },
+                        onClick = hapticAction {
+                            if (wordPronunciationEnabled) {
+                                tts.warnLowVolumeOnce()
+                            } else {
+                                android.util.Log.d("YanLangTts", "Low-volume warning skipped because word pronunciation is disabled")
+                            }
+                            revealed = if (isRevealed) revealed - entry.id else revealed + entry.id
+                        },
                         modifier = Modifier.fillMaxWidth().height(198.dp), shape = SmoothCornerShape(42.dp), colors = CardDefaults.cardColors(containerColor = Color.White), elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
                     ) {
                         Column(Modifier.fillMaxSize().padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-                            val translation = entry.translations[languageCode] ?: entry.translations.values.firstOrNull() ?: VocabularyTranslation("")
                             Text(translation.text, style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
                             Spacer(Modifier.height(18.dp))
                             Text(translation.pronunciation, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)

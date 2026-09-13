@@ -187,7 +187,7 @@ internal fun WordbookScreen(
     onReveal: (String) -> Unit,
     onMove: (Int) -> Unit,
     onComplete: () -> Unit,
-    showTestButton: Boolean = false,
+    wordPronunciationEnabled: Boolean = true,
 ) {
     val tokens = document.tokens
     val index = document.wordbookIndex.coerceIn(0, (tokens.size - 1).coerceAtLeast(0))
@@ -196,6 +196,15 @@ internal fun WordbookScreen(
         pageCount = { tokens.size },
     )
     val hapticFeedback = LocalHapticFeedback.current
+    val tts = rememberYanLangTts(
+        languageCode = document.targetLanguage,
+        lowVolumeMessage = stringResource(R.string.tts_volume_low_warning),
+    )
+
+    YanLangTtsPreload(
+        tts = tts,
+        texts = tokens.map { it.source },
+    )
 
     androidx.compose.runtime.LaunchedEffect(pagerState.currentPage, tokens.size) {
         if (tokens.isNotEmpty() && pagerState.currentPage != document.wordbookIndex) {
@@ -214,14 +223,6 @@ internal fun WordbookScreen(
          playCompleteButtonAnimation = tokens.isNotEmpty() && index == tokens.lastIndex,
          onComplete = onComplete,
          stageProgress = learningStageProgress(document),
-         topBarActions = if (showTestButton) {
-             { Text(
-                 "確認",
-                 fontWeight = FontWeight.Bold,
-                 fontSize = 13.sp,
-                 color = Color.Black,
-             ) }
-         } else null,
      ) { padding ->
         Column(
             modifier = Modifier
@@ -267,14 +268,31 @@ internal fun WordbookScreen(
                     key = { tokens[it].id },
                 ) { cardIndex ->
                     val token = tokens[cardIndex]
+                    val revealed = token.id in document.revealedWordIds ||
+                        (cardIndex == index && document.wordbookRevealed)
+
                     StackedWordCard(
                         token = token,
-                        revealed = token.id in document.revealedWordIds ||
-                            (cardIndex == index && document.wordbookRevealed),
+                        revealed = revealed,
                         muted = cardIndex != index,
                         onClick = {
+                            // 音量警告は単語画面向けであり、特定のカード向けではない。
+                            // アクティブカードの表示アクションから直接話すことで、長文単語帳が再構成/LaunchedEffect遷移に依存しないようにする。
+                            if (wordPronunciationEnabled) {
+                                tts.warnLowVolumeOnce()
+                            } else {
+                                android.util.Log.d("YanLangTts", "Low-volume warning skipped because word pronunciation is disabled")
+                            }
                             if (cardIndex == pagerState.currentPage) {
+                                if (!revealed && wordPronunciationEnabled) {
+                                    android.util.Log.d("YanLangTts", "Wordbook reveal; speaking target word directly: ${token.source}")
+                                    tts.speak(token.source)
+                                } else if (revealed) {
+                                    android.util.Log.d("YanLangTts", "Wordbook word hidden; pronunciation not repeated: ${token.source}")
+                                }
                                 onReveal(token.id)
+                            } else {
+                                android.util.Log.d("YanLangTts", "Non-active word card tapped; reveal ignored")
                             }
                         },
                     )

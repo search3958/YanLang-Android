@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 
-/** A Figma-style smooth squircle shape with a configurable base radius. */
+/** 設定可能なベース半径を持つ、Figma風の滑らかなスクエア形状。 */
 class SmoothCornerShape(private val radius: Dp) : Shape {
     override fun createOutline(
         size: Size,

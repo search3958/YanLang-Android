@@ -92,6 +92,7 @@ data class AppState(
     val currentStep: LearningStep = LearningStep.LIBRARY,
     val nativeLanguageCode: String = "ja",
     val customNativeLanguage: String = "",
+    val wordPronunciationEnabled: Boolean = true,
     val activityDates: Set<String> = emptySet(),
 )
 

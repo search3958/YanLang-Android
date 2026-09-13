@@ -2,10 +2,7 @@ package com.sentaro.yanlang.data
 
 import org.json.JSONObject
 
-/**
- * Serializes untrusted text as one standard JSON string literal before embedding it in a prompt.
- * This safely keeps JavaScript, JSON, quotes, braces, and backslashes as data rather than syntax.
- */
+/** 信頼できないテキストを、プロンプトに埋め込む前に標準的なJSON文字列リテラルとしてシリアライズする。 */
 internal object AiTextCodec {
     fun escape(value: String): String = buildString(value.length + 2) {
         append('"')
@@ -28,11 +25,11 @@ internal object AiTextCodec {
         append('"')
     }
 
-    /** JSONObject has already decoded valid response strings. */
-    fun unescape(value: String): String = value
+/** JSONObjectはすでに有効なレスポンス文字列をデコード済み。 */
+fun unescape(value: String): String = value
 }
 
-/** Accepts only one syntactically valid JSON object, never a JSON-looking fragment. */
+/** 構文的に有効なJSONオブジェクトのみを受け入れ、JSON風の断片は受け付けない。 */
 internal object AiJsonResponse {
     fun extractObject(content: String): String {
         val candidate = unwrapCodeFence(content.trim())

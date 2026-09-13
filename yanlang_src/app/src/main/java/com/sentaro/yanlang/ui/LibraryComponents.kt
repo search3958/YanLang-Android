@@ -345,10 +345,10 @@ internal fun CompletedDocumentMenu(
                 Text(stringResource(R.string.ui_080), color = MaterialTheme.colorScheme.onSurfaceVariant)
                 Spacer(Modifier.height(16.dp))
                 listOf(
-                    "単語帳" to LearningStep.WORDBOOK,
-                    "単語確認" to LearningStep.WORD_CHECK,
-                    "接続詞確認" to LearningStep.CONNECTOR_CHECK,
-                    "全文翻訳" to LearningStep.FINAL_TRANSLATION,
+                    stringResource(R.string.ui_030) to LearningStep.WORDBOOK,
+                    stringResource(R.string.ui_031) to LearningStep.WORD_CHECK,
+                    stringResource(R.string.ui_032) to LearningStep.CONNECTOR_CHECK,
+                    stringResource(R.string.ui_033) to LearningStep.FINAL_TRANSLATION,
                 ).forEach { (label, step) ->
                     FilledTonalButton(
                         onClick = hapticAction { onStartStep(step) },

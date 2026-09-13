@@ -161,4 +161,16 @@ Google Analytics获取的信息不会与应用ID关联。
         <string name="credit_reward_reset_loading_title">正在重置积分</string>
     <string name="credit_reward_ad_unavailable">广告不可用</string>
     <string name="credit_reward_success_message">已为您重置积分。您可以继续使用 YanLang。</string>
+    <string name="tts_volume_low_warning">音量较低，可能难以听清语音。</string>
+    <string name="tts_word_pronunciation_title">单词朗读</string>
+    <string name="tts_word_pronunciation_description">显示母语释义时，自动朗读正在学习的单词。</string>
+    <string name="tts_word_pronunciation_enabled">启用</string>
+    <string name="tts_word_pronunciation_disabled">停用</string>
+    <string name="ui_132">总记录</string>
+    <string name="credit_reward_missing_user">无法确认当前登录用户，因此无法验证广告奖励。</string>
+    <string name="credit_reward_ad_unavailable_message">由于无法使用广告，无法重置积分。请稍后再试。</string>
+    <string name="credit_reward_verification_failed">无法通过服务器验证广告奖励。</string>
+    <string name="credit_reward_verification_pending">暂时无法确认广告奖励。请稍后再试。</string>
+    <string name="credit_reward_expired_message">广告奖励验证已过期。请重试。</string>
+    <string name="credit_reward_generic_error">处理广告奖励时发生错误。请稍后再试。</string>
 </resources>

@@ -9,10 +9,7 @@ import com.sentaro.yanlang.data.LearningDocument
 import com.sentaro.yanlang.data.LearningRepository
 import com.sentaro.yanlang.data.normalized
 
-/**
- * Holds the live learning state across Compose recomposition and configuration changes.
- * Persistence is a backup; the ViewModel is the source of truth while the task is open.
- */
+/** Composeの再構成や設定変更をまたいで学習状態を保持する。永続化はバックアップであり、ViewModelがタスク開始中の真実の源である。 */
 class YanLangViewModel(
     private val repository: LearningRepository,
 ) : ViewModel() {
