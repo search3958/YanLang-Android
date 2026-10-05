@@ -1,5 +1,5 @@
 [versions]
-agp = "8.13.2"
+agp = "9.4.1"
 kotlin = "2.3.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -15,6 +15,7 @@ googleServices = "4.5.0"
 supabaseKt = "3.1.4"
 ktorClient = "3.1.3"
 playServicesAds = "25.4.0"
+playServicesBilling = "8.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,6 +43,7 @@ ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version
 
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version = "2.7.0" }
 ads-mobile-sdk = { group = "com.google.android.libraries.ads.mobile.sdk", name = "ads-mobile-sdk", version = "1.4.0" }
+play-services-billing = { group = "com.android.billingclient", name = "billing", version.ref = "playServicesBilling" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

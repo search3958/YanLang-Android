@@ -11,12 +11,21 @@ android {
         version = release(36)
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("C:/Users/Sentaro Takenaka/Downloads/jungyo/key.jks")
+            storePassword = "kuma565662"
+            keyAlias = "key0"
+            keyPassword = "kuma565662"
+        }
+    }
+
     defaultConfig {
         applicationId = "com.sentaro.yanlang"
         minSdk = 24
         targetSdk = 36
-        versionCode = 5
-        versionName = "4"
+        versionCode = 7
+        versionName = "6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "SUPABASE_URL", "\"https://bhwxeffktrxzfdmpfhpd.supabase.co\"")
@@ -25,11 +34,13 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
@@ -64,6 +75,7 @@ dependencies {
     implementation(libs.ktor.client.android)
     implementation(libs.coil.compose)
     implementation(libs.ads.mobile.sdk)
+    implementation(libs.play.services.billing)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

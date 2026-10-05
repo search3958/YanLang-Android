@@ -272,6 +272,7 @@ fun YanLangApp(
     var creditRewardPhase by remember { mutableStateOf<CreditRewardPhase?>(null) }
     var creditRewardResult by remember { mutableStateOf<String?>(null) }
     var creditRewardSuccess by remember { mutableStateOf(false) }
+    var creditRefreshPending by remember { mutableStateOf(false) }
     val rewardedCreditAdManager = RewardedCreditAdManager.shared
     val rewardCreditCoordinator = remember(authRepository) { RewardCreditCoordinator(authRepository, rewardedCreditAdManager) }
     val context = LocalContext.current
@@ -280,13 +281,20 @@ fun YanLangApp(
     val appScope = rememberCoroutineScope()
 
     val refreshCredits: () -> Unit = {
-        appScope.launch {
-            val refreshed = authRepository.fetchCredits().getOrNull()
-            creditInfo = refreshed
-            if (refreshed == null) {
-                println("[YanLangApp] Credit refresh failed")
-            } else {
-                println("[YanLangApp] Credit refresh success: remainingTokens=${refreshed.remainingTokens}")
+        if (!creditRefreshPending) {
+            creditRefreshPending = true
+            appScope.launch {
+                try {
+                    val refreshed = authRepository.fetchCredits().getOrNull()
+                    creditInfo = refreshed
+                    if (refreshed == null) {
+                        println("[YanLangApp] Credit refresh failed")
+                    } else {
+                        println("[YanLangApp] Credit refresh success: remainingTokens=${refreshed.remainingTokens}")
+                    }
+                } finally {
+                    creditRefreshPending = false
+                }
             }
         }
     }

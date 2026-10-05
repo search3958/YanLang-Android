@@ -191,6 +191,7 @@ internal fun SettingsScreen(
 ) {
     var showAnalyticsDialog by remember { mutableStateOf(false) }
     val uriHandler = LocalUriHandler.current
+    val context = LocalContext.current
     val languages = listOf(
         "ja" to "日本語",
         "en" to "English",
@@ -324,6 +325,16 @@ internal fun SettingsScreen(
             modifier = Modifier.fillMaxWidth(),
         ) {
             Text(stringResource(R.string.analytics_consent_title))
+        }
+        Spacer(Modifier.height(4.dp))
+        TextButton(
+            onClick = hapticAction {
+                val intent = android.content.Intent(context, com.sentaro.yanlang.ui.RedFlagConfirmationActivity::class.java)
+                context.startActivity(intent)
+            },
+            modifier = Modifier.fillMaxWidth(),
+        ) {
+            Text(stringResource(R.string.ui_environment_details))
         }
         if (showAnalyticsDialog) {
             AnalyticsConsentDialog(onConsent = {

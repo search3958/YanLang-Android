@@ -1,12 +1,7 @@
-<resources>
+﻿<resources>
     <string name="app_name">YanLang</string>
-    <string name="analytics_consent_message">YanLang prohibits the analysis, interception of communications, unauthorized access to or use of APIs/servers, and any other unauthorized use whatsoever. Absolutely do not engage in any such behavior.
-If unauthorized use is detected, measures such as service prohibition may be taken on services operated by Sentaro, including YanLang. This includes the Nidele series.
-YanLang issues and manages an ID per app to prevent unauthorized use, and records the date/time of use, IP address, and usage status. No unnecessary information other than these will be associated with the ID.
-Additionally, Google Analytics is used to collect information necessary for app improvement and development in a non-personally-identifiable format. Information obtained through Google Analytics is never associated with the app ID.
-This information collection and management is necessary for service operation and prevention of unauthorized use.
-If you cannot agree to this, please close the app and discontinue use.</string>
     <string name="analytics_consent_accept">Close</string>
+    <string name="analytics_consent_loading_message">読み込みには時間がかかります。Web版: https://search3958.github.io/policies/yanlang/</string>
     <string name="analytics_consent_title">Terms of Service &amp; Privacy Policy</string>
     <string name="analytics_consent_skip">Skip</string>
     <string name="analytics_consent_confirm_title">Confirm Consent</string>
@@ -14,7 +9,7 @@ If you cannot agree to this, please close the app and discontinue use.</string>
     <string name="ui_000">Nice to meet you</string>
     <string name="ui_001">Continue</string>
     <string name="ui_002">What is your native language?</string>
-    <string name="ui_003">We\'ll tailor translations and exercises for you</string>
+    <string name="ui_003">We will tailor translations and exercises for you</string>
     <string name="ui_004">Texts</string>
     <string name="ui_005">Words</string>
     <string name="ui_006">New</string>
@@ -35,7 +30,7 @@ If you cannot agree to this, please close the app and discontinue use.</string>
     <string name="ui_021">Choose a language</string>
     <string name="ui_022">Choose a theme to study</string>
     <string name="ui_023">Enter a text</string>
-    <string name="ui_024">Analyzing…</string>
+    <string name="ui_024">Analyzing</string>
     <string name="ui_025">Continue</string>
     <string name="ui_026">Language to learn</string>
     <string name="ui_027">Title</string>
@@ -58,11 +53,12 @@ If you cannot agree to this, please close the app and discontinue use.</string>
     <string name="ui_044">Delete</string>
     <string name="ui_045">Edit</string>
     <string name="ui_046">Consistency is strength</string>
-    <string name="ui_047">Steady progress · One good deed a day</string>
+    <string name="ui_047">Steady progress - One good deed a day</string>
     <string name="ui_048">Enter your native language</string>
     <string name="ui_049">Version</string>
     <string name="ui_050">About me</string>
     <string name="ui_051">More apps</string>
+    <string name="ui_environment_details">Show more info</string>
     <string name="ui_052">Other</string>
     <string name="ui_053">Search titles and texts</string>
     <string name="ui_054">Search themes and words</string>
@@ -103,13 +99,13 @@ If you cannot agree to this, please close the app and discontinue use.</string>
     <string name="ui_089">Paste a short text and learn it step by step, from words to the full passage.</string>
     <string name="ui_090">New wordbook</string>
     <string name="ui_091">Edit wordbook</string>
-    <string name="ui_092">単語帳の名前を入力...</string>
+    <string name="ui_092">Create a custom wordbook</string>
     <string name="ui_093">Pronunciation (optional)</string>
     <string name="ui_094">Meaning</string>
     <string name="ui_095">Untitled wordbook</string>
     <string name="ui_096">Create your own wordbook from New</string>
     <string name="ui_097">No matching wordbooks</string>
-    <string name="ui_098">Tap to reveal · Swipe for next</string>
+    <string name="ui_098">Tap to reveal - Swipe for next</string>
     <string name="ui_099">Translate the words</string>
     <string name="ui_100">Skip words you know</string>
     <string name="ui_101">Choose the connector</string>
@@ -119,10 +115,10 @@ If you cannot agree to this, please close the app and discontinue use.</string>
     <string name="ui_105">Comparing the source text with your translation.</string>
     <string name="ui_106">Creating questions that check your understanding.</string>
     <string name="ui_107">Review</string>
-    <string name="ui_108">Creating questions…</string>
-    <string name="ui_109">AI is grading…</string>
+    <string name="ui_108">Creating questions</string>
+    <string name="ui_109">AI is grading</string>
     <string name="ui_110">Grade with AI</string>
-    <string name="ui_111">Checking answers…</string>
+    <string name="ui_111">Checking answers</string>
     <string name="ui_112">Finish lesson</string>
     <string name="ui_113">Check answers</string>
     <string name="ui_114">Check your understanding</string>
@@ -141,8 +137,9 @@ If you cannot agree to this, please close the app and discontinue use.</string>
     <string name="ui_127">Final score</string>
     <string name="ui_128">Resets daily</string>
     <string name="ui_129">Vocabulary test</string>
+    <string name="ui_130">Word meaning quiz</string>
     <string name="ui_131">Choose the meaning of the word</string>
-    <string name="ui_130">一部の単語が標準語と同様になっているか、正しくない場合があります</string>
+    <string name="ui_132">Total record</string>
     <string name="credit_usage_percent">%1$d%% used</string>
     <string name="credit_usage_reset_hint">Tap to reset usage</string>
     <string name="credit_usage">-%</string>
@@ -154,27 +151,32 @@ If you cannot agree to this, please close the app and discontinue use.</string>
     <string name="boost">BOOST</string>
     <string name="score">SCORE</string>
     <string name="delete_confirmation">Are you sure you want to delete all words registered in "%s"? This action cannot be undone.</string>
-    <string name="show_latest">Show latest version</string>
-<string name="example_sentence_button">Example sentences</string><string name="example_sentence_title">Example sentences</string><string name="example_sentence_select">Choose an example to use in your lesson.</string><string name="example_sentence_close">Close</string><string name="credit_empty_title">No AI credits</string><string name="credit_empty_message">There are no AI credits available right now. You can reset your credits by watching an ad.</string><string name="credit_empty_close">Close</string>
+    <string name="show_latest">Open in browser</string>
+    <string name="example_sentence_button">Example sentences</string>
+    <string name="example_sentence_title">Example sentences</string>
+    <string name="example_sentence_select">Choose an example to use in your lesson.</string>
+    <string name="example_sentence_close">Close</string>
+    <string name="credit_empty_title">No AI credits</string>
+    <string name="credit_empty_message">There are no AI credits available right now. You can reset your credits by watching an ad.</string>
+    <string name="credit_empty_close">Close</string>
     <string name="credit_reward_ad">Reset usage with an ad (Beta)</string>
-    <string name="credit_reward_ad_loading">Loading ad…</string>
+    <string name="credit_reward_ad_loading">Loading ad</string>
     <string name="credit_reward_success_title">Reset complete</string>
     <string name="credit_reward_error_title">Reset failed</string>
     <string name="credit_reward_ad_loading_title">Loading ad</string>
-        <string name="credit_reward_reset_loading">Verifying the ad and resetting your credits…</string>
-        <string name="credit_reward_reset_loading_title">Resetting credits</string>
+    <string name="credit_reward_reset_loading">Verifying the ad and resetting your credits</string>
+    <string name="credit_reward_reset_loading_title">Resetting credits</string>
     <string name="credit_reward_ad_unavailable">Ads unavailable</string>
     <string name="credit_reward_success_message">Your credits have been reset. You can continue using YanLang.</string>
+    <string name="credit_reward_missing_user">Could not verify the signed-in user, so the ad reward could not be confirmed.</string>
+    <string name="credit_reward_ad_unavailable_message">Could not use the ad, so your credits could not be reset. Please try again later.</string>
+    <string name="credit_reward_verification_failed">The server could not verify the ad reward.</string>
+    <string name="credit_reward_verification_pending">The ad reward has not been confirmed yet. Please try again later.</string>
+    <string name="credit_reward_expired_message">Ad reward verification has expired. Please try again.</string>
+    <string name="credit_reward_generic_error">An error occurred while processing the ad reward. Please try again later.</string>
     <string name="tts_volume_low_warning">Wordbook volume is low, so the voice may be hard to hear.</string>
     <string name="tts_word_pronunciation_title">Word pronunciation</string>
     <string name="tts_word_pronunciation_description">Automatically reads the target-language word when its native-language meaning is shown.</string>
     <string name="tts_word_pronunciation_enabled">Enabled</string>
     <string name="tts_word_pronunciation_disabled">Disabled</string>
-    <string name="ui_132">Total record</string>
-    <string name="credit_reward_missing_user">We could not verify the signed-in user, so the ad reward could not be confirmed.</string>
-    <string name="credit_reward_ad_unavailable_message">The ad could not be used, so your credits could not be reset. Please try again later.</string>
-    <string name="credit_reward_verification_failed">The ad reward could not be verified by the server.</string>
-    <string name="credit_reward_verification_pending">The ad reward could not be confirmed yet. Please try again later.</string>
-    <string name="credit_reward_expired_message">The ad reward confirmation expired. Please try again.</string>
-    <string name="credit_reward_generic_error">An error occurred while processing the ad reward. Please try again later.</string>
 </resources>

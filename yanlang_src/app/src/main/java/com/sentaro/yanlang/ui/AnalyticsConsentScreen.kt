@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,6 +24,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.sentaro.yanlang.R
+import com.sentaro.yanlang.data.NetworkClient
+import io.ktor.client.call.body
+import io.ktor.client.request.get
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 @Composable
 fun AnalyticsConsentScreen(
@@ -30,6 +36,15 @@ fun AnalyticsConsentScreen(
     modifier: Modifier = Modifier,
 ) {
     var agreed by remember { mutableStateOf(false) }
+    var termsContent by remember { mutableStateOf<String?>(null) }
+    var isLoading by remember { mutableStateOf(true) }
+
+    androidx.compose.runtime.LaunchedEffect(Unit) {
+        kotlinx.coroutines.withContext(Dispatchers.IO) {
+            termsContent = fetchTerms("https://search3958.github.io/policies/yanlang/policies.md")
+            isLoading = false
+        }
+    }
 
     Column(
         modifier
@@ -47,8 +62,12 @@ fun AnalyticsConsentScreen(
             textAlign = TextAlign.Center,
         )
         Spacer(Modifier.height(20.dp))
+        if (isLoading) {
+            CircularProgressIndicator()
+            Spacer(Modifier.height(8.dp))
+        }
         Text(
-            stringResource(R.string.analytics_consent_message),
+            text = termsContent ?: stringResource(R.string.analytics_consent_loading_message),
             color = androidx.compose.ui.graphics.Color(0xFF666666),
             style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Center,
@@ -66,5 +85,13 @@ fun AnalyticsConsentScreen(
             Text(stringResource(R.string.analytics_consent_accept), fontWeight = FontWeight.Bold)
         }
         Spacer(Modifier.weight(1f, true))
+    }
+}
+
+private suspend fun fetchTerms(url: String): String {
+    return try {
+        NetworkClient.http.get(url).body()
+    } catch (exception: Exception) {
+        "エラー: ${exception.message ?: "不明なエラー"}"
     }
 }

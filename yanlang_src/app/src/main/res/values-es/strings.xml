@@ -1,10 +1,4 @@
-<resources>
-    <string name="analytics_consent_message">YanLang prohíbe el análisis, la interceptación de comunicaciones, el acceso o uso no autorizado de APIs/servidores, y cualquier otro uso no autorizado. Absolutamente no realice tales acciones.
-Si se detecta uso no autorizado, se pueden tomar medidas como la prohibición del servicio en los servicios operados por Sentaro, incluido YanLang. Esto incluye la serie Nidele.
-YanLang emite y gestiona un ID por aplicación para prevenir el uso no autorizado, y registra la fecha/hora de uso, la dirección IP y el estado de uso. No se asociará ninguna información innecesaria adicional al ID.
-Además, se utiliza Google Analytics para recopilar información necesaria para la mejora y el desarrollo de la aplicación en un formato no identificable personalmente. La información obtenida a través de Google Analytics nunca se asocia con el ID de la aplicación.
-Esta recopilación y gestión de información es necesaria para el funcionamiento del servicio y la prevención del uso no autorizado.
-Si no puede estar de acuerdo con esto, por favor cierre la aplicación y deje de usarla.</string>
+﻿<resources>
     <string name="analytics_consent_accept">Cerrar</string>
     <string name="analytics_consent_skip">Omitir</string>
     <string name="analytics_consent_confirm_title">Confirmar consentimiento</string>
@@ -34,7 +28,7 @@ Si no puede estar de acuerdo con esto, por favor cierre la aplicación y deje de
     <string name="ui_021">Elegir idioma</string>
     <string name="ui_022">Elige un tema para estudiar</string>
     <string name="ui_023">Introduce un texto</string>
-    <string name="ui_024">Analizando…</string>
+    <string name="ui_024">Analizando</string>
     <string name="ui_025">Continuar</string>
     <string name="ui_026">Idioma que quieres aprender</string>
     <string name="ui_027">Título</string>
@@ -57,7 +51,7 @@ Si no puede estar de acuerdo con esto, por favor cierre la aplicación y deje de
     <string name="ui_044">Eliminar</string>
     <string name="ui_045">Editar</string>
     <string name="ui_046">La constancia da fuerza</string>
-    <string name="ui_047">Progreso diario · Una buena acción al día</string>
+    <string name="ui_047">Progreso diario - Una buena acción al día</string>
     <string name="ui_048">Introduce tu lengua materna</string>
     <string name="ui_049">Versión</string>
     <string name="ui_050">About me</string>
@@ -102,13 +96,13 @@ Si no puede estar de acuerdo con esto, por favor cierre la aplicación y deje de
     <string name="ui_089">Pega un texto corto y aprende paso a paso, desde palabras hasta el texto completo.</string>
     <string name="ui_090">Nuevo vocabulario</string>
     <string name="ui_091">Editar vocabulario</string>
-    <string name="ui_092">単語帳の名前を入力...</string>
+    <string name="ui_092">Crear vocabulario personalizado</string>
     <string name="ui_093">Pronunciación (opcional)</string>
     <string name="ui_094">Significado</string>
     <string name="ui_095">Vocabulario sin título</string>
     <string name="ui_096">Crea tu propio vocabulario desde Nuevo</string>
     <string name="ui_097">No hay vocabularios coincidentes</string>
-    <string name="ui_098">Toca para mostrar · Desliza para seguir</string>
+    <string name="ui_098">Toca para mostrar - Desliza para seguir</string>
     <string name="ui_099">Traduce las palabras</string>
     <string name="ui_100">Omitir palabras conocidas</string>
     <string name="ui_101">Elige el conector</string>
@@ -118,10 +112,10 @@ Si no puede estar de acuerdo con esto, por favor cierre la aplicación y deje de
     <string name="ui_105">Comparando el original con tu traducción.</string>
     <string name="ui_106">Creando preguntas para comprobar tu comprensión.</string>
     <string name="ui_107">Revisar</string>
-    <string name="ui_108">Creando preguntas…</string>
-    <string name="ui_109">La IA está evaluando…</string>
+    <string name="ui_108">Creando preguntas</string>
+    <string name="ui_109">La IA está evaluando</string>
     <string name="ui_110">Evaluar con IA</string>
-    <string name="ui_111">Comprobando respuestas…</string>
+    <string name="ui_111">Comprobando respuestas</string>
     <string name="ui_112">Finalizar lección</string>
     <string name="ui_113">Comprobar respuestas</string>
     <string name="ui_114">Comprueba tu comprensión</string>
@@ -131,9 +125,18 @@ Si no puede estar de acuerdo con esto, por favor cierre la aplicación y deje de
     <string name="ui_118">Comenzar</string>
     <string name="ui_119">Jugar de nuevo</string>
     <string name="ui_120">Puntuación final</string>
+    <string name="ui_121">Seguir estudiando</string>
+    <string name="ui_122">Reiniciar</string>
+    <string name="ui_123">Comprobar conectores</string>
+    <string name="ui_124">Traducción completa</string>
+    <string name="ui_125">Empezar</string>
+    <string name="ui_126">Jugar otra vez</string>
+    <string name="ui_127">Puntuación final</string>
     <string name="ui_128">Se reinicia a diario</string>
     <string name="ui_129">Prueba de vocabulario</string>
+    <string name="ui_130">Test de significados</string>
     <string name="ui_131">Elige el significado de la palabra</string>
+    <string name="ui_132">Registro total</string>
     <string name="credit_usage_percent">%1$d%% utilizado</string>
     <string name="credit_usage_reset_hint">Toca para restablecer el uso</string>
     <string name="credit_usage">-%</string>
@@ -143,17 +146,23 @@ Si no puede estar de acuerdo con esto, por favor cierre la aplicación y deje de
     <string name="ai_server_response">Respuesta del servidor IA</string>
     <string name="close">Cerrar</string>
     <string name="boost">BOOST</string>
-    <string name="score">SCORE</string>
+    <string name="score">PUNTUACIÓN</string>
     <string name="delete_confirmation">¿Seguro que quieres eliminar todas las palabras registradas en "%s"? Esta acción no se puede deshacer.</string>
-    <string name="show_latest">Mostrar versión más reciente</string>
-<string name="example_sentence_button">Ejemplos</string><string name="example_sentence_title">Ejemplos de frases</string><string name="example_sentence_select">Elige un ejemplo para usar en tu lección.</string><string name="example_sentence_close">Cerrar</string><string name="credit_empty_title">No hay créditos de IA</string><string name="credit_empty_message">No hay créditos de IA disponibles en este momento. Puedes restablecer tus créditos viendo un anuncio.</string><string name="credit_empty_close">Cerrar</string>
+    <string name="show_latest">Abrir en el navegador</string>
+    <string name="example_sentence_button">Ejemplos</string>
+    <string name="example_sentence_title">Ejemplos de frases</string>
+    <string name="example_sentence_select">Elige un ejemplo para usar en tu lección.</string>
+    <string name="example_sentence_close">Cerrar</string>
+    <string name="credit_empty_title">No hay créditos de IA</string>
+    <string name="credit_empty_message">No hay créditos de IA disponibles en este momento. Puedes restablecer tus créditos viendo un anuncio.</string>
+    <string name="credit_empty_close">Cerrar</string>
     <string name="credit_reward_ad">Restablecer el uso con un anuncio (Beta)</string>
-    <string name="credit_reward_ad_loading">Cargando anuncio…</string>
+    <string name="credit_reward_ad_loading">Cargando anuncio</string>
     <string name="credit_reward_success_title">Restablecimiento completado</string>
     <string name="credit_reward_error_title">No se pudo restablecer</string>
     <string name="credit_reward_ad_loading_title">Cargando anuncio</string>
-        <string name="credit_reward_reset_loading">Verificando el anuncio y restableciendo tus créditos…</string>
-        <string name="credit_reward_reset_loading_title">Restableciendo créditos</string>
+    <string name="credit_reward_reset_loading">Verificando el anuncio y restableciendo tus créditos</string>
+    <string name="credit_reward_reset_loading_title">Restableciendo créditos</string>
     <string name="credit_reward_ad_unavailable">Anuncios no disponibles</string>
     <string name="credit_reward_success_message">Tus créditos se han restablecido. Puedes seguir usando YanLang.</string>
     <string name="tts_volume_low_warning">El volumen es bajo, por lo que puede ser difícil oír la voz.</string>
@@ -161,7 +170,6 @@ Si no puede estar de acuerdo con esto, por favor cierre la aplicación y deje de
     <string name="tts_word_pronunciation_description">Lee automáticamente la palabra que estudias cuando se muestra su significado en tu idioma nativo.</string>
     <string name="tts_word_pronunciation_enabled">Activada</string>
     <string name="tts_word_pronunciation_disabled">Desactivada</string>
-    <string name="ui_132">Registro total</string>
     <string name="credit_reward_missing_user">No se pudo verificar al usuario autenticado, por lo que no se pudo confirmar la recompensa del anuncio.</string>
     <string name="credit_reward_ad_unavailable_message">No se pudo utilizar el anuncio, por lo que no se pudieron restablecer tus créditos. Inténtalo de nuevo más tarde.</string>
     <string name="credit_reward_verification_failed">El servidor no pudo verificar la recompensa del anuncio.</string>

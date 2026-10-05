@@ -6,13 +6,15 @@ import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.auth.Auth
 import io.github.jan.supabase.auth.auth
 import com.sentaro.yanlang.BuildConfig
+import io.ktor.client.call.body
+import io.ktor.client.request.header
+import io.ktor.client.request.post
+import io.ktor.client.request.setBody
+import io.ktor.http.ContentType
+import io.ktor.http.contentType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
-import java.net.HttpURLConnection
-import java.net.URL
-
-
 
 data class RewardClaimPreparation(
     val claimId: String,
@@ -70,37 +72,24 @@ class AuthRepository {
         runCatching {
             val token = auth.currentSessionOrNull()?.accessToken
                 ?: throw IllegalStateException("Not authenticated")
-            val url = "${BuildConfig.SUPABASE_URL}/functions/v1/yanlang-credits-checker"
-            val connection = (URL(url).openConnection() as HttpURLConnection).apply {
-                requestMethod = "POST"
-                connectTimeout = 10_000
-                readTimeout = 10_000
-                doOutput = true
-                setRequestProperty("Authorization", "Bearer $token")
-                setRequestProperty("Content-Type", "application/json; charset=utf-8")
-                setRequestProperty("Accept", "application/json")
+            val response = NetworkClient.http.post("${BuildConfig.SUPABASE_URL}/functions/v1/yanlang-credits-checker") {
+                header("Authorization", "Bearer $token")
+                contentType(ContentType.Application.Json)
+                setBody(JSONObject().toString())
             }
-            try {
-                connection.outputStream.bufferedWriter(Charsets.UTF_8).use { it.write("{}") }
-                val status = connection.responseCode
-                val responseText = (
-                    if (status in 200..299) connection.inputStream else connection.errorStream
-                    )?.bufferedReader(Charsets.UTF_8)?.use { it.readText() }.orEmpty()
-                if (status !in 200..299) {
-                    throw Exception("Credit check failed ($status): $responseText")
-                }
-                val json = JSONObject(responseText)
-                CreditInfo(
-                    uuid = json.optString("uuid"),
-                    dailyLimit = json.optInt("daily_limit"),
-                    tokenCredits = json.optInt("token_credits"),
-                    remainingTokens = json.optInt("remaining_tokens"),
-                    usagePercent = json.optDouble("usage_percent"),
-                    lastUse = json.optString("last_use"),
-                )
-            } finally {
-                connection.disconnect()
+            val responseText = response.body<String>()
+            if (responseText.isBlank()) {
+                throw IllegalStateException("Credit check returned empty response")
             }
+            val json = JSONObject(responseText)
+            CreditInfo(
+                uuid = json.optString("uuid"),
+                dailyLimit = json.optInt("daily_limit"),
+                tokenCredits = json.optInt("token_credits"),
+                remainingTokens = json.optInt("remaining_tokens"),
+                usagePercent = json.optDouble("usage_percent"),
+                lastUse = json.optString("last_use"),
+            )
         }.onFailure { e ->
             Log.e("AuthRepository", "Fetch credits failed: ${e.message}", e)
         }
@@ -154,34 +143,17 @@ class AuthRepository {
 
     private data class RewardEndpointResponse(val body: String)
 
-    private fun postRewardEndpoint(token: String, body: JSONObject): RewardEndpointResponse {
-        val url = "${BuildConfig.SUPABASE_URL}/functions/v1/yanlang-2-credit-50"
-        val connection = (URL(url).openConnection() as HttpURLConnection).apply {
-            requestMethod = "POST"
-            connectTimeout = 10_000
-            readTimeout = 15_000
-            doOutput = true
-            setRequestProperty("Authorization", "Bearer $token")
-            setRequestProperty("Content-Type", "application/json; charset=utf-8")
-            setRequestProperty("Accept", "application/json")
+    private suspend fun postRewardEndpoint(token: String, body: JSONObject): RewardEndpointResponse {
+        val response = NetworkClient.http.post("${BuildConfig.SUPABASE_URL}/functions/v1/yanlang-2-credit-50") {
+            header("Authorization", "Bearer $token")
+            contentType(ContentType.Application.Json)
+            setBody(body.toString())
         }
-        try {
-            connection.outputStream.bufferedWriter(Charsets.UTF_8).use { it.write(body.toString()) }
-            val status = connection.responseCode
-            val responseText = (if (status in 200..299) connection.inputStream else connection.errorStream)
-                ?.bufferedReader(Charsets.UTF_8)?.use { it.readText() }.orEmpty()
-            if (status !in 200..299) {
-                val message = runCatching { JSONObject(responseText).optString("error") }.getOrNull().orEmpty()
-                Log.e("AuthRepository", "Reward endpoint HTTP $status: $message")
-                throw IllegalStateException(message.ifBlank { "広告処理でサーバーエラーが発生しました ($status)" })
-            }
-            if (responseText.isBlank()) {
-                throw IllegalStateException("広告処理の応答が空です")
-            }
-            return RewardEndpointResponse(responseText)
-        } finally {
-            connection.disconnect()
+        val responseText = response.body<String>()
+        if (responseText.isBlank()) {
+            throw IllegalStateException("広告処理の応答が空です")
         }
+        return RewardEndpointResponse(responseText)
     }
 
 }

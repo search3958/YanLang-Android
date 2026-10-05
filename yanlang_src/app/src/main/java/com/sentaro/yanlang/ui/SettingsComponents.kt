@@ -19,6 +19,7 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.platform.LocalContext
 import coil.compose.rememberAsyncImagePainter
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
@@ -207,7 +208,11 @@ internal fun CreditCard(
     onWatchRewardedAd: () -> Unit = {},
 ) {
     var showDialog by remember { mutableStateOf(false) }
-    val painter = rememberAsyncImagePainter(model = "https://search3958.github.io/imgs/app/yanlang-credits-bg.png")
+    val context = LocalContext.current
+    val painter = rememberAsyncImagePainter(
+        model = "https://search3958.github.io/imgs/app/yanlang-credits-bg.png",
+        imageLoader = AppImageLoader.get(context),
+    )
 
     Card(
         modifier = Modifier

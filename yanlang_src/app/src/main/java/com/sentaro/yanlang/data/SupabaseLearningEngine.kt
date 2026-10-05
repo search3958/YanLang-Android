@@ -2,10 +2,15 @@ package com.sentaro.yanlang.data
 
 import org.json.JSONArray
 import org.json.JSONObject
-import java.net.HttpURLConnection
-import java.net.URL
 import java.util.UUID
 import io.github.jan.supabase.auth.auth
+import io.ktor.client.call.body
+import io.ktor.client.request.header
+import io.ktor.client.request.post
+import io.ktor.client.request.setBody
+import io.ktor.http.ContentType
+import io.ktor.http.contentType
+import kotlinx.coroutines.runBlocking
 
 
 class SupabaseLearningEngine(
@@ -330,42 +335,44 @@ class SupabaseLearningEngine(
         payload: JSONObject,
         retryAfterEmptyResponse: Boolean = true,
     ): String {
-        val connection = (URL(endpoint).openConnection() as HttpURLConnection).apply {
-            requestMethod = "POST"
-            connectTimeout = 20_000
-            readTimeout = 90_000
-            doOutput = true
-            setRequestProperty("Content-Type", "application/json; charset=utf-8")
-            setRequestProperty("Accept", "application/json")
-            if (authRepository != null && !authRepository.currentUserId.isNullOrBlank()) {
-                val token: String? = SupabaseAuthClient.client.auth.currentSessionOrNull()?.accessToken
-                if (token != null) {
-                    setRequestProperty("Authorization", "Bearer $token")
-                }
+        val body = JSONObject()
+            .put("action", action)
+            .put("payload", payload)
+            .toString()
+        val responseText = runBlocking {
+            try {
+                NetworkClient.http.post(endpoint) {
+                    contentType(ContentType.Application.Json)
+                    setBody(body)
+                    if (authRepository != null && !authRepository.currentUserId.isNullOrBlank()) {
+                        val token = SupabaseAuthClient.client.auth.currentSessionOrNull()?.accessToken
+                        if (token != null) {
+                            header("Authorization", "Bearer $token")
+                        }
+                    }
+                }.body<String>()
+            } catch (error: Exception) {
+                throw LearningApiException(
+                    "AIに接続できませんでした。通信環境を確認して再試行してください。",
+                    error,
+                )
             }
         }
 
-        return try {
-            val body = JSONObject()
-                .put("action", action)
-                .put("payload", payload)
-                .toString()
-            connection.outputStream.bufferedWriter(Charsets.UTF_8).use { it.write(body) }
-            val status = connection.responseCode
-            val responseText = (
-                if (status in 200..299) connection.inputStream else connection.errorStream
-                )?.bufferedReader(Charsets.UTF_8)?.use { it.readText() }.orEmpty()
+        if (responseText.isBlank()) {
+            throw LearningApiException("AIサーバーが空の応答を返しました。")
+        }
 
-            if (status !in 200..299) {
-                val errorJson: JSONObject? = try {
-                    JSONObject(responseText)
-                } catch (_: Exception) {
-                    null
-                }
+        return try {
+            val statusJson = JSONObject(responseText)
+            val errorObj = statusJson.optJSONObject("error")
+            val httpStatus = errorObj?.optInt("status") ?: 200
+            if (httpStatus !in 200..299) {
+                val errorJson = errorObj ?: statusJson
                 val detailCandidates = arrayOf("error", "message", "details")
                 var detail = ""
                 for (key in detailCandidates) {
-                    val candidate = errorJson?.optString(key).orEmpty().trim()
+                    val candidate = errorJson.optString(key).trim()
                     if (candidate.isNotBlank()) {
                         detail = candidate
                         break
@@ -374,27 +381,24 @@ class SupabaseLearningEngine(
                 if (detail.isBlank()) {
                     detail = responseText.trim()
                 }
-                val errorCode = errorJson?.optString("code").orEmpty()
+                val errorCode = errorJson.optString("code")
                 val creditExhausted = indicatesCreditExhaustion(responseText)
-                println("[SupabaseLearningEngine] AI request failed: action=$action status=$status creditExhausted=$creditExhausted code=$errorCode")
+                println("[SupabaseLearningEngine] AI request failed: action=$action status=$httpStatus creditExhausted=$creditExhausted code=$errorCode")
                 throw LearningApiException(
-                    if (creditExhausted) {
-                        "AIクレジットが不足しています"
-                    } else {
-                        detail.ifBlank { "AIサーバーでエラーが発生しました（$status）" }
-                    },
+                    if (creditExhausted) "AIクレジットが不足しています" else detail.ifBlank { "AIサーバーでエラーが発生しました（$httpStatus）" },
                     rawResponse = responseText,
                     isCreditExhausted = creditExhausted,
-                    statusCode = status,
+                    statusCode = httpStatus,
                 )
             }
 
-            if (indicatesCreditExhaustion(responseText)) {
+            val creditExhausted = indicatesCreditExhaustion(responseText)
+            if (creditExhausted) {
                 throw LearningApiException(
                     "AIクレジットが不足しています",
                     rawResponse = responseText,
                     isCreditExhausted = true,
-                    statusCode = status,
+                    statusCode = httpStatus,
                 )
             }
 
@@ -415,11 +419,9 @@ class SupabaseLearningEngine(
             throw error
         } catch (error: Exception) {
             throw LearningApiException(
-                "AIに接続できませんでした。通信環境を確認して再試行してください。",
+                "AIの応答を解析できませんでした。通信環境を確認して再試行してください。",
                 error,
             )
-        } finally {
-            connection.disconnect()
         }
     }
 
